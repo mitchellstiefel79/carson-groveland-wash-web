@@ -54,7 +54,7 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-semibold text-secondary mb-1">Phone</h3>
                       <p className="text-gray-600">
-                        <a href="tel:3528150290" className="hover:text-primary">352-815-0290</a>
+                        <a href="tel:3524673964" className="hover:text-primary">352-467-3964</a>
                       </p>
                     </div>
                   </div>

@@ -76,9 +76,9 @@ const Navbar = () => {
             </NavLink>
           ))}
           <Button className="bg-accent hover:bg-accent/90 flex items-center gap-2 text-white" asChild>
-            <a href="tel:3528150290">
+            <a href="tel:3524673964">
               <Phone size={16} />
-              <span className="hidden lg:inline">352-815-0290</span>
+              <span className="hidden lg:inline">352-467-3964</span>
             </a>
           </Button>
         </nav>
@@ -116,9 +116,9 @@ const Navbar = () => {
                 </NavLink>
               ))}
               <Button className="bg-accent hover:bg-accent/90 flex items-center gap-2 text-white" asChild>
-                <a href="tel:3528150290">
+                <a href="tel:3524673964">
                   <Phone size={16} />
-                  <span>Call: 352-815-0290</span>
+                  <span>Call: 352-467-3964</span>
                 </a>
               </Button>
             </nav>
