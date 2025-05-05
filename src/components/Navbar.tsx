@@ -47,9 +47,11 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <NavLink to="/" className="flex items-center">
-          <div className="text-2xl font-bold text-primary">
-            Carson's <span className="text-secondary">Soft Wash</span>
-          </div>
+          <img 
+            src="/lovable-uploads/74691437-06d7-47c3-a140-7ee919fc173a.png" 
+            alt="Carson's Soft Wash Logo" 
+            className="h-16 md:h-20" 
+          />
         </NavLink>
 
         {/* Desktop Navigation */}

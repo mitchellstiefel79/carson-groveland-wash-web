@@ -12,9 +12,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold border-b-2 border-accent pb-2 inline-block">
-              Carson's Soft Wash Inc.
-            </h3>
+            <div className="mb-4">
+              <img 
+                src="/lovable-uploads/74691437-06d7-47c3-a140-7ee919fc173a.png" 
+                alt="Carson's Soft Wash Logo" 
+                className="h-20" 
+              />
+            </div>
             <p className="text-gray-300 max-w-xs">
               Professional pressure washing and soft washing services for residential and commercial properties in Groveland, FL and surrounding areas.
             </p>
