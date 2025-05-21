@@ -6,6 +6,7 @@ import SectionTitle from "@/components/SectionTitle";
 import TestimonialCard from "@/components/TestimonialCard";
 import CallToAction from "@/components/CallToAction";
 import { ArrowRight, Check, Home, Building2, Droplets, Brush } from "lucide-react";
+
 const Index = () => {
   const services = [{
     title: "Residential Pressure Washing",
@@ -46,16 +47,44 @@ const Index = () => {
   }];
   return <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center bg-secondary">
-        <div className="absolute inset-0 z-0 bg-black/60">
+      <section className="relative min-h-[85vh] flex items-center bg-secondary overflow-hidden">
+        {/* Blue Bubble Background */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary to-secondary">
+          <div className="absolute inset-0 opacity-20">
+            {/* Large bubbles */}
+            <div className="absolute w-64 h-64 rounded-full bg-white/20 blur-xl top-1/4 left-1/4 animate-pulse" 
+                 style={{animationDuration: '8s'}}></div>
+            <div className="absolute w-80 h-80 rounded-full bg-white/20 blur-xl bottom-1/3 right-1/4 animate-pulse"
+                 style={{animationDuration: '10s'}}></div>
+            <div className="absolute w-72 h-72 rounded-full bg-white/20 blur-xl top-1/2 right-1/3 animate-pulse"
+                 style={{animationDuration: '12s'}}></div>
+            
+            {/* Medium bubbles */}
+            <div className="absolute w-40 h-40 rounded-full bg-white/30 blur-lg top-1/3 left-1/3 animate-pulse"
+                 style={{animationDuration: '7s'}}></div>
+            <div className="absolute w-48 h-48 rounded-full bg-white/30 blur-lg bottom-1/4 right-1/4 animate-pulse"
+                 style={{animationDuration: '9s'}}></div>
+            
+            {/* Small bubbles */}
+            <div className="absolute w-24 h-24 rounded-full bg-white/40 blur-md top-1/2 left-1/2 animate-pulse"
+                 style={{animationDuration: '6s'}}></div>
+            <div className="absolute w-16 h-16 rounded-full bg-white/40 blur-md bottom-1/3 left-1/4 animate-pulse"
+                 style={{animationDuration: '5s'}}></div>
+            <div className="absolute w-20 h-20 rounded-full bg-white/40 blur-md top-1/4 right-1/3 animate-pulse"
+                 style={{animationDuration: '4s'}}></div>
+          </div>
+        </div>
+        
+        <div className="absolute inset-0 z-0 opacity-40">
           <img alt="Pressure washing service" className="w-full h-full object-cover mix-blend-overlay" src="/lovable-uploads/29afe2d9-ff00-4898-9aea-c3cc5d3accf6.jpg" />
         </div>
+        
         <div className="container mx-auto px-4 z-10 animate-fade-in">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
               Expert Pressure Washing Services in Groveland, FL
             </h1>
-            <p className="text-xl text-gray-200 mb-8">
+            <p className="text-xl text-gray-200 mb-8 drop-shadow-md">
               Professional soft washing and pressure cleaning for residential and commercial properties. Licensed and insured.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -162,4 +191,5 @@ const Index = () => {
       </section>
     </Layout>;
 };
+
 export default Index;
