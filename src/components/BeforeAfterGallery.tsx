@@ -8,9 +8,9 @@ const BeforeAfterGallery = () => {
   
   const beforeAfterImages = [
     {
-      before: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&h=400&fit=crop",
-      after: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=600&h=400&fit=crop",
-      title: "House Exterior Transformation",
+      before: "/lovable-uploads/3f4acc65-08b1-47cc-8347-6a7403d15bf7.png",
+      after: "/lovable-uploads/3f4acc65-08b1-47cc-8347-6a7403d15bf7.png",
+      title: "Driveway Pressure Washing",
       location: "Groveland, FL"
     },
     {
