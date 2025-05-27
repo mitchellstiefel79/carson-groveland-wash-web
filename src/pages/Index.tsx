@@ -5,7 +5,10 @@ import ServiceCard from "@/components/ServiceCard";
 import SectionTitle from "@/components/SectionTitle";
 import TestimonialCard from "@/components/TestimonialCard";
 import CallToAction from "@/components/CallToAction";
-import { ArrowRight, Check, Home, Building2, Droplets, Brush } from "lucide-react";
+import BookingCTA from "@/components/BookingCTA";
+import TrustBadges from "@/components/TrustBadges";
+import BeforeAfterGallery from "@/components/BeforeAfterGallery";
+import { ArrowRight, Check, Home, Building2, Droplets, Brush, Star, MapPin, Phone } from "lucide-react";
 
 const Index = () => {
   const services = [{
@@ -45,34 +48,35 @@ const Index = () => {
     quote: "We use Carson's for our business storefront cleaning quarterly. Always consistent results and fair pricing.",
     rating: 5
   }];
-  return <Layout>
+  return (
+    <Layout>
+      <BookingCTA />
+      
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center bg-secondary overflow-hidden">
         {/* Blue Bubble Background */}
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary to-secondary">
-          <div className="absolute inset-0 opacity-20">
-            {/* Large bubbles */}
-            <div className="absolute w-64 h-64 rounded-full bg-white/20 blur-xl top-1/4 left-1/4 animate-pulse" 
-                 style={{animationDuration: '8s'}}></div>
-            <div className="absolute w-80 h-80 rounded-full bg-white/20 blur-xl bottom-1/3 right-1/4 animate-pulse"
-                 style={{animationDuration: '10s'}}></div>
-            <div className="absolute w-72 h-72 rounded-full bg-white/20 blur-xl top-1/2 right-1/3 animate-pulse"
-                 style={{animationDuration: '12s'}}></div>
-            
-            {/* Medium bubbles */}
-            <div className="absolute w-40 h-40 rounded-full bg-white/30 blur-lg top-1/3 left-1/3 animate-pulse"
-                 style={{animationDuration: '7s'}}></div>
-            <div className="absolute w-48 h-48 rounded-full bg-white/30 blur-lg bottom-1/4 right-1/4 animate-pulse"
-                 style={{animationDuration: '9s'}}></div>
-            
-            {/* Small bubbles */}
-            <div className="absolute w-24 h-24 rounded-full bg-white/40 blur-md top-1/2 left-1/2 animate-pulse"
-                 style={{animationDuration: '6s'}}></div>
-            <div className="absolute w-16 h-16 rounded-full bg-white/40 blur-md bottom-1/3 left-1/4 animate-pulse"
-                 style={{animationDuration: '5s'}}></div>
-            <div className="absolute w-20 h-20 rounded-full bg-white/40 blur-md top-1/4 right-1/3 animate-pulse"
-                 style={{animationDuration: '4s'}}></div>
-          </div>
+          {/* Large bubbles */}
+          <div className="absolute w-64 h-64 rounded-full bg-white/20 blur-xl top-1/4 left-1/4 animate-pulse" 
+               style={{animationDuration: '8s'}}></div>
+          <div className="absolute w-80 h-80 rounded-full bg-white/20 blur-xl bottom-1/3 right-1/4 animate-pulse"
+               style={{animationDuration: '10s'}}></div>
+          <div className="absolute w-72 h-72 rounded-full bg-white/20 blur-xl top-1/2 right-1/3 animate-pulse"
+               style={{animationDuration: '12s'}}></div>
+          
+          {/* Medium bubbles */}
+          <div className="absolute w-40 h-40 rounded-full bg-white/30 blur-lg top-1/3 left-1/3 animate-pulse"
+               style={{animationDuration: '7s'}}></div>
+          <div className="absolute w-48 h-48 rounded-full bg-white/30 blur-lg bottom-1/4 right-1/4 animate-pulse"
+               style={{animationDuration: '9s'}}></div>
+          
+          {/* Small bubbles */}
+          <div className="absolute w-24 h-24 rounded-full bg-white/40 blur-md top-1/2 left-1/2 animate-pulse"
+               style={{animationDuration: '6s'}}></div>
+          <div className="absolute w-16 h-16 rounded-full bg-white/40 blur-md bottom-1/3 left-1/4 animate-pulse"
+               style={{animationDuration: '5s'}}></div>
+          <div className="absolute w-20 h-20 rounded-full bg-white/40 blur-md top-1/4 right-1/3 animate-pulse"
+               style={{animationDuration: '4s'}}></div>
         </div>
         
         <div className="absolute inset-0 z-0 opacity-40">
@@ -80,21 +84,59 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto px-4 z-10 animate-fade-in">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+          <div className="max-w-4xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg leading-tight">
               Expert Pressure Washing Services in Groveland, FL
             </h1>
-            <p className="text-xl text-gray-200 mb-8 drop-shadow-md">
+            <p className="text-lg sm:text-xl text-gray-200 mb-8 drop-shadow-md max-w-2xl">
               Professional soft washing and pressure cleaning for residential and commercial properties. Licensed and insured.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-white">
-                <Link to="/contact">Get a Free Quote</Link>
+            
+            {/* Enhanced CTAs with urgency */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300">
+                <Link to="/contact">Get FREE Quote Today</Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="bg-white/10 text-white border-white hover:bg-white/20">
-                <Link to="/services">Our Services</Link>
+              <Button size="lg" asChild className="bg-white/10 text-white border-white hover:bg-white/20 text-lg px-8 py-4">
+                <a href="tel:3524673964" className="flex items-center gap-2">
+                  <Phone className="h-5 w-5" />
+                  Call (352) 467-3964
+                </a>
               </Button>
             </div>
+            
+            {/* Service area highlight */}
+            <div className="flex items-center gap-2 text-gray-200">
+              <MapPin className="h-4 w-4" />
+              <span className="text-sm">Serving Groveland, Clermont, Minneola & surrounding areas</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Badges */}
+      <TrustBadges />
+
+      {/* Before & After Gallery Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <SectionTitle 
+            title="See the Difference" 
+            subtitle="Real results from recent projects in Central Florida"
+            centered 
+          />
+          
+          <div className="mt-12 max-w-4xl mx-auto">
+            <BeforeAfterGallery />
+          </div>
+          
+          <div className="text-center mt-8">
+            <Button asChild variant="outline" className="group">
+              <Link to="/gallery" className="flex items-center">
+                View Full Gallery
+                <ArrowRight className="ml-2 h-4 w-4 transform transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -104,7 +146,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <SectionTitle title="Why Choose Carson's Soft Wash?" subtitle="We're committed to delivering exceptional cleaning results with professional service at competitive prices." centered />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12">
             <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                 <Check className="h-6 w-6 text-primary" />
@@ -161,7 +203,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <SectionTitle title="Our Services" subtitle="We offer a comprehensive range of pressure washing and soft washing services for both residential and commercial properties." centered />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mt-12">
             {services.map((service, index) => <ServiceCard key={index} title={service.title} description={service.description} icon={service.icon} to={service.to} />)}
           </div>
           
@@ -176,20 +218,43 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <CallToAction title="Ready to Transform Your Property?" description="Contact us today for a free, no-obligation quote. We serve Groveland, Clermont, Minneola, and surrounding areas in Central Florida." buttonText="Get a Free Quote" buttonLink="/contact" variant="primary" />
+      {/* Enhanced CTA Section */}
+      <CallToAction 
+        title="Ready to Transform Your Property?" 
+        description="Join 100+ satisfied customers in Central Florida. Get your free quote today and see the Carson's difference!" 
+        buttonText="Get FREE Quote Now" 
+        buttonLink="/contact" 
+        variant="primary" 
+      />
 
-      {/* Testimonials Section */}
+      {/* Enhanced Testimonials Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <SectionTitle title="What Our Customers Say" subtitle="Don't just take our word for it. Here's what our satisfied customers have to say about our services." centered />
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12">
             {testimonials.map((testimonial, index) => <TestimonialCard key={index} name={testimonial.name} location={testimonial.location} quote={testimonial.quote} rating={testimonial.rating} />)}
+          </div>
+          
+          {/* Google Reviews CTA */}
+          <div className="text-center mt-12 p-6 bg-white rounded-lg shadow-md max-w-2xl mx-auto">
+            <div className="flex justify-center mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-6 w-6 text-yellow-500 fill-current" />
+              ))}
+            </div>
+            <h3 className="text-xl font-bold text-secondary mb-2">Rated 5.0 Stars</h3>
+            <p className="text-gray-600 mb-4">Based on 50+ Google Reviews</p>
+            <Button asChild variant="outline">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                Read All Reviews
+              </a>
+            </Button>
           </div>
         </div>
       </section>
-    </Layout>;
+    </Layout>
+  );
 };
 
 export default Index;
