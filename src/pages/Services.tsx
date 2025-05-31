@@ -11,6 +11,10 @@ const Services = () => {
       title: "Residential Pressure Washing",
       description: "Keep your home looking its best with our comprehensive residential pressure washing services.",
       image: "https://images.unsplash.com/photo-1426604966848-d7adac402bff",
+      beforeAfterImages: {
+        before: "/lovable-uploads/c0b09503-393d-4ff9-b53e-b990e2169565.png",
+        after: "/lovable-uploads/1a7ffadb-19b9-4c40-ba72-a012323a0dd5.png"
+      },
       features: [
         "House washing and exterior cleaning",
         "Concrete cleaning (driveways, walkways, patios)",
@@ -117,11 +121,39 @@ const Services = () => {
                 </div>
                 
                 <div className={`rounded-lg overflow-hidden shadow-xl ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                  <img 
-                    src={service.image} 
-                    alt={service.title} 
-                    className="w-full h-auto"
-                  />
+                  {service.beforeAfterImages ? (
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="relative">
+                          <img 
+                            src={service.beforeAfterImages.before} 
+                            alt="Before pressure washing" 
+                            className="w-full h-48 object-cover rounded-lg"
+                          />
+                          <div className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded text-sm font-semibold">
+                            BEFORE
+                          </div>
+                        </div>
+                        <div className="relative">
+                          <img 
+                            src={service.beforeAfterImages.after} 
+                            alt="After pressure washing" 
+                            className="w-full h-48 object-cover rounded-lg"
+                          />
+                          <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-sm font-semibold">
+                            AFTER
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-center text-sm text-gray-600 font-medium">Fence Cleaning Results</p>
+                    </div>
+                  ) : (
+                    <img 
+                      src={service.image} 
+                      alt={service.title} 
+                      className="w-full h-auto"
+                    />
+                  )}
                 </div>
               </div>
             ))}
