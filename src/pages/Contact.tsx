@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import ContactForm from "@/components/ContactForm";
@@ -66,7 +65,7 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-semibold text-secondary mb-1">Email</h3>
                       <p className="text-gray-600">
-                        <a href="mailto:info@carsonssoftwash.com" className="hover:text-primary">info@carsonssoftwash.com</a>
+                        <a href="mailto:carsonssoftwash@gmail.com" className="hover:text-primary">carsonssoftwash@gmail.com</a>
                       </p>
                     </div>
                   </div>

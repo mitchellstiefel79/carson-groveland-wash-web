@@ -1,4 +1,3 @@
-
 import { NavLink } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Instagram, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -62,7 +61,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-accent flex-shrink-0" />
-                <a href="mailto:info@carsonssoftwash.com" className="hover:text-accent transition-colors">info@carsonssoftwash.com</a>
+                <a href="mailto:carsonssoftwash@gmail.com" className="hover:text-accent transition-colors">carsonssoftwash@gmail.com</a>
               </div>
               <div className="flex items-start space-x-3">
                 <Clock size={18} className="text-accent mt-1 flex-shrink-0" />
