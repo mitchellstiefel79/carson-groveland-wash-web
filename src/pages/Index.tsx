@@ -8,7 +8,7 @@ import CallToAction from "@/components/CallToAction";
 import BookingCTA from "@/components/BookingCTA";
 import TrustBadges from "@/components/TrustBadges";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
-import { ArrowRight, Check, Home, Building2, Droplets, Brush, Star, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Check, Home, Building2, Droplets, Star, MapPin, Phone } from "lucide-react";
 
 const Index = () => {
   const services = [{
@@ -27,11 +27,12 @@ const Index = () => {
     icon: <Droplets className="h-10 w-10" />,
     to: "/services"
   }, {
-    title: "Deck & Fence Restoration",
-    description: "Revitalize your wooden surfaces with our specialized cleaning and restoration services.",
-    icon: <Brush className="h-10 w-10" />,
+    title: "Paver Sealing, Sanding and Stripping",
+    description: "Professional paver restoration services including sealing, joint sanding, and stripping for driveways and patios.",
+    icon: <Star className="h-10 w-10" />,
     to: "/services"
   }];
+  
   const testimonials = [{
     name: "Jennifer L.",
     location: "Groveland, FL",
