@@ -8,6 +8,7 @@ import CallToAction from "@/components/CallToAction";
 import BookingCTA from "@/components/BookingCTA";
 import TrustBadges from "@/components/TrustBadges";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
+import TrendingTikToks from "@/components/TrendingTikToks";
 import { ArrowRight, Check, Home, Building2, Droplets, Star, MapPin, Phone } from "lucide-react";
 
 const Index = () => {
@@ -117,6 +118,13 @@ const Index = () => {
 
       {/* Trust Badges */}
       <TrustBadges />
+
+      {/* TikTok Trending Videos Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <TrendingTikToks />
+        </div>
+      </section>
 
       {/* Before & After Gallery Section */}
       <section className="py-20 bg-white">
