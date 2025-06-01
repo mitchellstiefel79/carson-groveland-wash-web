@@ -43,6 +43,10 @@ const Services = () => {
       title: "Roof Soft Washing",
       description: "Safely remove black streaks, algae, moss, and lichen from your roof without damaging shingles.",
       image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+      beforeAfterImages: {
+        before: "/lovable-uploads/c0b09503-393d-4ff9-b53e-b990e2169565.png",
+        after: "/lovable-uploads/1a7ffadb-19b9-4c40-ba72-a012323a0dd5.png"
+      },
       features: [
         "Low-pressure cleaning technique",
         "Removes harmful organic growth",
@@ -145,7 +149,9 @@ const Services = () => {
                           </div>
                         </div>
                       </div>
-                      <p className="text-center text-sm text-gray-600 font-medium">Fence Cleaning Results</p>
+                      <p className="text-center text-sm text-gray-600 font-medium">
+                        {service.id === "roof" ? "Roof Cleaning Results" : "Fence Cleaning Results"}
+                      </p>
                     </div>
                   ) : (
                     <img 
