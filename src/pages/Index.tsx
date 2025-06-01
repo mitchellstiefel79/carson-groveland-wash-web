@@ -1,3 +1,4 @@
+
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -81,8 +82,20 @@ const Index = () => {
                style={{animationDuration: '4s'}}></div>
         </div>
         
+        {/* YouTube Video Background */}
         <div className="absolute inset-0 z-0 opacity-40">
-          <img alt="Pressure washing service" className="w-full h-full object-cover mix-blend-overlay" src="/lovable-uploads/29afe2d9-ff00-4898-9aea-c3cc5d3accf6.jpg" />
+          <iframe
+            src="https://www.youtube.com/embed/gimqCXsA4Q0?autoplay=1&mute=1&loop=1&playlist=gimqCXsA4Q0&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+            className="w-full h-full object-cover"
+            style={{
+              pointerEvents: 'none',
+              minWidth: '100%',
+              minHeight: '100%',
+            }}
+            allow="autoplay; encrypted-media"
+            allowFullScreen={false}
+            title="Pressure Washing Background Video"
+          />
         </div>
         
         <div className="container mx-auto px-4 z-10 animate-fade-in">
