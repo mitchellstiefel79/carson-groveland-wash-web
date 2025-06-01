@@ -67,6 +67,13 @@ const VideoGallery = () => {
     ? videos 
     : videos.filter(video => video.platform === selectedPlatform);
 
+  // Reset currentSlide if it's out of bounds
+  useEffect(() => {
+    if (currentSlide >= filteredVideos.length && filteredVideos.length > 0) {
+      setCurrentSlide(0);
+    }
+  }, [filteredVideos.length, currentSlide]);
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % filteredVideos.length);
   };
@@ -85,12 +92,40 @@ const VideoGallery = () => {
 
   if (filteredVideos.length === 0) {
     return (
-      <div className="text-center py-8">
-        <p className="text-gray-600">No videos available at the moment.</p>
+      <div className="relative">
+        {/* Platform Filter */}
+        <div className="flex justify-center gap-2 mb-6">
+          <Button
+            onClick={() => setSelectedPlatform("all")}
+            variant={selectedPlatform === "all" ? "default" : "outline"}
+            size="sm"
+          >
+            All Videos
+          </Button>
+          <Button
+            onClick={() => setSelectedPlatform("youtube")}
+            variant={selectedPlatform === "youtube" ? "default" : "outline"}
+            size="sm"
+          >
+            YouTube Shorts
+          </Button>
+          <Button
+            onClick={() => setSelectedPlatform("tiktok")}
+            variant={selectedPlatform === "tiktok" ? "default" : "outline"}
+            size="sm"
+          >
+            TikTok
+          </Button>
+        </div>
+
+        <div className="text-center py-8">
+          <p className="text-gray-600">No videos available for the selected platform.</p>
+        </div>
       </div>
     );
   }
 
+  // Only access currentVideo after we've confirmed filteredVideos has items
   const currentVideo = filteredVideos[currentSlide];
 
   return (
