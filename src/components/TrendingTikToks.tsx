@@ -21,7 +21,7 @@ const TrendingTikToks = () => {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
 
-  const fetchTrendingVideos = async () => {
+  const fetchVideos = async () => {
     setLoading(true);
     try {
       const { data, error } = await supabase.functions.invoke('fetch-trending-tiktoks');
@@ -33,13 +33,13 @@ const TrendingTikToks = () => {
       
       toast({
         title: "Success",
-        description: "Trending TikTok videos fetched successfully!",
+        description: "Carson's Soft Wash TikTok videos fetched successfully!",
       });
     } catch (error) {
-      console.error('Error fetching trending videos:', error);
+      console.error('Error fetching videos:', error);
       toast({
         title: "Error",
-        description: "Failed to fetch trending videos",
+        description: "Failed to fetch videos",
         variant: "destructive",
       });
     } finally {
@@ -69,14 +69,14 @@ const TrendingTikToks = () => {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-secondary">Trending TikTok Videos</h2>
+        <h2 className="text-2xl font-bold text-secondary">Carson's Soft Wash TikTok Videos</h2>
         <Button 
-          onClick={fetchTrendingVideos} 
+          onClick={fetchVideos} 
           disabled={loading}
           className="flex items-center gap-2"
         >
           <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
-          {loading ? 'Fetching...' : 'Fetch Trending'}
+          {loading ? 'Fetching...' : 'Fetch Latest Videos'}
         </Button>
       </div>
 
@@ -148,9 +148,9 @@ const TrendingTikToks = () => {
 
       {videos.length === 0 && !loading && (
         <div className="text-center py-12">
-          <p className="text-gray-500 mb-4">No TikTok videos found</p>
-          <Button onClick={fetchTrendingVideos}>
-            Fetch Trending Videos
+          <p className="text-gray-500 mb-4">No videos found from @carson.soft.wash</p>
+          <Button onClick={fetchVideos}>
+            Fetch Videos
           </Button>
         </div>
       )}

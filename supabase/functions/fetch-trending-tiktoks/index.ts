@@ -20,7 +20,8 @@ serve(async (req) => {
       throw new Error('RAPIDAPI_KEY not configured');
     }
 
-    const response = await fetch('https://tiktok-api23.p.rapidapi.com/api/post/trending?count=16', {
+    // Fetch videos from specific user @carson.soft.wash
+    const response = await fetch('https://tiktok-api23.p.rapidapi.com/api/user/posts?unique_id=carson.soft.wash&count=16', {
       method: 'GET',
       headers: {
         'X-RapidAPI-Key': rapidApiKey,
@@ -39,7 +40,7 @@ serve(async (req) => {
     const supabaseKey = Deno.env.get('SUPABASE_ANON_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Store trending videos in database
+    // Store videos from carson.soft.wash in database
     if (data.posts && Array.isArray(data.posts)) {
       for (const post of data.posts) {
         const { error } = await supabase
@@ -47,7 +48,7 @@ serve(async (req) => {
           .upsert({
             title: post.title || 'Untitled',
             video_url: post.video_url || post.play_url || '',
-            user_name: post.author?.unique_id || post.author?.nickname || 'Unknown',
+            user_name: post.author?.unique_id || post.author?.nickname || 'carson.soft.wash',
             profile_pic: post.author?.avatar_url || null,
             tiktok_link: post.share_url || `https://tiktok.com/@${post.author?.unique_id}/video/${post.aweme_id}`,
           }, {
@@ -64,7 +65,7 @@ serve(async (req) => {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   } catch (error) {
-    console.error('Error fetching trending TikToks:', error);
+    console.error('Error fetching videos from @carson.soft.wash:', error);
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
