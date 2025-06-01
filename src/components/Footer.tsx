@@ -1,3 +1,4 @@
+
 import { NavLink } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Instagram, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,7 +20,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-gray-300 max-w-xs">
-              Professional pressure washing and soft washing services for residential and commercial properties in Groveland, FL and surrounding areas.
+              Professional pressure washing, soft washing and paver sealing services for residential and commercial properties covering all of Central Florida.
             </p>
             <div className="flex space-x-4">
               <a href="https://facebook.com" className="hover:text-accent transition-colors" aria-label="Facebook">
@@ -53,7 +54,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <MapPin size={18} className="text-accent mt-1 flex-shrink-0" />
-                <span>Groveland, FL</span>
+                <span>Serving all of Central Florida</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-accent flex-shrink-0" />
@@ -80,3 +81,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

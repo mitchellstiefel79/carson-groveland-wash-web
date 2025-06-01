@@ -1,4 +1,5 @@
 
+
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import CallToAction from "@/components/CallToAction";
@@ -22,7 +23,7 @@ const Services = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
-            <p className="text-xl">Professional pressure washing and soft washing solutions for all your needs</p>
+            <p className="text-xl">Professional pressure washing, soft washing and paver sealing solutions covering all of Central Florida</p>
           </div>
         </div>
       </section>
@@ -32,7 +33,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <SectionTitle 
             title="Professional Cleaning Services" 
-            subtitle="At Carson's Soft Wash, we offer a comprehensive range of pressure washing and soft washing services for both residential and commercial properties."
+            subtitle="At Carson's Soft Wash, we offer a comprehensive range of pressure washing, soft washing and paver sealing services for both residential and commercial properties throughout Central Florida."
             centered
           />
           
@@ -73,7 +74,7 @@ const Services = () => {
       {/* CTA Section */}
       <CallToAction
         title="Ready to Restore Your Property's Appearance?"
-        description="Contact us today for a free estimate on any of our pressure washing services."
+        description="Contact us today for a free estimate on any of our pressure washing, soft washing or paver sealing services throughout Central Florida."
         buttonText="Get a Free Quote"
         buttonLink="/contact"
         variant="primary"
@@ -83,3 +84,4 @@ const Services = () => {
 };
 
 export default Services;
+

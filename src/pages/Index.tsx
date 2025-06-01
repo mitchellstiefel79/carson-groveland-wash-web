@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -89,7 +88,7 @@ const Index = () => {
         <div className="container mx-auto px-4 z-10 animate-fade-in">
           <div className="max-w-4xl">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg leading-tight">
-              Expert Pressure Washing Services in Groveland, FL
+              Pressure Washing, Soft Washing and Paver Sealing Covering all of Central Florida
             </h1>
             <p className="text-lg sm:text-xl text-gray-200 mb-8 drop-shadow-md max-w-2xl">
               Professional soft washing and pressure cleaning for residential and commercial properties. Licensed and insured.
@@ -111,7 +110,7 @@ const Index = () => {
             {/* Service area highlight */}
             <div className="flex items-center gap-2 text-gray-200">
               <MapPin className="h-4 w-4" />
-              <span className="text-sm">Serving Groveland, Clermont, Minneola & surrounding areas</span>
+              <span className="text-sm">Serving all of Central Florida including Groveland, Clermont, Minneola & surrounding areas</span>
             </div>
           </div>
         </div>
@@ -125,7 +124,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <SectionTitle 
             title="See the Difference" 
-            subtitle="Real results from recent projects in Central Florida"
+            subtitle="Real results from recent projects throughout Central Florida"
             centered 
           />
           
@@ -224,7 +223,7 @@ const Index = () => {
       {/* Enhanced CTA Section */}
       <CallToAction 
         title="Ready to Transform Your Property?" 
-        description="Join 100+ satisfied customers in Central Florida. Get your free quote today and see the Carson's difference!" 
+        description="Join 100+ satisfied customers throughout Central Florida. Get your free quote today and see the Carson's difference!" 
         buttonText="Get FREE Quote Now" 
         buttonLink="/contact" 
         variant="primary" 

@@ -1,3 +1,4 @@
+
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import ContactForm from "@/components/ContactForm";
@@ -19,7 +20,7 @@ const Contact = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-            <p className="text-xl">Get in touch for a free estimate or to learn more about our services</p>
+            <p className="text-xl">Get in touch for a free estimate or to learn more about our services throughout Central Florida</p>
           </div>
         </div>
       </section>
@@ -75,10 +76,10 @@ const Contact = () => {
                       <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-secondary mb-1">Location</h3>
+                      <h3 className="text-lg font-semibold text-secondary mb-1">Service Area</h3>
                       <p className="text-gray-600">
-                        Groveland, FL<br />
-                        Serving Groveland, Clermont, Minneola, and surrounding areas
+                        Covering all of Central Florida<br />
+                        Including Groveland, Clermont, Minneola, and surrounding areas
                       </p>
                     </div>
                   </div>
@@ -101,7 +102,7 @@ const Contact = () => {
               <div className="mt-8 bg-gray-50 p-8 rounded-lg border border-gray-100">
                 <h3 className="text-xl font-bold text-secondary mb-4">Service Areas</h3>
                 <p className="text-gray-600 mb-4">
-                  We provide pressure washing services throughout Central Florida, including:
+                  We provide pressure washing, soft washing and paver sealing services throughout Central Florida, including:
                 </p>
                 <ul className="grid grid-cols-2 gap-2 text-gray-600">
                   <li>• Groveland</li>
@@ -123,8 +124,8 @@ const Contact = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <SectionTitle 
-            title="Our Location" 
-            subtitle="Based in Groveland, FL, we serve residential and commercial clients throughout the surrounding areas."
+            title="Our Service Area" 
+            subtitle="Based in Central Florida, we serve residential and commercial clients throughout the region."
             centered
           />
           
@@ -146,3 +147,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

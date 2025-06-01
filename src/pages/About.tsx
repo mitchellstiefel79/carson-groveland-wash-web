@@ -1,4 +1,5 @@
 
+
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import CallToAction from "@/components/CallToAction";
@@ -19,7 +20,7 @@ const About = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">About Carson's Soft Wash</h1>
-            <p className="text-xl">Providing Quality Pressure Washing Services Since 2018</p>
+            <p className="text-xl">Providing Quality Pressure Washing, Soft Washing and Paver Sealing Services Since 2018</p>
           </div>
         </div>
       </section>
@@ -31,7 +32,7 @@ const About = () => {
             <div>
               <SectionTitle 
                 title="Our Story" 
-                subtitle="Founded in 2018, Carson's Soft Wash has grown from a small family business to one of the most trusted pressure washing companies in Groveland and surrounding areas."
+                subtitle="Founded in 2018, Carson's Soft Wash has grown from a small family business to one of the most trusted pressure washing, soft washing and paver sealing companies serving all of Central Florida."
               />
               <div className="space-y-4 text-gray-600">
                 <p>
@@ -41,7 +42,7 @@ const About = () => {
                   Our founder, Carson, began with just one pressure washer and a commitment to quality. Today, our team uses state-of-the-art equipment and eco-friendly cleaning solutions to deliver exceptional results while protecting your property and the environment.
                 </p>
                 <p>
-                  We've built our reputation on reliability, attention to detail, and customer satisfaction. We're proud to be a locally owned and operated business serving our community with pride.
+                  We've built our reputation on reliability, attention to detail, and customer satisfaction. We're proud to be a locally owned and operated business serving our community with pride throughout Central Florida.
                 </p>
               </div>
             </div>
@@ -172,7 +173,7 @@ const About = () => {
       {/* CTA Section */}
       <CallToAction
         title="Ready to Experience the Carson's Difference?"
-        description="Contact us today to schedule your free estimate and see how we can transform your property."
+        description="Contact us today to schedule your free estimate and see how we can transform your property throughout Central Florida."
         buttonText="Contact Us"
         buttonLink="/contact"
         variant="primary"
@@ -182,3 +183,4 @@ const About = () => {
 };
 
 export default About;
+
