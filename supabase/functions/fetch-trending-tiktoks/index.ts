@@ -16,8 +16,8 @@ serve(async (req) => {
   try {
     const rapidApiKey = '2c11cebbe5mshc94b1b4e4a6553bp187ffajsna68f44b984cb';
     
-    // Fetch videos from @carson.soft.wash user
-    const response = await fetch('https://tiktok-video-no-watermark2.p.rapidapi.com/user/posts?unique_id=carson.soft.wash&count=20', {
+    // Fetch videos from @carson.soft.wash user with updated parameters
+    const response = await fetch('https://tiktok-video-no-watermark2.p.rapidapi.com/user/posts?unique_id=@carson.soft.wash&count=35&cursor=0', {
       method: 'GET',
       headers: {
         'x-rapidapi-key': rapidApiKey,
