@@ -14,18 +14,14 @@ serve(async (req) => {
   }
 
   try {
-    const rapidApiKey = Deno.env.get('RAPIDAPI_KEY');
+    const rapidApiKey = '2c11cebbe5mshc94b1b4e4a6553bp187ffajsna68f44b984cb';
     
-    if (!rapidApiKey) {
-      throw new Error('RAPIDAPI_KEY not configured');
-    }
-
-    // Fetch videos from specific user @carson.soft.wash
-    const response = await fetch('https://tiktok-api23.p.rapidapi.com/api/user/posts?unique_id=carson.soft.wash&count=16', {
+    // Fetch videos from @carson.soft.wash user
+    const response = await fetch('https://tiktok-video-no-watermark2.p.rapidapi.com/user/posts?unique_id=carson.soft.wash&count=20', {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': rapidApiKey,
-        'X-RapidAPI-Host': 'tiktok-api23.p.rapidapi.com',
+        'x-rapidapi-key': rapidApiKey,
+        'x-rapidapi-host': 'tiktok-video-no-watermark2.p.rapidapi.com',
       },
     });
 
@@ -41,16 +37,16 @@ serve(async (req) => {
     const supabase = createClient(supabaseUrl, supabaseKey);
 
     // Store videos from carson.soft.wash in database
-    if (data.posts && Array.isArray(data.posts)) {
-      for (const post of data.posts) {
+    if (data.data && Array.isArray(data.data.videos)) {
+      for (const video of data.data.videos) {
         const { error } = await supabase
           .from('tiktok_videos')
           .upsert({
-            title: post.title || 'Untitled',
-            video_url: post.video_url || post.play_url || '',
-            user_name: post.author?.unique_id || post.author?.nickname || 'carson.soft.wash',
-            profile_pic: post.author?.avatar_url || null,
-            tiktok_link: post.share_url || `https://tiktok.com/@${post.author?.unique_id}/video/${post.aweme_id}`,
+            title: video.title || video.desc || 'Untitled',
+            video_url: video.play || video.download_addr?.url_list?.[0] || '',
+            user_name: video.author?.unique_id || video.author?.nickname || 'carson.soft.wash',
+            profile_pic: video.author?.avatar_thumb?.url_list?.[0] || null,
+            tiktok_link: video.video_id ? `https://tiktok.com/@carson.soft.wash/video/${video.video_id}` : '',
           }, {
             onConflict: 'tiktok_link'
           });
