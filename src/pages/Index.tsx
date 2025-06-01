@@ -11,6 +11,8 @@ import HeroSection from "@/components/HeroSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import ServicesSection from "@/components/ServicesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import AdminVideoSync from "@/components/AdminVideoSync";
+import AdminTikTokSync from "@/components/AdminTikTokSync";
 import { ArrowRight } from "lucide-react";
 
 const Index = () => {
@@ -23,6 +25,22 @@ const Index = () => {
 
       {/* Trust Badges */}
       <TrustBadges />
+
+      {/* Admin Sync Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <SectionTitle 
+            title="Content Management" 
+            subtitle="Sync your latest videos from social media platforms"
+            centered 
+          />
+          
+          <div className="mt-8 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            <AdminVideoSync />
+            <AdminTikTokSync />
+          </div>
+        </div>
+      </section>
 
       {/* Dynamic Video Gallery Section */}
       <section className="py-20 bg-white">
