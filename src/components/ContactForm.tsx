@@ -1,9 +1,11 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import PhotoUpload from "./PhotoUpload";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -14,6 +16,7 @@ const ContactForm = () => {
     service: "",
     message: ""
   });
+  const [photos, setPhotos] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -34,7 +37,8 @@ const ContactForm = () => {
           email: formData.email,
           phone: formData.phone,
           service: formData.service,
-          message: formData.message
+          message: formData.message,
+          photos: photos
         }]);
 
       if (error) {
@@ -60,6 +64,7 @@ const ContactForm = () => {
         service: "",
         message: ""
       });
+      setPhotos([]);
     } catch (error) {
       console.error('Unexpected error:', error);
       toast({
@@ -153,6 +158,16 @@ const ContactForm = () => {
           placeholder="Tell us about your project or ask a question..."
           rows={4}
         />
+      </div>
+
+      <div className="space-y-2">
+        <label className="text-sm font-medium">
+          Upload Photos (Optional)
+        </label>
+        <p className="text-xs text-gray-500 mb-2">
+          Share photos of areas that need cleaning to help us provide a more accurate estimate
+        </p>
+        <PhotoUpload photos={photos} onPhotosChange={setPhotos} />
       </div>
 
       <Button type="submit" className="w-full md:w-auto" disabled={isSubmitting}>
