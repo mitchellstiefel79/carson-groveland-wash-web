@@ -6,7 +6,7 @@ import SectionTitle from "@/components/SectionTitle";
 import CallToAction from "@/components/CallToAction";
 import BookingCTA from "@/components/BookingCTA";
 import TrustBadges from "@/components/TrustBadges";
-import BeforeAfterGallery from "@/components/BeforeAfterGallery";
+import VideoGallery from "@/components/VideoGallery";
 import HeroSection from "@/components/HeroSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -24,17 +24,17 @@ const Index = () => {
       {/* Trust Badges */}
       <TrustBadges />
 
-      {/* Before & After Gallery Section */}
+      {/* Dynamic Video Gallery Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <SectionTitle 
-            title="See the Difference" 
-            subtitle="Real results from recent projects throughout Central Florida"
+            title="See Our Work in Action" 
+            subtitle="Watch real transformations from our recent pressure washing and soft washing projects throughout Central Florida"
             centered 
           />
           
           <div className="mt-12 max-w-4xl mx-auto">
-            <BeforeAfterGallery />
+            <VideoGallery />
           </div>
           
           <div className="text-center mt-8">
