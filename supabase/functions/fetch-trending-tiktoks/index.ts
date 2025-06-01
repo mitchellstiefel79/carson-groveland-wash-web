@@ -46,7 +46,7 @@ serve(async (req) => {
             video_url: video.play || video.download_addr?.url_list?.[0] || '',
             user_name: video.author?.unique_id || video.author?.nickname || 'carson.soft.wash',
             profile_pic: video.author?.avatar_thumb?.url_list?.[0] || null,
-            tiktok_link: video.video_id ? `https://tiktok.com/@carson.soft.wash/video/${video.video_id}` : '',
+            tiktok_link: video.video_id ? `https://www.tiktok.com/@carson.soft.wash/video/${video.video_id}` : '',
           }, {
             onConflict: 'tiktok_link'
           });
