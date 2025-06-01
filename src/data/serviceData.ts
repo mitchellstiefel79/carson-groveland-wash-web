@@ -38,8 +38,8 @@ export const serviceDetails = [
     description: "Safely remove black streaks, algae, moss, and lichen from your roof without damaging shingles.",
     image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
     beforeAfterImages: {
-      before: "/lovable-uploads/c0b09503-393d-4ff9-b53e-b990e2169565.png",
-      after: "/lovable-uploads/1a7ffadb-19b9-4c40-ba72-a012323a0dd5.png"
+      before: "/lovable-uploads/85077737-17b0-4aa3-a898-c65527f1d6cb.png",
+      after: "/lovable-uploads/efc952a9-adaf-438f-9d93-fb25cb3c2b1b.png"
     },
     features: [
       "Low-pressure cleaning technique",
