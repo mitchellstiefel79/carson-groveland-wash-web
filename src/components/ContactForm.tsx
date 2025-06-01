@@ -1,9 +1,9 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -25,12 +25,34 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Save customer registration to Supabase
+      const { error } = await supabase
+        .from('customers')
+        .insert([{
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message
+        }]);
+
+      if (error) {
+        console.error('Error saving customer registration:', error);
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
       toast({
         title: "Message Sent!",
         description: "Thanks for reaching out. We'll contact you shortly.",
       });
+      
+      // Reset form
       setFormData({
         name: "",
         email: "",
@@ -38,8 +60,16 @@ const ContactForm = () => {
         service: "",
         message: ""
       });
+    } catch (error) {
+      console.error('Unexpected error:', error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
