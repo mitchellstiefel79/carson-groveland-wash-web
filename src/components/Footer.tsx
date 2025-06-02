@@ -1,6 +1,5 @@
-
 import { NavLink } from "react-router-dom";
-import { Phone, Mail, MapPin, Facebook, Youtube, Google, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Youtube, Building, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
@@ -30,7 +29,7 @@ const Footer = () => {
                 <Youtube size={20} />
               </a>
               <a href="#" className="hover:text-accent transition-colors" aria-label="Google My Business">
-                <Google size={20} />
+                <Building size={20} />
               </a>
             </div>
           </div>
