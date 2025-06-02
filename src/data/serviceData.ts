@@ -22,7 +22,7 @@ export const serviceDetails = [
     id: "commercial",
     title: "Commercial Pressure Washing",
     description: "Maintain a professional appearance for your business with our commercial pressure washing solutions.",
-    image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
+    image: "/lovable-uploads/790c44b3-2bda-4131-b27b-ca29eb40a2aa.png",
     features: [
       "Storefront and building exterior cleaning",
       "Parking lot and garage cleaning",
