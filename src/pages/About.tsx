@@ -1,4 +1,5 @@
 
+
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import CallToAction from "@/components/CallToAction";
@@ -11,8 +12,8 @@ const About = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/40"></div>
           <img 
-            src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07" 
-            alt="Pressure washing team" 
+            src="/lovable-uploads/07b2bf0f-b574-4f77-be82-55d89757f2f9.png" 
+            alt="Carson's Soft Wash Logo" 
             className="w-full h-full object-cover"
           />
         </div>
@@ -182,3 +183,4 @@ const About = () => {
 };
 
 export default About;
+
