@@ -1,5 +1,3 @@
-
-
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import CallToAction from "@/components/CallToAction";
@@ -15,8 +13,8 @@ const Services = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/40"></div>
           <img 
-            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" 
-            alt="Pressure washing services" 
+            src="/lovable-uploads/afcec310-400e-49cb-a32c-b4e8336d83e7.png" 
+            alt="Professional paver cleaning services" 
             className="w-full h-full object-cover"
           />
         </div>
@@ -84,4 +82,3 @@ const Services = () => {
 };
 
 export default Services;
-
