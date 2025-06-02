@@ -1,6 +1,6 @@
 
 import { NavLink } from "react-router-dom";
-import { Phone, Mail, MapPin, Facebook, Instagram, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Youtube, Google, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
@@ -23,11 +23,14 @@ const Footer = () => {
               Professional pressure washing, soft washing and paver sealing services for residential and commercial properties covering all of Central Florida.
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" className="hover:text-accent transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=100088828035566" className="hover:text-accent transition-colors" aria-label="Facebook">
                 <Facebook size={20} />
               </a>
-              <a href="https://instagram.com" className="hover:text-accent transition-colors" aria-label="Instagram">
-                <Instagram size={20} />
+              <a href="#" className="hover:text-accent transition-colors" aria-label="YouTube">
+                <Youtube size={20} />
+              </a>
+              <a href="#" className="hover:text-accent transition-colors" aria-label="Google My Business">
+                <Google size={20} />
               </a>
             </div>
           </div>
@@ -81,4 +84,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
