@@ -81,7 +81,7 @@ const Gallery = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/40"></div>
           <img 
-            src="https://images.unsplash.com/photo-1426604966848-d7adac402bff" 
+            src="/lovable-uploads/33ddd57b-b074-4962-8d39-cf59460ca10b.png" 
             alt="Pressure washing gallery" 
             className="w-full h-full object-cover"
           />
