@@ -69,39 +69,6 @@ export type Database = {
         }
         Relationships: []
       }
-      tiktok_videos: {
-        Row: {
-          created_at: string
-          id: string
-          profile_pic: string | null
-          tiktok_link: string
-          title: string
-          updated_at: string
-          user_name: string
-          video_url: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          profile_pic?: string | null
-          tiktok_link: string
-          title: string
-          updated_at?: string
-          user_name: string
-          video_url: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          profile_pic?: string | null
-          tiktok_link?: string
-          title?: string
-          updated_at?: string
-          user_name?: string
-          video_url?: string
-        }
-        Relationships: []
-      }
       video_gallery: {
         Row: {
           created_at: string
