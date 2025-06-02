@@ -1,3 +1,4 @@
+
 import { NavLink } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Youtube, Building, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -25,7 +26,7 @@ const Footer = () => {
               <a href="https://www.facebook.com/profile.php?id=100088828035566" className="hover:text-accent transition-colors" aria-label="Facebook">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="hover:text-accent transition-colors" aria-label="YouTube">
+              <a href="https://www.youtube.com/@CarsonStiefel/videos" className="hover:text-accent transition-colors" aria-label="YouTube">
                 <Youtube size={20} />
               </a>
               <a href="#" className="hover:text-accent transition-colors" aria-label="Google My Business">
