@@ -1,5 +1,3 @@
-
-
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import CallToAction from "@/components/CallToAction";
@@ -20,7 +18,7 @@ const About = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">About Carson's Soft Wash</h1>
-            <p className="text-xl">Providing Quality Pressure Washing, Soft Washing and Paver Sealing Services Since 2018</p>
+            <p className="text-xl">Providing Quality Pressure Washing, Soft Washing and Paver Sealing Services Since 2022</p>
           </div>
         </div>
       </section>
@@ -32,17 +30,17 @@ const About = () => {
             <div>
               <SectionTitle 
                 title="Our Story" 
-                subtitle="Founded in 2018, Carson's Soft Wash has grown from a small family business to one of the most trusted pressure washing, soft washing and paver sealing companies serving all of Central Florida."
+                subtitle="Founded in 2022, Carson had a dream to own his own pressure washing business. Through hard work, dedication, and a passion for transforming properties, Carson's Soft Wash has become a trusted name serving all of Central Florida."
               />
               <div className="space-y-4 text-gray-600">
                 <p>
-                  What started as a passion for transforming dirty surfaces into clean, like-new conditions, quickly grew into a full-service exterior cleaning company serving both residential and commercial clients throughout Central Florida.
+                  Carson's journey began in 2022 with a simple but powerful dream - to own his own pressure washing business. He poured all his efforts into learning the trade and investing in quality equipment, knowing that success would require dedication and hard work.
                 </p>
                 <p>
-                  Our founder, Carson, began with just one pressure washer and a commitment to quality. Today, our team uses state-of-the-art equipment and eco-friendly cleaning solutions to deliver exceptional results while protecting your property and the environment.
+                  Through sweat and tears, Carson was able to graduate ahead of schedule from his training program. But what truly drove him wasn't just the technical skills - it was his genuine passion for being out in the field, speaking with people, and seeing the transformation of their properties firsthand.
                 </p>
                 <p>
-                  We've built our reputation on reliability, attention to detail, and customer satisfaction. We're proud to be a locally owned and operated business serving our community with pride throughout Central Florida.
+                  Today, Carson's vision has grown into a full-service exterior cleaning company that serves both residential and commercial clients throughout Central Florida. We've built our reputation on the same values that started it all - hard work, quality results, and genuine care for our customers and their properties.
                 </p>
               </div>
             </div>
@@ -183,4 +181,3 @@ const About = () => {
 };
 
 export default About;
-
