@@ -1,6 +1,6 @@
 
 import { NavLink } from "react-router-dom";
-import { Phone, Mail, MapPin, Facebook, Youtube, Building, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Youtube, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
@@ -29,8 +29,8 @@ const Footer = () => {
               <a href="https://www.youtube.com/@CarsonStiefel/videos" className="hover:text-accent transition-colors" aria-label="YouTube">
                 <Youtube size={20} />
               </a>
-              <a href="#" className="hover:text-accent transition-colors" aria-label="Google My Business">
-                <Building size={20} />
+              <a href="https://g.co/kgs/BpMXxfs" className="hover:text-accent transition-colors" aria-label="Google My Business">
+                <img src="/lovable-uploads/2ca4c1e4-aa11-4619-a561-4aceddf1c443.png" alt="Google My Business" className="w-5 h-5" />
               </a>
             </div>
           </div>
