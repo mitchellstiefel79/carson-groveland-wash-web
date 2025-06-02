@@ -3,6 +3,10 @@ import { useState } from "react";
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import CallToAction from "@/components/CallToAction";
+import VideoGallery from "@/components/VideoGallery";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 interface GalleryImage {
   id: number;
@@ -90,11 +94,26 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-16">
+      {/* Video Gallery Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <SectionTitle 
-            title="Project Gallery" 
+            title="See Our Work in Action" 
+            subtitle="Watch real transformations from our recent pressure washing and soft washing projects throughout Central Florida"
+            centered 
+          />
+          
+          <div className="mt-12 max-w-4xl mx-auto">
+            <VideoGallery />
+          </div>
+        </div>
+      </section>
+
+      {/* Photo Gallery Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <SectionTitle 
+            title="Project Photo Gallery" 
             subtitle="Take a look at some of our recent pressure washing and soft washing projects."
             centered
           />
@@ -141,7 +160,7 @@ const Gallery = () => {
       </section>
 
       {/* Testimonial */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <svg className="w-12 h-12 text-primary mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
