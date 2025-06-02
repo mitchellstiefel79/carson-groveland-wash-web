@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { supabase } from '@/integrations/supabase/client';
-import { Play, User, RefreshCw } from 'lucide-react';
+import { Play, User, RefreshCw, Download } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 interface TikTokVideo {
@@ -33,7 +33,7 @@ const TrendingTikToks = () => {
       
       toast({
         title: "Success",
-        description: "Carson's Soft Wash TikTok videos fetched successfully!",
+        description: "Carson's Soft Wash TikTok videos fetched and stored successfully!",
       });
     } catch (error) {
       console.error('Error fetching videos:', error);
@@ -62,6 +62,10 @@ const TrendingTikToks = () => {
     }
   };
 
+  const isStoredVideo = (videoUrl: string) => {
+    return videoUrl.includes('supabase.co/storage/v1/object/public/tiktok-videos/');
+  };
+
   useEffect(() => {
     loadVideosFromDB();
   }, []);
@@ -76,7 +80,7 @@ const TrendingTikToks = () => {
           className="flex items-center gap-2"
         >
           <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
-          {loading ? 'Fetching...' : 'Fetch Latest Videos'}
+          {loading ? 'Fetching & Storing...' : 'Fetch Latest Videos'}
         </Button>
       </div>
 
@@ -98,6 +102,12 @@ const TrendingTikToks = () => {
                 )}
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium truncate">@{video.user_name}</p>
+                  {isStoredVideo(video.video_url) && (
+                    <div className="flex items-center gap-1 text-xs text-green-600">
+                      <Download className="h-3 w-3" />
+                      Stored locally
+                    </div>
+                  )}
                 </div>
               </div>
             </CardHeader>
@@ -125,7 +135,7 @@ const TrendingTikToks = () => {
                 {video.video_url && (
                   <Button
                     asChild
-                    variant="default"
+                    variant={isStoredVideo(video.video_url) ? "default" : "secondary"}
                     size="sm"
                     className="w-full"
                   >
@@ -136,7 +146,7 @@ const TrendingTikToks = () => {
                       className="flex items-center gap-2"
                     >
                       <Play className="h-4 w-4" />
-                      Direct Video
+                      {isStoredVideo(video.video_url) ? 'Play Stored Video' : 'Direct Video'}
                     </a>
                   </Button>
                 )}

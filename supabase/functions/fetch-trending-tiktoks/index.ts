@@ -33,17 +33,69 @@ serve(async (req) => {
     
     // Initialize Supabase client
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
-    const supabaseKey = Deno.env.get('SUPABASE_ANON_KEY')!;
+    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseKey);
+
+    // Helper function to download and store video in Supabase storage
+    const downloadAndStoreVideo = async (videoUrl: string, videoId: string) => {
+      try {
+        console.log(`Downloading video: ${videoId}`);
+        const videoResponse = await fetch(videoUrl);
+        
+        if (!videoResponse.ok) {
+          console.error(`Failed to download video ${videoId}: ${videoResponse.status}`);
+          return null;
+        }
+
+        const videoBlob = await videoResponse.arrayBuffer();
+        const fileName = `${videoId}.mp4`;
+
+        // Upload to Supabase storage
+        const { data: uploadData, error: uploadError } = await supabase.storage
+          .from('tiktok-videos')
+          .upload(fileName, videoBlob, {
+            contentType: 'video/mp4',
+            upsert: true
+          });
+
+        if (uploadError) {
+          console.error(`Upload error for ${videoId}:`, uploadError);
+          return null;
+        }
+
+        // Get public URL
+        const { data: urlData } = supabase.storage
+          .from('tiktok-videos')
+          .getPublicUrl(fileName);
+
+        console.log(`Successfully stored video ${videoId} at: ${urlData.publicUrl}`);
+        return urlData.publicUrl;
+      } catch (error) {
+        console.error(`Error processing video ${videoId}:`, error);
+        return null;
+      }
+    };
 
     // Store videos from carson.soft.wash in database
     if (data.data && Array.isArray(data.data.videos)) {
       for (const video of data.data.videos) {
+        const videoId = video.video_id || video.aweme_id || `video_${Date.now()}_${Math.random()}`;
+        const originalVideoUrl = video.play || video.download_addr?.url_list?.[0] || '';
+        
+        // Download and store video in Supabase storage
+        let storedVideoUrl = originalVideoUrl;
+        if (originalVideoUrl) {
+          const downloadedUrl = await downloadAndStoreVideo(originalVideoUrl, videoId);
+          if (downloadedUrl) {
+            storedVideoUrl = downloadedUrl;
+          }
+        }
+
         const { error } = await supabase
           .from('tiktok_videos')
           .upsert({
             title: video.title || video.desc || 'Untitled',
-            video_url: video.play || video.download_addr?.url_list?.[0] || '',
+            video_url: storedVideoUrl,
             user_name: video.author?.unique_id || video.author?.nickname || 'carson.soft.wash',
             profile_pic: video.author?.avatar_thumb?.url_list?.[0] || null,
             tiktok_link: video.video_id ? `https://www.tiktok.com/@carson.soft.wash/video/${video.video_id}` : '',
@@ -53,11 +105,17 @@ serve(async (req) => {
         
         if (error) {
           console.error('Error inserting video:', error);
+        } else {
+          console.log(`Successfully processed video: ${video.title || 'Untitled'}`);
         }
       }
     }
 
-    return new Response(JSON.stringify(data), {
+    return new Response(JSON.stringify({ 
+      success: true, 
+      message: `Processed ${data.data?.videos?.length || 0} videos`,
+      data: data 
+    }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   } catch (error) {
