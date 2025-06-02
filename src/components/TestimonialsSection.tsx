@@ -57,7 +57,7 @@ const TestimonialsSection = () => {
           <h3 className="text-xl font-bold text-secondary mb-2">Rated 5.0 Stars</h3>
           <p className="text-gray-600 mb-4">Based on 50+ Google Reviews</p>
           <Button asChild variant="outline">
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.google.com/search?sca_esv=ec8f78d2e7286749&rlz=1C1CHBF_enUS923US923&sxsrf=AE3TifP9OLuk0KQGhTnfgbgaP0M-0vzCaw:1748826577162&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E1svy5C-Eqmqh6YREeXU3hyHxmUlOK02cJMBiERVmsNlqeXFmf8CVIXPXRBx3gbNixsMUf67NbzcAiCHpMKaf94ki7401h0nCLupelTukAdvxbnavV4diXBP5TEqGnWOU_19ZgE%3D&q=Carson%27s+Soft+Wash+Services+Inc.+Reviews&sa=X&ved=2ahUKEwiKgp_XxtGNAxUxRjABHXQgLWQQ0bkNegQIIRAD&biw=1536&bih=695&dpr=1.25" target="_blank" rel="noopener noreferrer">
               Read All Reviews
             </a>
           </Button>
