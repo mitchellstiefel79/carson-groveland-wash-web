@@ -1,3 +1,4 @@
+
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import CallToAction from "@/components/CallToAction";
@@ -46,8 +47,8 @@ const About = () => {
             </div>
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" 
-                alt="Pressure washing transformation" 
+                src="/lovable-uploads/3cf20cdf-d9c9-41da-a7f0-93843756957b.png" 
+                alt="Carson and team" 
                 className="w-full h-auto"
               />
             </div>
