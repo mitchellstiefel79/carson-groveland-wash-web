@@ -11,6 +11,7 @@ interface ServiceDetailProps {
       before: string;
       after: string;
     };
+    youtubeVideo?: string;
     features: string[];
   };
   index: number;
@@ -39,7 +40,18 @@ const ServiceDetail = ({ service, index }: ServiceDetailProps) => {
       </div>
       
       <div className={`rounded-lg overflow-hidden shadow-xl ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-        {service.beforeAfterImages ? (
+        {service.youtubeVideo ? (
+          <div className="aspect-video">
+            <iframe
+              src={`https://www.youtube.com/embed/${service.youtubeVideo}`}
+              title={`${service.title} Video`}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full rounded-lg"
+            ></iframe>
+          </div>
+        ) : service.beforeAfterImages ? (
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="relative">

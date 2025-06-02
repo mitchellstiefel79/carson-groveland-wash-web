@@ -55,6 +55,7 @@ export const serviceDetails = [
     title: "Concrete Cleaning",
     description: "Restore your concrete surfaces to their original appearance with our specialized concrete cleaning.",
     image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+    youtubeVideo: "lRxRAWWb-Bs",
     features: [
       "Driveway cleaning and restoration",
       "Sidewalk and walkway cleaning",
