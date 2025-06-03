@@ -1,9 +1,10 @@
 
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import VapiPhoneButton from "./VapiPhoneButton";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -75,12 +76,9 @@ const Navbar = () => {
               {item.label}
             </NavLink>
           ))}
-          <Button className="bg-accent hover:bg-accent/90 flex items-center gap-2 text-white" asChild>
-            <a href="tel:3524673964">
-              <Phone size={16} />
-              <span className="hidden lg:inline">352-467-3964</span>
-            </a>
-          </Button>
+          <VapiPhoneButton className="bg-accent hover:bg-accent/90 text-white">
+            <span className="hidden lg:inline">352-467-3964</span>
+          </VapiPhoneButton>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -115,12 +113,9 @@ const Navbar = () => {
                   {item.label}
                 </NavLink>
               ))}
-              <Button className="bg-accent hover:bg-accent/90 flex items-center gap-2 text-white" asChild>
-                <a href="tel:3524673964">
-                  <Phone size={16} />
-                  <span>Call: 352-467-3964</span>
-                </a>
-              </Button>
+              <VapiPhoneButton className="bg-accent hover:bg-accent/90 text-white">
+                Call: 352-467-3964
+              </VapiPhoneButton>
             </nav>
           </div>
         </div>
