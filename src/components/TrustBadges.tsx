@@ -10,7 +10,7 @@ const TrustBadges = () => {
     },
     {
       icon: <Award className="h-8 w-8 text-primary" />,
-      title: "5+ Years Experience",
+      title: "3+ Years Experience",
       description: "Proven track record in Central Florida"
     },
     {
