@@ -2,18 +2,11 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Calendar } from "lucide-react";
-import VapiPhoneButton from "./VapiPhoneButton";
 
 const BookingCTA = () => {
   return (
-    <div className="fixed bottom-4 right-4 z-40 flex flex-col gap-2 sm:flex-row sm:gap-3">
-      {/* Mobile-first floating CTAs */}
-      <VapiPhoneButton 
-        size="lg"
-        className="bg-accent hover:bg-accent/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-        showText={false}
-      />
-      
+    <div className="fixed bottom-4 right-4 z-30 flex flex-col gap-2 sm:flex-row sm:gap-3">
+      {/* Only the Book Online button - Vapi widget is handled by the script in index.html */}
       <Button 
         asChild 
         size="lg"
