@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
@@ -59,7 +60,7 @@ const HeroSection = () => {
             <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300">
               <Link to="/contact">Get FREE Quote Today</Link>
             </Button>
-            <Button size="lg" asChild className="bg-white/10 text-white border-white hover:bg-white/20 text-lg px-8 py-4">
+            <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-white border-primary text-lg px-8 py-4">
               <a href="tel:3524673964" className="flex items-center gap-2">
                 <Phone className="h-5 w-5" />
                 Call (352) 467-3964
