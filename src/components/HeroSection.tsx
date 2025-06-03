@@ -1,7 +1,15 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
+
 const HeroSection = () => {
+  const handleVapiCall = () => {
+    if (window.vapiSDK) {
+      window.vapiSDK.start();
+    }
+  };
+
   return <section className="relative min-h-[85vh] flex items-center bg-secondary overflow-hidden">
       {/* Blue Bubble Background */}
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary to-secondary">
@@ -56,8 +64,12 @@ const HeroSection = () => {
           
           {/* Enhanced CTAs with urgency */}
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300">
-              <Link to="/contact">Get FREE Quote Today</Link>
+            <Button 
+              size="lg" 
+              onClick={handleVapiCall}
+              className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300"
+            >
+              Get FREE Quote Today
             </Button>
             <Button size="lg" asChild className="bg-white/10 text-white border-white hover:bg-white/20 text-lg px-8 py-4">
               <a href="tel:3524673964" className="flex items-center gap-2">
@@ -76,4 +88,5 @@ const HeroSection = () => {
       </div>
     </section>;
 };
+
 export default HeroSection;
