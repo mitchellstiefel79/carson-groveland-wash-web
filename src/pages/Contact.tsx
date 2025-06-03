@@ -2,8 +2,7 @@
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import ContactForm from "@/components/ContactForm";
-import { Mail, MapPin, Clock } from "lucide-react";
-import VapiPhoneButton from "@/components/VapiPhoneButton";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -50,16 +49,13 @@ const Contact = () => {
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <div className="bg-primary/10 p-3 rounded-full mr-4">
-                      <VapiPhoneButton 
-                        variant="ghost" 
-                        size="sm" 
-                        className="p-0 h-auto text-primary hover:text-primary"
-                        showText={false}
-                      />
+                      <Phone className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-secondary mb-1">Phone</h3>
-                      <p className="text-gray-600">352-467-3964</p>
+                      <p className="text-gray-600">
+                        <a href="tel:3524673964" className="hover:text-primary">352-467-3964</a>
+                      </p>
                     </div>
                   </div>
                   
@@ -151,3 +147,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

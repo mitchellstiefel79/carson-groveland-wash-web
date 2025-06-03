@@ -1,7 +1,7 @@
 
 import { NavLink } from "react-router-dom";
-import { Mail, MapPin, Facebook, Youtube, Clock } from "lucide-react";
-import VapiPhoneButton from "./VapiPhoneButton";
+import { Phone, Mail, MapPin, Facebook, Youtube, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -60,13 +60,8 @@ const Footer = () => {
                 <span>Serving all of Central Florida</span>
               </div>
               <div className="flex items-center space-x-3">
-                <VapiPhoneButton 
-                  variant="ghost" 
-                  size="sm" 
-                  className="p-0 h-auto text-white hover:text-accent"
-                  showText={false}
-                />
-                <span className="hover:text-accent transition-colors">352-467-3964</span>
+                <Phone size={18} className="text-accent flex-shrink-0" />
+                <a href="tel:3524673964" className="hover:text-accent transition-colors">352-467-3964</a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-accent flex-shrink-0" />
