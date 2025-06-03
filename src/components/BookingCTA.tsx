@@ -6,7 +6,7 @@ import VapiPhoneButton from "./VapiPhoneButton";
 
 const BookingCTA = () => {
   return (
-    <div className="fixed bottom-4 right-4 z-40 flex flex-col gap-2 sm:flex-row sm:gap-3">
+    <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-2 sm:flex-row sm:gap-3">
       {/* Mobile-first floating CTAs */}
       <VapiPhoneButton 
         size="lg"

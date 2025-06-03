@@ -33,27 +33,27 @@
       // 2) Prepare buttonConfig (optional; see below for customization)
       const buttonConfig = {
         position: "bottom-right", // where on the screen (see docs for other options)
-        offset:   "160px",        // increased offset to avoid overlapping with existing buttons
+        offset:   "40px",         // distance from the edges
         width:    "60px",         // button width
         height:   "60px",         // button height
 
         // idle state (before call)
         idle: {
-          color:  "#EA5C0F",        // Carson's brand orange
+          color:  "rgb(93,254,202)",
           type:   "pill",                   // "pill" or "round"
           icon:   "https://unpkg.com/lucide-static@0.321.0/icons/phone.svg",
         },
 
         // loading state (while connecting)
         loading: {
-          color:  "#0056A2",        // Carson's brand blue
+          color:  "rgb(93,124,202)",
           type:   "pill",
           icon:   "https://unpkg.com/lucide-static@0.321.0/icons/loader-2.svg",
         },
 
         // active state (when the call is live)
         active: {
-          color:  "#0E2A4D",        // Carson's brand navy
+          color:  "rgb(255,0,0)",
           type:   "pill",
           icon:   "https://unpkg.com/lucide-static@0.321.0/icons/phone-off.svg",
         },
