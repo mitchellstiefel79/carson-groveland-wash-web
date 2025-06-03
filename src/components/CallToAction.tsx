@@ -20,14 +20,6 @@ const CallToAction = ({
   className,
   variant = "primary",
 }: CallToActionProps) => {
-  const handleVapiCall = () => {
-    if (window.vapiSDK) {
-      window.vapiSDK.start();
-    }
-  };
-
-  const isQuoteButton = buttonText.toLowerCase().includes("free quote");
-
   return (
     <div className={cn(
       "py-16 px-4",
@@ -40,24 +32,13 @@ const CallToAction = ({
           "mb-8 text-lg mx-auto max-w-2xl",
           variant === "primary" ? "text-gray-100" : "text-gray-600"
         )}>{description}</p>
-        
-        {isQuoteButton ? (
-          <Button 
-            onClick={handleVapiCall}
-            size="lg"
-            className={variant === "primary" ? "bg-white text-primary hover:bg-gray-100" : "bg-primary hover:bg-primary/90"}
-          >
-            {buttonText}
-          </Button>
-        ) : (
-          <Button 
-            asChild
-            size="lg"
-            className={variant === "primary" ? "bg-white text-primary hover:bg-gray-100" : "bg-primary hover:bg-primary/90"}
-          >
-            <Link to={buttonLink}>{buttonText}</Link>
-          </Button>
-        )}
+        <Button 
+          asChild
+          size="lg"
+          className={variant === "primary" ? "bg-white text-primary hover:bg-gray-100" : "bg-primary hover:bg-primary/90"}
+        >
+          <Link to={buttonLink}>{buttonText}</Link>
+        </Button>
       </div>
     </div>
   );
