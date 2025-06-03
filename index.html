@@ -23,5 +23,62 @@
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Vapi Voice Widget Snippet (add just before </body>) -->
+    <script>
+      // 1) Paste your assistant ID and public key here:
+      const assistant = "fe750b19-40b9-4c59-952d-927fe08e638d";      // e.g., "63f...a2b"
+      const apiKey    = "d756dbc8-483c-4fa4-848b-3c2e2d980171";    // e.g., "pk_live_ABC123xyz"
+
+      // 2) Prepare buttonConfig (optional; see below for customization)
+      const buttonConfig = {
+        position: "bottom-right", // where on the screen (see docs for other options)
+        offset:   "40px",         // distance from the edges
+        width:    "60px",         // button width
+        height:   "60px",         // button height
+
+        // idle state (before call)
+        idle: {
+          color:  "rgb(93,254,202)",
+          type:   "round",                   // "pill" or "round"
+          icon:   "https://unpkg.com/lucide-static@0.321.0/icons/phone.svg",
+        },
+
+        // loading state (while connecting)
+        loading: {
+          color:  "rgb(93,124,202)",
+          type:   "round",
+          icon:   "https://unpkg.com/lucide-static@0.321.0/icons/loader-2.svg",
+        },
+
+        // active state (when the call is live)
+        active: {
+          color:  "rgb(255,0,0)",
+          type:   "round",
+          icon:   "https://unpkg.com/lucide-static@0.321.0/icons/phone-off.svg",
+        },
+      };
+
+      // 3) Dynamically insert Vapi's SDK script and launch the widget:
+      (function (d, t) {
+        var g = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+
+        g.src   = "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+
+        g.onload = function () {
+          // Initialize Vapi widget once the script is ready:
+          window.vapiSDK.run({
+            apiKey:    apiKey,      // your public API key
+            assistant: assistant,   // your assistant ID
+            config:    buttonConfig // optional config for appearance & positioning
+          });
+        };
+      })(document, "script");
+    </script>
+    <!-- /Vapi Voice Widget Snippet -->
   </body>
 </html>
