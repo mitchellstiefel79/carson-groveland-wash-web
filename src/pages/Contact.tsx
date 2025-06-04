@@ -2,40 +2,11 @@
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const Contact = () => {
-  useEffect(() => {
-    // Load Markate widget script
-    const loadMarkateWidget = () => {
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.async = true;
-      const protocol = window.location.protocol === 'https:' ? 'https://' : 'http://';
-      const url = protocol + 'www.markate.com/public/widget/contact/js';
-      const timestamp = Math.random() * 10000000000000000;
-      script.src = url + '?id=4c919067e16f1fca20aff8729b18916e:70367:78ba3f26&ref=' + encodeURIComponent(window.location.href) + '&t=' + timestamp;
-      
-      const widgetContainer = document.getElementById('markate-widget-contact');
-      if (widgetContainer && widgetContainer.parentNode) {
-        widgetContainer.parentNode.insertBefore(script, widgetContainer);
-      }
-    };
-
-    if (window.attachEvent) {
-      window.attachEvent('onload', loadMarkateWidget);
-    } else {
-      window.addEventListener('load', loadMarkateWidget, false);
-    }
-
-    // Cleanup function
-    return () => {
-      if (!window.attachEvent) {
-        window.removeEventListener('load', loadMarkateWidget, false);
-      }
-    };
-  }, []);
-
   return (
     <Layout>
       {/* Hero Section */}
@@ -66,7 +37,59 @@ const Contact = () => {
                 title="Get a Free Quote" 
                 subtitle="Fill out the form below and we'll get back to you as soon as possible with a free estimate."
               />
-              <div id="markate-widget-contact"></div>
+              
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                      First Name
+                    </label>
+                    <Input id="firstName" type="text" required />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                      Last Name
+                    </label>
+                    <Input id="lastName" type="text" required />
+                  </div>
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email
+                  </label>
+                  <Input id="email" type="email" required />
+                </div>
+                
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number
+                  </label>
+                  <Input id="phone" type="tel" />
+                </div>
+                
+                <div>
+                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+                    Service Needed
+                  </label>
+                  <Input id="service" type="text" placeholder="e.g., House washing, driveway cleaning, etc." />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Message
+                  </label>
+                  <Textarea 
+                    id="message" 
+                    rows={4} 
+                    placeholder="Tell us more about your project..."
+                  />
+                </div>
+                
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+                  Send Message
+                </Button>
+              </form>
             </div>
             
             {/* Contact Info */}
