@@ -1,3 +1,4 @@
+
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
@@ -40,8 +41,8 @@ const Contact = () => {
                 width="100%" 
                 height="1800" 
                 scrolling="no" 
-                frameBorder="0" 
-                allowTransparency="true" 
+                frameBorder={0}
+                allowTransparency={true}
                 style={{border: 'none', overflow: 'hidden'}}
                 title="Contact Form"
               />
