@@ -1,10 +1,41 @@
 
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
-import ContactForm from "@/components/ContactForm";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { useEffect } from "react";
 
 const Contact = () => {
+  useEffect(() => {
+    // Load Markate widget script
+    const loadMarkateWidget = () => {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      const protocol = window.location.protocol === 'https:' ? 'https://' : 'http://';
+      const url = protocol + 'www.markate.com/public/widget/contact/js';
+      const timestamp = Math.random() * 10000000000000000;
+      script.src = url + '?id=4c919067e16f1fca20aff8729b18916e:70367:78ba3f26&ref=' + encodeURIComponent(window.location.href) + '&t=' + timestamp;
+      
+      const widgetContainer = document.getElementById('markate-widget-contact');
+      if (widgetContainer && widgetContainer.parentNode) {
+        widgetContainer.parentNode.insertBefore(script, widgetContainer);
+      }
+    };
+
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadMarkateWidget);
+    } else {
+      window.addEventListener('load', loadMarkateWidget, false);
+    }
+
+    // Cleanup function
+    return () => {
+      if (!window.attachEvent) {
+        window.removeEventListener('load', loadMarkateWidget, false);
+      }
+    };
+  }, []);
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -35,7 +66,7 @@ const Contact = () => {
                 title="Get a Free Quote" 
                 subtitle="Fill out the form below and we'll get back to you as soon as possible with a free estimate."
               />
-              <ContactForm />
+              <div id="markate-widget-contact"></div>
             </div>
             
             {/* Contact Info */}
@@ -147,4 +178,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
