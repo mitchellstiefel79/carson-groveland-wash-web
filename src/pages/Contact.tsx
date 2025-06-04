@@ -1,10 +1,6 @@
-
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 
 const Contact = () => {
   return (
@@ -38,58 +34,17 @@ const Contact = () => {
                 subtitle="Fill out the form below and we'll get back to you as soon as possible with a free estimate."
               />
               
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                      First Name
-                    </label>
-                    <Input id="firstName" type="text" required />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                      Last Name
-                    </label>
-                    <Input id="lastName" type="text" required />
-                  </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email
-                  </label>
-                  <Input id="email" type="email" required />
-                </div>
-                
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
-                  </label>
-                  <Input id="phone" type="tel" />
-                </div>
-                
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                    Service Needed
-                  </label>
-                  <Input id="service" type="text" placeholder="e.g., House washing, driveway cleaning, etc." />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
-                  </label>
-                  <Textarea 
-                    id="message" 
-                    rows={4} 
-                    placeholder="Tell us more about your project..."
-                  />
-                </div>
-                
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
-                  Send Message
-                </Button>
-              </form>
+              <iframe 
+                id="markate-widget-contact-iframe" 
+                src="https://www.markate.com/public/widget/contact?id=4c919067e16f1fca20aff8729b18916e:70367:78ba3f26" 
+                width="100%" 
+                height="1800" 
+                scrolling="no" 
+                frameBorder="0" 
+                allowTransparency="true" 
+                style={{border: 'none', overflow: 'hidden'}}
+                title="Contact Form"
+              />
             </div>
             
             {/* Contact Info */}
