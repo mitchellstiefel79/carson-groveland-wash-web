@@ -41,7 +41,7 @@ const Contact = () => {
                   id="markate-widget-contact-iframe" 
                   src="https://www.markate.com/public/widget/contact?id=4c919067e16f1fca20aff8729b18916e:70367:78ba3f26&font-family=Inter&theme=minimal" 
                   width="100%" 
-                  height="1800" 
+                  height="800" 
                   scrolling="no" 
                   frameBorder={0}
                   allowTransparency={true}
