@@ -35,17 +35,24 @@ const Contact = () => {
                 subtitle="Fill out the form below and we'll get back to you as soon as possible with a free estimate."
               />
               
-              <iframe 
-                id="markate-widget-contact-iframe" 
-                src="https://www.markate.com/public/widget/contact?id=4c919067e16f1fca20aff8729b18916e:70367:78ba3f26" 
-                width="100%" 
-                height="1800" 
-                scrolling="no" 
-                frameBorder={0}
-                allowTransparency={true}
-                style={{border: 'none', overflow: 'hidden'}}
-                title="Contact Form"
-              />
+              {/* Enhanced iframe container with better styling */}
+              <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+                <iframe 
+                  id="markate-widget-contact-iframe" 
+                  src="https://www.markate.com/public/widget/contact?id=4c919067e16f1fca20aff8729b18916e:70367:78ba3f26&font-family=Inter&theme=minimal" 
+                  width="100%" 
+                  height="1800" 
+                  scrolling="no" 
+                  frameBorder={0}
+                  allowTransparency={true}
+                  style={{
+                    border: 'none', 
+                    overflow: 'hidden',
+                    fontFamily: 'Inter, system-ui, sans-serif'
+                  }}
+                  title="Contact Form"
+                />
+              </div>
             </div>
             
             {/* Contact Info */}
