@@ -1,7 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
+
 const HeroSection = () => {
   return <section className="relative min-h-[85vh] flex items-center bg-secondary overflow-hidden">
       {/* Blue Bubble Background */}
@@ -39,7 +39,7 @@ const HeroSection = () => {
       
       {/* YouTube Video Background */}
       <div className="absolute inset-0 z-0 opacity-40">
-        <iframe src="https://www.youtube.com/embed/yVjp_Js1x8E?autoplay=1&mute=1&loop=1&playlist=yVjp_Js1x8E&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&start=2129" className="w-full h-full object-cover" style={{
+        <iframe src="https://www.youtube.com/embed/yVjp_Js1x8E?autoplay=1&mute=1&loop=1&playlist=yVjp_Js1x8E&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&start=2129&end=2159" className="w-full h-full object-cover" style={{
         pointerEvents: 'none',
         minWidth: '100%',
         minHeight: '100%'
@@ -77,4 +77,5 @@ const HeroSection = () => {
       </div>
     </section>;
 };
+
 export default HeroSection;
