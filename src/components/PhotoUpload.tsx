@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Upload, X, Image } from "lucide-react";
+import GooglePhotosPicker from "./GooglePhotosPicker";
 
 interface PhotoUploadProps {
   onPhotosChange: (photoUrls: string[]) => void;
@@ -14,6 +15,7 @@ interface PhotoUploadProps {
 const PhotoUpload = ({ onPhotosChange, photos }: PhotoUploadProps) => {
   const { toast } = useToast();
   const [uploading, setUploading] = useState(false);
+  const [showGooglePicker, setShowGooglePicker] = useState(false);
 
   const onDrop = useCallback(async (acceptedFiles: File[]) => {
     if (acceptedFiles.length === 0) return;
@@ -75,6 +77,11 @@ const PhotoUpload = ({ onPhotosChange, photos }: PhotoUploadProps) => {
     onPhotosChange(newPhotos);
   };
 
+  const handleGooglePhotosSelected = (googlePhotoUrls: string[]) => {
+    const newPhotos = [...photos, ...googlePhotoUrls];
+    onPhotosChange(newPhotos);
+  };
+
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
@@ -112,6 +119,19 @@ const PhotoUpload = ({ onPhotosChange, photos }: PhotoUploadProps) => {
         )}
       </div>
 
+      {/* Google Photos Import Button */}
+      <div className="flex justify-center">
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() => setShowGooglePicker(true)}
+          className="flex items-center gap-2"
+        >
+          <Image className="h-4 w-4" />
+          Import from Google Photos
+        </Button>
+      </div>
+
       {photos.length > 0 && (
         <div className="space-y-2">
           <h4 className="text-sm font-medium">Uploaded Photos ({photos.length})</h4>
@@ -137,6 +157,13 @@ const PhotoUpload = ({ onPhotosChange, photos }: PhotoUploadProps) => {
           </div>
         </div>
       )}
+
+      {/* Google Photos Picker Modal */}
+      <GooglePhotosPicker
+        isOpen={showGooglePicker}
+        onClose={() => setShowGooglePicker(false)}
+        onPhotosSelected={handleGooglePhotosSelected}
+      />
     </div>
   );
 };
