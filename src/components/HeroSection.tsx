@@ -1,8 +1,46 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const HeroSection = () => {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    const handleVideoLoop = () => {
+      const iframe = iframeRef.current;
+      if (!iframe) return;
+
+      // Send message to YouTube iframe to seek to start time when video ends
+      const interval = setInterval(() => {
+        if (iframe.contentWindow) {
+          iframe.contentWindow.postMessage(
+            '{"event":"command","func":"seekTo","args":[2129,true]}',
+            '*'
+          );
+        }
+      }, 20000); // Loop every 20 seconds (duration between start and end)
+
+      return () => clearInterval(interval);
+    };
+
+    // Enable YouTube API communication
+    if (iframeRef.current) {
+      const iframe = iframeRef.current;
+      iframe.onload = () => {
+        if (iframe.contentWindow) {
+          iframe.contentWindow.postMessage(
+            '{"event":"listening","id":"ytplayer"}',
+            '*'
+          );
+        }
+      };
+    }
+
+    const cleanup = handleVideoLoop();
+    return cleanup;
+  }, []);
+
   return <section className="relative min-h-[85vh] flex items-center bg-secondary overflow-hidden">
       {/* Blue Bubble Background */}
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary to-secondary">
@@ -39,11 +77,19 @@ const HeroSection = () => {
       
       {/* YouTube Video Background */}
       <div className="absolute inset-0 z-0 opacity-40">
-        <iframe src="https://www.youtube.com/embed/yVjp_Js1x8E?autoplay=1&mute=1&loop=1&playlist=yVjp_Js1x8E&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&start=2129&end=2149" className="w-full h-full object-cover" style={{
-        pointerEvents: 'none',
-        minWidth: '100%',
-        minHeight: '100%'
-      }} allow="autoplay; encrypted-media" allowFullScreen={false} title="Pressure Washing Background Video" />
+        <iframe 
+          ref={iframeRef}
+          src="https://www.youtube.com/embed/yVjp_Js1x8E?autoplay=1&mute=1&loop=1&playlist=yVjp_Js1x8E&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&start=2129&end=2149&enablejsapi=1" 
+          className="w-full h-full object-cover" 
+          style={{
+            pointerEvents: 'none',
+            minWidth: '100%',
+            minHeight: '100%'
+          }} 
+          allow="autoplay; encrypted-media" 
+          allowFullScreen={false} 
+          title="Pressure Washing Background Video" 
+        />
       </div>
       
       <div className="container mx-auto px-4 z-10 animate-fade-in">
