@@ -1,4 +1,5 @@
 
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
@@ -126,31 +127,34 @@ const HeroSection = () => {
       </div>
       
       <div className="container mx-auto px-4 z-10 animate-fade-in">
-        <div className="max-w-4xl">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg leading-tight lg:text-4xl">
-            Pressure Washing, Soft Washing and Paver Sealing Covering all of Central Florida
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-200 mb-8 drop-shadow-md max-w-2xl">
-            Professional soft washing and pressure cleaning for residential and commercial properties. Licensed and insured.
-          </p>
-          
-          {/* Enhanced CTAs with urgency */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300">
-              <Link to="/contact">Get FREE Quote Today</Link>
-            </Button>
+        <div className="flex justify-between items-center">
+          {/* Left side - Call and Book buttons */}
+          <div className="flex flex-col gap-4">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-white border-primary text-lg px-8 py-4">
               <a href="tel:3524673964" className="flex items-center gap-2">
                 <Phone className="h-5 w-5" />
                 Call (352) 467-3964
               </a>
             </Button>
+            <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300">
+              <Link to="/contact">Get FREE Quote Today</Link>
+            </Button>
           </div>
           
-          {/* Service area highlight */}
-          <div className="flex items-center gap-2 text-gray-200">
-            <MapPin className="h-4 w-4" />
-            <span className="text-sm">Serving all of Central Florida including Groveland, Clermont, Minneola & surrounding areas</span>
+          {/* Right side - Main content */}
+          <div className="max-w-4xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg leading-tight lg:text-4xl">
+              Pressure Washing, Soft Washing and Paver Sealing Covering all of Central Florida
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-200 mb-8 drop-shadow-md max-w-2xl">
+              Professional soft washing and pressure cleaning for residential and commercial properties. Licensed and insured.
+            </p>
+            
+            {/* Service area highlight */}
+            <div className="flex items-center gap-2 text-gray-200">
+              <MapPin className="h-4 w-4" />
+              <span className="text-sm">Serving all of Central Florida including Groveland, Clermont, Minneola & surrounding areas</span>
+            </div>
           </div>
         </div>
       </div>
@@ -158,3 +162,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
