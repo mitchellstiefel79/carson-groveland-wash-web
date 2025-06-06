@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
@@ -37,7 +38,28 @@ const HeroSection = () => {
       };
     }
 
+    // Initialize TIXAE widget
+    const initTixaeWidget = () => {
+      (window as any).VG_CONFIG = {
+        ID: "HxOizRsI8uocTQY6Sf0N",
+        region: 'na',
+        render: 'custom',
+        container: 'VG_OVERLAY_CONTAINER',
+        modalMode: true,
+        stylesheets: [
+          "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
+        ],
+      };
+      
+      const script = document.createElement("script");
+      script.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
+      script.defer = true;
+      document.body.appendChild(script);
+    };
+
     const cleanup = handleVideoLoop();
+    initTixaeWidget();
+    
     return cleanup;
   }, []);
 
@@ -90,6 +112,17 @@ const HeroSection = () => {
           allowFullScreen={false} 
           title="Pressure Washing Background Video" 
         />
+      </div>
+      
+      {/* TIXAE Agents Widget Container */}
+      <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+        <div 
+          style={{ width: 0, height: 0 }} 
+          id="VG_OVERLAY_CONTAINER"
+          className="pointer-events-auto"
+        >
+          {/* Here is where TIXAE Agents renders the widget. */}
+        </div>
       </div>
       
       <div className="container mx-auto px-4 z-10 animate-fade-in">
