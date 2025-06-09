@@ -1,3 +1,10 @@
 
 User-agent: *
-Disallow: /
+Allow: /
+
+# Sitemap location
+Sitemap: https://carsonssoftwash.com/sitemap.xml
+
+# Block admin areas if any exist in the future
+Disallow: /admin/
+Disallow: /api/
