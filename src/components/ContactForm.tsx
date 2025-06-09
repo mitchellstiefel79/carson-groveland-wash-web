@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import PhotoUpload from "./PhotoUpload";
+import SecurePhotoUpload from "./SecurePhotoUpload";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -167,7 +167,7 @@ const ContactForm = () => {
         <p className="text-xs text-gray-500 mb-2">
           Share photos of areas that need cleaning to help us provide a more accurate estimate
         </p>
-        <PhotoUpload photos={photos} onPhotosChange={setPhotos} />
+        <SecurePhotoUpload photos={photos} onPhotosChange={setPhotos} />
       </div>
 
       <Button type="submit" className="w-full md:w-auto" disabled={isSubmitting}>
