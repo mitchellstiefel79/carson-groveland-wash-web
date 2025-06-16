@@ -137,31 +137,16 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Enhanced Map Section with Satellite View */}
+      {/* Map Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <SectionTitle 
             title="Our Service Area" 
-            subtitle="Based in Central Florida, we serve residential and commercial clients throughout the region. View our coverage area in satellite view below."
+            subtitle="Based in Central Florida, we serve residential and commercial clients throughout the region."
             centered
           />
           
-          <div className="mt-8 rounded-lg overflow-hidden shadow-lg h-96 relative">
-            {/* Service area overlay info */}
-            <div className="absolute top-4 left-4 z-10 bg-white/95 backdrop-blur-sm p-4 rounded-lg shadow-lg max-w-xs">
-              <h3 className="font-bold text-secondary mb-2">Primary Service Areas</h3>
-              <div className="text-sm text-gray-600 space-y-1">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-primary rounded-full mr-2"></div>
-                  <span>Groveland (Main Hub)</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-accent rounded-full mr-2"></div>
-                  <span>Extended Coverage</span>
-                </div>
-              </div>
-            </div>
-            
+          <div className="mt-8 rounded-lg overflow-hidden shadow-lg h-96">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112163.24333568184!2d-81.92491121793465!3d28.56561738435646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e7854f95f2f0c9%3A0x913def6a954aac80!2sGroveland%2C%20FL!5e1!3m2!1sen!2sus!4v1617321994523!5m2!1sen!2sus" 
               width="100%" 
@@ -169,43 +154,8 @@ const Contact = () => {
               style={{ border: 0 }} 
               allowFullScreen 
               loading="lazy"
-              title="Carson's Soft Wash service area map in satellite view"
+              title="Carson's Soft Wash service area map"
             ></iframe>
-          </div>
-          
-          {/* Service Area Details */}
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="w-4 h-4 bg-primary rounded-full mr-3"></div>
-                <h3 className="text-lg font-bold text-secondary">Primary Service Zone</h3>
-              </div>
-              <p className="text-gray-600 mb-3">
-                Our main service area within 15 miles of Groveland, FL - fastest response times and no travel charges.
-              </p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Groveland</li>
-                <li>• Clermont</li>
-                <li>• Minneola</li>
-                <li>• Mascotte</li>
-              </ul>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="w-4 h-4 bg-accent rounded-full mr-3"></div>
-                <h3 className="text-lg font-bold text-secondary">Extended Coverage</h3>
-              </div>
-              <p className="text-gray-600 mb-3">
-                We also serve these areas with minimal travel charges for larger projects.
-              </p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                <li>• Montverde</li>
-                <li>• Winter Garden</li>
-                <li>• Windermere</li>
-                <li>• Oakland</li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>
