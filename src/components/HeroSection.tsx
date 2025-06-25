@@ -76,9 +76,9 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-4 z-10 animate-fade-in">
         <div className="max-w-4xl">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg leading-tight lg:text-4xl">Pressure Washing
-Soft Washing
-Paver Sealing 
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg leading-tight lg:text-4xl text-left">Pressure Washing 
+Soft Washing 
+Paver Sealing  
 Covering all of Central Florida</h1>
           <p className="text-lg sm:text-xl text-gray-200 mb-8 drop-shadow-md max-w-2xl">
             Professional soft washing and pressure cleaning for residential and commercial properties. Licensed and insured.
