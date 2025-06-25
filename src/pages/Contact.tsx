@@ -1,7 +1,8 @@
-
 import Layout from "@/components/Layout";
 import SectionTitle from "@/components/SectionTitle";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Contact = () => {
   return (
@@ -121,7 +122,7 @@ const Contact = () => {
                 <p className="text-gray-600 mb-4">
                   We provide pressure washing, soft washing and paver sealing services throughout Central Florida, including:
                 </p>
-                <ul className="grid grid-cols-2 gap-2 text-gray-600">
+                <ul className="grid grid-cols-2 gap-2 text-gray-600 mb-6">
                   <li>• Groveland</li>
                   <li>• Clermont</li>
                   <li>• Minneola</li>
@@ -131,6 +132,11 @@ const Contact = () => {
                   <li>• Windermere</li>
                   <li>• Oakland</li>
                 </ul>
+                <Button asChild className="w-full">
+                  <Link to="/service-areas">
+                    View All Service Areas
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -156,6 +162,14 @@ const Contact = () => {
               loading="lazy"
               title="Carson's Soft Wash service area map"
             ></iframe>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <Button size="lg" asChild>
+              <Link to="/service-areas">
+                Learn More About Our Service Areas
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
