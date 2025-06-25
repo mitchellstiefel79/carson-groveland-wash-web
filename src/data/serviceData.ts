@@ -1,4 +1,3 @@
-
 export const serviceDetails = [
   {
     id: "residential",
@@ -37,10 +36,7 @@ export const serviceDetails = [
     title: "Roof Soft Washing",
     description: "Safely remove black streaks, algae, moss, and lichen from your roof without damaging shingles.",
     image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
-    beforeAfterImages: {
-      before: "/lovable-uploads/85077737-17b0-4aa3-a898-c65527f1d6cb.png",
-      after: "/lovable-uploads/efc952a9-adaf-438f-9d93-fb25cb3c2b1b.png"
-    },
+    tiktokEmbed: `<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@carson.soft.wash/video/7519135329660587277" data-video-id="7519135329660587277" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@carson.soft.wash" href="https://www.tiktok.com/@carson.soft.wash?refer=embed">@carson.soft.wash</a> #<a title="pressurewashing" target="_blank" href="https://www.tiktok.com/tag/pressurewashing?refer=embed">#pressurewashing</a> <a title="sidewalk" target="_blank" href="https://www.tiktok.com/tag/sidewalk?refer=embed">#sidewalk</a> <a title="softwashing" target="_blank" href="https://www.tiktok.com/tag/softwashing?refer=embed">#softwashing</a> <a title="roof" target="_blank" href="https://www.tiktok.com/tag/roof?refer=embed">#roof</a> <a title="roofcleaning" target="_blank" href="https://www.tiktok.com/tag/roofcleaning?refer=embed">#roofcleaning</a> <a title="good" target="_blank" href="https://www.tiktok.com/tag/good?refer=embed">#good</a> <a title="foryoupage" target="_blank" href="https://www.tiktok.com/tag/foryoupage?refer=embed">#foryoupage</a> <a target="_blank" title="♬ Way down We Go - KALEO" href="https://www.tiktok.com/music/Way-down-We-Go-6704985044194166786?refer=embed">♬ Way down We Go - KALEO</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>`,
     features: [
       "Low-pressure cleaning technique",
       "Removes harmful organic growth",

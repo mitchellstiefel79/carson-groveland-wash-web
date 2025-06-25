@@ -1,5 +1,6 @@
 
 import { Check } from "lucide-react";
+import { useEffect } from "react";
 
 interface ServiceDetailProps {
   service: {
@@ -12,12 +13,31 @@ interface ServiceDetailProps {
       after: string;
     };
     youtubeVideo?: string;
+    tiktokEmbed?: string;
     features: string[];
   };
   index: number;
 }
 
 const ServiceDetail = ({ service, index }: ServiceDetailProps) => {
+  useEffect(() => {
+    if (service.tiktokEmbed) {
+      // Load TikTok embed script
+      const script = document.createElement('script');
+      script.src = 'https://www.tiktok.com/embed.js';
+      script.async = true;
+      document.body.appendChild(script);
+
+      return () => {
+        // Cleanup script if component unmounts
+        const existingScript = document.querySelector('script[src="https://www.tiktok.com/embed.js"]');
+        if (existingScript) {
+          document.body.removeChild(existingScript);
+        }
+      };
+    }
+  }, [service.tiktokEmbed]);
+
   return (
     <div 
       id={service.id}
@@ -40,7 +60,11 @@ const ServiceDetail = ({ service, index }: ServiceDetailProps) => {
       </div>
       
       <div className={`rounded-lg overflow-hidden shadow-xl ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-        {service.youtubeVideo ? (
+        {service.tiktokEmbed ? (
+          <div className="flex justify-center">
+            <div dangerouslySetInnerHTML={{ __html: service.tiktokEmbed }} />
+          </div>
+        ) : service.youtubeVideo ? (
           <div className="aspect-video">
             <iframe
               src={`https://www.youtube.com/embed/${service.youtubeVideo}`}
