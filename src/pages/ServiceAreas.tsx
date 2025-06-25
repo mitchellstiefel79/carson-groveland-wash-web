@@ -5,6 +5,7 @@ import { MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useEffect } from "react";
 
 const ServiceAreas = () => {
   const serviceAreas = [
@@ -66,6 +67,22 @@ const ServiceAreas = () => {
     }
   ];
 
+  useEffect(() => {
+    // Load TikTok embed script
+    const script = document.createElement('script');
+    script.src = 'https://www.tiktok.com/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[src="https://www.tiktok.com/embed.js"]');
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
+    };
+  }, []);
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -82,6 +99,38 @@ const ServiceAreas = () => {
           <div className="max-w-3xl mx-auto text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Service Areas</h1>
             <p className="text-xl">Professional pressure washing services throughout Central Florida</p>
+          </div>
+        </div>
+      </section>
+
+      {/* TikTok Embed Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <SectionTitle 
+            title="See Our Work in Action" 
+            subtitle="Check out our latest pressure washing projects"
+            centered
+          />
+          
+          <div className="flex justify-center mt-12">
+            <blockquote 
+              className="tiktok-embed" 
+              cite="https://www.tiktok.com/@carson.soft.wash/video/7519135329660587277" 
+              data-video-id="7519135329660587277" 
+              style={{maxWidth: '605px', minWidth: '325px'}}
+            >
+              <section> 
+                <a target="_blank" title="@carson.soft.wash" href="https://www.tiktok.com/@carson.soft.wash?refer=embed">@carson.soft.wash</a> 
+                <a title="pressurewashing" target="_blank" href="https://www.tiktok.com/tag/pressurewashing?refer=embed">#pressurewashing</a> 
+                <a title="sidewalk" target="_blank" href="https://www.tiktok.com/tag/sidewalk?refer=embed">#sidewalk</a> 
+                <a title="softwashing" target="_blank" href="https://www.tiktok.com/tag/softwashing?refer=embed">#softwashing</a> 
+                <a title="roof" target="_blank" href="https://www.tiktok.com/tag/roof?refer=embed">#roof</a> 
+                <a title="roofcleaning" target="_blank" href="https://www.tiktok.com/tag/roofcleaning?refer=embed">#roofcleaning</a> 
+                <a title="good" target="_blank" href="https://www.tiktok.com/tag/good?refer=embed">#good</a> 
+                <a title="foryoupage" target="_blank" href="https://www.tiktok.com/tag/foryoupage?refer=embed">#foryoupage</a> 
+                <a target="_blank" title="♬ Way down We Go - KALEO" href="https://www.tiktok.com/music/Way-down-We-Go-6704985044194166786?refer=embed">♬ Way down We Go - KALEO</a> 
+              </section> 
+            </blockquote>
           </div>
         </div>
       </section>
