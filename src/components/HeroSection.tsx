@@ -1,9 +1,12 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { useEffect, useRef } from "react";
+
 const HeroSection = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+
   useEffect(() => {
     const handleVideoLoop = () => {
       const iframe = iframeRef.current;
@@ -12,7 +15,10 @@ const HeroSection = () => {
       // Send message to YouTube iframe to seek to start time when video ends
       const interval = setInterval(() => {
         if (iframe.contentWindow) {
-          iframe.contentWindow.postMessage('{"event":"command","func":"seekTo","args":[2129,true]}', '*');
+          iframe.contentWindow.postMessage(
+            '{"event":"command","func":"seekTo","args":[2129,true]}',
+            '*'
+          );
         }
       }, 20000); // Loop every 20 seconds (duration between start and end)
 
@@ -24,13 +30,19 @@ const HeroSection = () => {
       const iframe = iframeRef.current;
       iframe.onload = () => {
         if (iframe.contentWindow) {
-          iframe.contentWindow.postMessage('{"event":"listening","id":"ytplayer"}', '*');
+          iframe.contentWindow.postMessage(
+            '{"event":"listening","id":"ytplayer"}',
+            '*'
+          );
         }
       };
     }
+
     const cleanup = handleVideoLoop();
+    
     return cleanup;
   }, []);
+
   return <section className="relative min-h-[85vh] flex items-center bg-secondary overflow-hidden">
       {/* Blue Bubble Background */}
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary to-secondary">
@@ -67,19 +79,26 @@ const HeroSection = () => {
       
       {/* YouTube Video Background */}
       <div className="absolute inset-0 z-0 opacity-40">
-        <iframe ref={iframeRef} src="https://www.youtube.com/embed/yVjp_Js1x8E?autoplay=1&mute=1&loop=1&playlist=yVjp_Js1x8E&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&start=2129&end=2149&enablejsapi=1" className="w-full h-full object-cover" style={{
-        pointerEvents: 'none',
-        minWidth: '100%',
-        minHeight: '100%'
-      }} allow="autoplay; encrypted-media" allowFullScreen={false} title="Pressure Washing Background Video" />
+        <iframe 
+          ref={iframeRef}
+          src="https://www.youtube.com/embed/yVjp_Js1x8E?autoplay=1&mute=1&loop=1&playlist=yVjp_Js1x8E&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&start=2129&end=2149&enablejsapi=1" 
+          className="w-full h-full object-cover" 
+          style={{
+            pointerEvents: 'none',
+            minWidth: '100%',
+            minHeight: '100%'
+          }} 
+          allow="autoplay; encrypted-media" 
+          allowFullScreen={false} 
+          title="Pressure Washing Background Video" 
+        />
       </div>
       
       <div className="container mx-auto px-4 z-10 animate-fade-in">
         <div className="max-w-4xl">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg leading-tight lg:text-4xl text-justify">Pressure Washing
-Soft Washing
-Paver Sealing
-Covering all of Central Florida</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg leading-tight lg:text-4xl">
+            Pressure Washing, Soft Washing and Paver Sealing Covering all of Central Florida
+          </h1>
           <p className="text-lg sm:text-xl text-gray-200 mb-8 drop-shadow-md max-w-2xl">
             Professional soft washing and pressure cleaning for residential and commercial properties. Licensed and insured.
           </p>
@@ -106,4 +125,5 @@ Covering all of Central Florida</h1>
       </div>
     </section>;
 };
+
 export default HeroSection;
