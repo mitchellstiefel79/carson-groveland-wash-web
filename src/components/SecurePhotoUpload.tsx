@@ -16,12 +16,32 @@ const SecurePhotoUpload = ({ photos, onPhotosChange, maxFiles = 5 }: SecurePhoto
   const [uploading, setUploading] = useState(false);
   const { toast } = useToast();
 
+  const logSecurityEvent = async (action: string, details: any) => {
+    try {
+      await supabase.from('security_audit_log').insert({
+        action,
+        table_name: 'customer_photos',
+        details,
+        ip_address: null, // Could be enhanced to capture real IP
+        user_agent: navigator.userAgent
+      });
+    } catch (error) {
+      console.error('Failed to log security event:', error);
+    }
+  };
+
   const onDrop = useCallback(async (acceptedFiles: File[]) => {
     if (photos.length + acceptedFiles.length > maxFiles) {
       toast({
         title: "Too many files",
         description: `You can only upload up to ${maxFiles} photos.`,
         variant: "destructive",
+      });
+      await logSecurityEvent('file_upload_rejected', { 
+        reason: 'too_many_files', 
+        attempted_count: acceptedFiles.length,
+        current_count: photos.length,
+        max_allowed: maxFiles
       });
       return;
     }
@@ -31,36 +51,48 @@ const SecurePhotoUpload = ({ photos, onPhotosChange, maxFiles = 5 }: SecurePhoto
 
     try {
       for (const file of acceptedFiles) {
-        // Validate file size (10MB limit)
+        // Enhanced file validation
         if (file.size > 10 * 1024 * 1024) {
           toast({
             title: "File too large",
             description: `${file.name} is larger than 10MB. Please choose a smaller file.`,
             variant: "destructive",
           });
-          continue;
-        }
-
-        // Validate file type
-        if (!file.type.startsWith('image/')) {
-          toast({
-            title: "Invalid file type",
-            description: `${file.name} is not an image file.`,
-            variant: "destructive",
+          await logSecurityEvent('file_upload_rejected', { 
+            reason: 'file_too_large', 
+            filename: file.name, 
+            size: file.size 
           });
           continue;
         }
 
-        // Create unique file name
-        const fileExt = file.name.split('.').pop();
-        const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
+        // Strict file type validation
+        const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif'];
+        if (!allowedTypes.includes(file.type)) {
+          toast({
+            title: "Invalid file type",
+            description: `${file.name} is not a supported image format. Please use JPEG, PNG, WebP, or GIF.`,
+            variant: "destructive",
+          });
+          await logSecurityEvent('file_upload_rejected', { 
+            reason: 'invalid_file_type', 
+            filename: file.name, 
+            type: file.type 
+          });
+          continue;
+        }
 
-        // Upload to Supabase Storage
+        // Create secure file name with timestamp and random string
+        const fileExt = file.name.split('.').pop()?.toLowerCase();
+        const fileName = `customer-${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
+
+        // Upload to Supabase Storage with enhanced security
         const { data, error } = await supabase.storage
           .from('customer-photos')
           .upload(fileName, file, {
             cacheControl: '3600',
-            upsert: false
+            upsert: false,
+            duplex: 'half'
           });
 
         if (error) {
@@ -70,15 +102,25 @@ const SecurePhotoUpload = ({ photos, onPhotosChange, maxFiles = 5 }: SecurePhoto
             description: `Failed to upload ${file.name}. Please try again.`,
             variant: "destructive",
           });
+          await logSecurityEvent('file_upload_failed', { 
+            filename: file.name, 
+            error: error.message 
+          });
           continue;
         }
 
-        // Get public URL
-        const { data: urlData } = supabase.storage
+        // Get signed URL instead of public URL for better security
+        const { data: urlData } = await supabase.storage
           .from('customer-photos')
-          .getPublicUrl(data.path);
+          .createSignedUrl(data.path, 3600); // 1 hour expiry
 
-        newPhotos.push(urlData.publicUrl);
+        if (urlData?.signedUrl) {
+          newPhotos.push(urlData.signedUrl);
+          await logSecurityEvent('file_upload_success', { 
+            filename: file.name, 
+            path: data.path 
+          });
+        }
       }
 
       if (newPhotos.length > 0) {
@@ -90,6 +132,9 @@ const SecurePhotoUpload = ({ photos, onPhotosChange, maxFiles = 5 }: SecurePhoto
       }
     } catch (error) {
       console.error('Unexpected upload error:', error);
+      await logSecurityEvent('file_upload_error', { 
+        error: error instanceof Error ? error.message : 'Unknown error' 
+      });
       toast({
         title: "Upload error",
         description: "An unexpected error occurred. Please try again.",
@@ -103,17 +148,21 @@ const SecurePhotoUpload = ({ photos, onPhotosChange, maxFiles = 5 }: SecurePhoto
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
-      'image/*': ['.jpeg', '.jpg', '.png', '.webp', '.gif']
+      'image/jpeg': ['.jpeg', '.jpg'],
+      'image/png': ['.png'],
+      'image/webp': ['.webp'],
+      'image/gif': ['.gif']
     },
     multiple: true,
-    disabled: uploading
+    disabled: uploading,
+    maxSize: 10 * 1024 * 1024 // 10MB limit
   });
 
   const removePhoto = async (photoUrl: string, index: number) => {
     try {
-      // Extract file path from URL to delete from storage
+      // Extract file path from signed URL to delete from storage
       const urlParts = photoUrl.split('/');
-      const fileName = urlParts[urlParts.length - 1];
+      const fileName = urlParts[urlParts.length - 1].split('?')[0]; // Remove query params
       
       // Delete from storage
       const { error } = await supabase.storage
@@ -122,6 +171,14 @@ const SecurePhotoUpload = ({ photos, onPhotosChange, maxFiles = 5 }: SecurePhoto
 
       if (error) {
         console.error('Delete error:', error);
+        await logSecurityEvent('file_delete_failed', { 
+          filename: fileName, 
+          error: error.message 
+        });
+      } else {
+        await logSecurityEvent('file_delete_success', { 
+          filename: fileName 
+        });
       }
 
       // Remove from state regardless of storage deletion result
@@ -129,6 +186,9 @@ const SecurePhotoUpload = ({ photos, onPhotosChange, maxFiles = 5 }: SecurePhoto
       onPhotosChange(newPhotos);
     } catch (error) {
       console.error('Error removing photo:', error);
+      await logSecurityEvent('file_delete_error', { 
+        error: error instanceof Error ? error.message : 'Unknown error' 
+      });
       // Still remove from UI even if storage deletion fails
       const newPhotos = photos.filter((_, i) => i !== index);
       onPhotosChange(newPhotos);
@@ -148,7 +208,7 @@ const SecurePhotoUpload = ({ photos, onPhotosChange, maxFiles = 5 }: SecurePhoto
         <input {...getInputProps()} />
         <Upload className="mx-auto h-12 w-12 text-gray-400 mb-4" />
         {uploading ? (
-          <p className="text-gray-600">Uploading photos...</p>
+          <p className="text-gray-600">Uploading photos securely...</p>
         ) : isDragActive ? (
           <p className="text-gray-600">Drop the photos here...</p>
         ) : (

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { LogOut, Users, Settings, Video } from "lucide-react";
+import { LogOut, Users, Settings, Video, Shield } from "lucide-react";
 import AdminVideoSync from "./AdminVideoSync";
 
 interface Customer {
@@ -18,17 +18,28 @@ interface Customer {
   created_at: string;
 }
 
+interface SecurityAuditLog {
+  id: string;
+  action: string;
+  table_name: string | null;
+  details: any;
+  created_at: string;
+}
+
 interface AdminDashboardProps {
   onSignOut: () => void;
 }
 
 const AdminDashboard = ({ onSignOut }: AdminDashboardProps) => {
   const [customers, setCustomers] = useState<Customer[]>([]);
+  const [securityLogs, setSecurityLogs] = useState<SecurityAuditLog[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showSecurityLogs, setShowSecurityLogs] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
     fetchCustomers();
+    fetchSecurityLogs();
   }, []);
 
   const fetchCustomers = async () => {
@@ -52,8 +63,29 @@ const AdminDashboard = ({ onSignOut }: AdminDashboardProps) => {
     }
   };
 
+  const fetchSecurityLogs = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('security_audit_log')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(50);
+
+      if (error) throw error;
+      setSecurityLogs(data || []);
+    } catch (error: any) {
+      console.error('Error fetching security logs:', error);
+    }
+  };
+
   const handleSignOut = async () => {
     try {
+      // Log security event
+      await supabase.from('security_audit_log').insert({
+        action: 'admin_signout',
+        details: { timestamp: new Date().toISOString() }
+      });
+
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
       
@@ -83,6 +115,13 @@ const AdminDashboard = ({ onSignOut }: AdminDashboardProps) => {
     );
   }
 
+  const recentSecurityEvents = securityLogs.filter(log => {
+    const logDate = new Date(log.created_at);
+    const oneDayAgo = new Date();
+    oneDayAgo.setDate(oneDayAgo.getDate() - 1);
+    return logDate > oneDayAgo;
+  }).length;
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white shadow-sm border-b">
@@ -98,7 +137,7 @@ const AdminDashboard = ({ onSignOut }: AdminDashboardProps) => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Total Customers</CardTitle>
@@ -127,9 +166,64 @@ const AdminDashboard = ({ onSignOut }: AdminDashboardProps) => {
             </CardContent>
           </Card>
 
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Security Events</CardTitle>
+              <Shield className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">{recentSecurityEvents}</div>
+              <p className="text-xs text-muted-foreground">Last 24 hours</p>
+            </CardContent>
+          </Card>
+
           <div className="lg:col-span-1">
             <AdminVideoSync />
           </div>
+        </div>
+
+        <div className="mb-6">
+          <Button 
+            onClick={() => setShowSecurityLogs(!showSecurityLogs)}
+            variant="outline"
+            className="mb-4"
+          >
+            <Shield className="h-4 w-4 mr-2" />
+            {showSecurityLogs ? 'Hide' : 'Show'} Security Logs
+          </Button>
+
+          {showSecurityLogs && (
+            <Card className="mb-6">
+              <CardHeader>
+                <CardTitle>Security Audit Log</CardTitle>
+                <CardDescription>Recent security events and file operations</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2 max-h-96 overflow-y-auto">
+                  {securityLogs.map((log) => (
+                    <div key={log.id} className="p-3 bg-gray-50 rounded-lg text-sm">
+                      <div className="flex justify-between items-start">
+                        <span className="font-medium">{log.action}</span>
+                        <span className="text-gray-500 text-xs">
+                          {new Date(log.created_at).toLocaleString()}
+                        </span>
+                      </div>
+                      {log.details && (
+                        <div className="mt-1 text-gray-600">
+                          {typeof log.details === 'object' 
+                            ? JSON.stringify(log.details, null, 2)
+                            : log.details}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                  {securityLogs.length === 0 && (
+                    <p className="text-gray-500">No security events recorded yet.</p>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          )}
         </div>
 
         <Card>

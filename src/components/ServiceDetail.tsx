@@ -1,6 +1,7 @@
 
 import { Check } from "lucide-react";
 import { useEffect } from "react";
+import { sanitizeHtml, isTrustedTikTokEmbed } from "@/utils/htmlSanitizer";
 
 interface ServiceDetailProps {
   service: {
@@ -21,8 +22,8 @@ interface ServiceDetailProps {
 
 const ServiceDetail = ({ service, index }: ServiceDetailProps) => {
   useEffect(() => {
-    if (service.tiktokEmbed) {
-      // Load TikTok embed script
+    if (service.tiktokEmbed && isTrustedTikTokEmbed(service.tiktokEmbed)) {
+      // Load TikTok embed script only for trusted embeds
       const script = document.createElement('script');
       script.src = 'https://www.tiktok.com/embed.js';
       script.async = true;
@@ -37,6 +38,11 @@ const ServiceDetail = ({ service, index }: ServiceDetailProps) => {
       };
     }
   }, [service.tiktokEmbed]);
+
+  // Sanitize TikTok embed HTML to prevent XSS
+  const sanitizedTikTokEmbed = service.tiktokEmbed 
+    ? sanitizeHtml(service.tiktokEmbed) 
+    : null;
 
   return (
     <div 
@@ -60,9 +66,9 @@ const ServiceDetail = ({ service, index }: ServiceDetailProps) => {
       </div>
       
       <div className={`rounded-lg overflow-hidden shadow-xl ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-        {service.tiktokEmbed ? (
+        {sanitizedTikTokEmbed && isTrustedTikTokEmbed(service.tiktokEmbed!) ? (
           <div className="flex justify-center">
-            <div dangerouslySetInnerHTML={{ __html: service.tiktokEmbed }} />
+            <div dangerouslySetInnerHTML={{ __html: sanitizedTikTokEmbed }} />
           </div>
         ) : service.youtubeVideo ? (
           <div className="aspect-video">
