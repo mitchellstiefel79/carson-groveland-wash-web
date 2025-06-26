@@ -4,10 +4,7 @@ export const serviceDetails = [
     title: "Residential Pressure Washing",
     description: "Keep your home looking its best with our comprehensive residential pressure washing services.",
     image: "https://images.unsplash.com/photo-1426604966848-d7adac402bff",
-    beforeAfterImages: {
-      before: "/lovable-uploads/c0b09503-393d-4ff9-b53e-b990e2169565.png",
-      after: "/lovable-uploads/1a7ffadb-19b9-4c40-ba72-a012323a0dd5.png"
-    },
+    tiktokEmbed: `<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@carson.soft.wash/video/7459554517697252654" data-video-id="7459554517697252654" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@carson.soft.wash" href="https://www.tiktok.com/@carson.soft.wash?refer=embed">@carson.soft.wash</a> <a title="pressurewashing" target="_blank" href="https://www.tiktok.com/tag/pressurewashing?refer=embed">#pressurewashing</a> <a title="fun" target="_blank" href="https://www.tiktok.com/tag/fun?refer=embed">#fun</a> <a title="sidewalk" target="_blank" href="https://www.tiktok.com/tag/sidewalk?refer=embed">#sidewalk</a> <a title="good" target="_blank" href="https://www.tiktok.com/tag/good?refer=embed">#good</a> <a title="softwashing" target="_blank" href="https://www.tiktok.com/tag/softwashing?refer=embed">#softwashing</a> <a title="softwashing" target="_blank" href="https://www.tiktok.com/tag/softwashing?refer=embed">#softwashing</a> <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a> <a title="driveway" target="_blank" href="https://www.tiktok.com/tag/driveway?refer=embed">#driveway</a> <a title="work" target="_blank" href="https://www.tiktok.com/tag/work?refer=embed">#work</a> <a title="carsonssoftwash" target="_blank" href="https://www.tiktok.com/tag/carsonssoftwash?refer=embed">#carsonssoftwash</a> <a target="_blank" title="♬ Love You So - The King Khan &#38; BBQ Show" href="https://www.tiktok.com/music/Love-You-So-7096858059892328450?refer=embed">♬ Love You So - The King Khan &#38; BBQ Show</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>`,
     features: [
       "House washing and exterior cleaning",
       "Concrete cleaning (driveways, walkways, patios)",
