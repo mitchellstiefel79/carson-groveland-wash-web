@@ -47,11 +47,11 @@ const ServiceDetail = ({ service, index }: ServiceDetailProps) => {
   return (
     <div 
       id={service.id}
-      className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+      className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch ${
         index % 2 === 1 ? "lg:flex-row-reverse" : ""
       }`}
     >
-      <div className={index % 2 === 1 ? "lg:order-2" : ""}>
+      <div className={`flex flex-col justify-center ${index % 2 === 1 ? "lg:order-2" : ""}`}>
         <h2 className="text-3xl font-bold text-secondary mb-4">{service.title}</h2>
         <p className="text-gray-600 mb-6">{service.description}</p>
         
@@ -65,13 +65,13 @@ const ServiceDetail = ({ service, index }: ServiceDetailProps) => {
         </ul>
       </div>
       
-      <div className={`rounded-lg overflow-hidden shadow-xl ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+      <div className={`rounded-lg overflow-hidden shadow-xl flex items-center ${index % 2 === 1 ? "lg:order-1" : ""}`}>
         {sanitizedTikTokEmbed && isTrustedTikTokEmbed(service.tiktokEmbed!) ? (
-          <div className="flex justify-center">
+          <div className="flex justify-center w-full">
             <div dangerouslySetInnerHTML={{ __html: sanitizedTikTokEmbed }} />
           </div>
         ) : service.youtubeVideo ? (
-          <div className="aspect-video">
+          <div className="w-full h-full min-h-[300px]">
             <iframe
               src={`https://www.youtube.com/embed/${service.youtubeVideo}`}
               title={`${service.title} Video`}
@@ -82,8 +82,8 @@ const ServiceDetail = ({ service, index }: ServiceDetailProps) => {
             ></iframe>
           </div>
         ) : service.beforeAfterImages ? (
-          <div className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="w-full flex flex-col justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div className="relative">
                 <img 
                   src={service.beforeAfterImages.before} 
@@ -113,7 +113,7 @@ const ServiceDetail = ({ service, index }: ServiceDetailProps) => {
           <img 
             src={service.image} 
             alt={service.title} 
-            className="w-full h-auto"
+            className="w-full h-full object-cover rounded-lg"
           />
         )}
       </div>
