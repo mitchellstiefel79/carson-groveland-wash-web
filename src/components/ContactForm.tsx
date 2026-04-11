@@ -30,7 +30,7 @@ const ContactForm = () => {
     
     try {
       // Save customer registration to Supabase
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from('customers')
         .insert([{
           name: formData.name,

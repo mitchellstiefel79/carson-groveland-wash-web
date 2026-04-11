@@ -18,7 +18,7 @@ const SecurePhotoUpload = ({ photos, onPhotosChange, maxFiles = 5 }: SecurePhoto
 
   const logSecurityEvent = async (action: string, details: any) => {
     try {
-      await supabase.from('security_audit_log').insert({
+      await (supabase as any).from('security_audit_log').insert({
         action,
         table_name: 'customer_photos',
         details,

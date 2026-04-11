@@ -44,7 +44,7 @@ const AdminDashboard = ({ onSignOut }: AdminDashboardProps) => {
 
   const fetchCustomers = async () => {
     try {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('customers')
         .select('*')
         .order('created_at', { ascending: false });
@@ -65,7 +65,7 @@ const AdminDashboard = ({ onSignOut }: AdminDashboardProps) => {
 
   const fetchSecurityLogs = async () => {
     try {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('security_audit_log')
         .select('*')
         .order('created_at', { ascending: false })
@@ -81,7 +81,7 @@ const AdminDashboard = ({ onSignOut }: AdminDashboardProps) => {
   const handleSignOut = async () => {
     try {
       // Log security event
-      await supabase.from('security_audit_log').insert({
+      await (supabase as any).from('security_audit_log').insert({
         action: 'admin_signout',
         details: { timestamp: new Date().toISOString() }
       });
