@@ -10,6 +10,11 @@ import { ArrowRight } from "lucide-react";
 import sidewalkBeforeAfter from "@/assets/gallery-sidewalk-before-after.jpg";
 import roofBeforeAfter from "@/assets/gallery-roof-before-after.jpg";
 import paverWalkwayBeforeAfter from "@/assets/gallery-paver-walkway-before-after.jpg";
+import poolDeckPavers from "@/assets/gallery-pool-deck-pavers.jpg";
+import paverDrivewayOak from "@/assets/gallery-paver-driveway-oak.jpg";
+import paverDrivewayHome from "@/assets/gallery-paver-driveway-home.jpg";
+import brickPaverDriveway from "@/assets/gallery-brick-paver-driveway.jpg";
+import tanPaverDriveway from "@/assets/gallery-tan-paver-driveway.jpg";
 
 interface GalleryImage {
   id: number;
@@ -31,9 +36,9 @@ const Gallery = () => {
     },
     {
       id: 2,
-      src: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
-      category: "Commercial",
-      description: "Storefront cleaning for local business"
+      src: poolDeckPavers,
+      category: "Residential",
+      description: "Pool deck paver cleaning — before and after"
     },
     {
       id: 3,
@@ -43,9 +48,9 @@ const Gallery = () => {
     },
     {
       id: 4,
-      src: "https://images.unsplash.com/photo-1426604966848-d7adac402bff",
+      src: paverDrivewayHome,
       category: "Residential",
-      description: "Patio and deck cleaning"
+      description: "Paver driveway and home exterior wash"
     },
     {
       id: 5,
@@ -55,21 +60,21 @@ const Gallery = () => {
     },
     {
       id: 6,
-      src: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
-      category: "Commercial",
-      description: "Restaurant exterior cleaning"
+      src: paverDrivewayOak,
+      category: "Concrete",
+      description: "Paver driveway cleaning under oak canopy"
     },
     {
       id: 7,
-      src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      src: brickPaverDriveway,
       category: "Concrete",
-      description: "Sidewalk cleaning for HOA"
+      description: "Brick paver driveway cleaning"
     },
     {
       id: 8,
-      src: "https://images.unsplash.com/photo-1426604966848-d7adac402bff",
-      category: "Residential",
-      description: "House siding before and after"
+      src: tanPaverDriveway,
+      category: "Concrete",
+      description: "Driveway paver pressure washing"
     }
   ];
 
