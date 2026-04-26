@@ -1,27 +1,20 @@
+## Goal
 
+Use your uploaded sidewalk before/after photo as the **Residential — "House exterior cleaning in Groveland"** image in the Gallery, and remove the text overlay (category + description) that appears on hover for this image.
 
-## Plan: Fix Build Errors and Cloudflare DNS Setup
+## Changes
 
-### Part 1: Fix Build Errors
+### 1. Add the uploaded photo to the project
+- Copy `user-uploads://IMG_4577.jpg` into `src/assets/` as `gallery-sidewalk-before-after.jpg` so it can be imported and bundled properly.
 
-The build errors are caused by the database types file (`types.ts`) showing empty tables, even though tables exist in the database. The code references `customers`, `security_audit_log`, and `video_gallery` tables that aren't reflected in the auto-generated types.
+### 2. Update `src/pages/Gallery.tsx`
+- Import the new asset at the top of the file.
+- Replace the `src` of the gallery item with `id: 1` (currently the Unsplash photo at line 25) with the imported image.
+- Update its `description` to a short, accurate alt text (e.g. "Sidewalk pressure washing before and after in Groveland") so screen readers and SEO still get meaningful info — this is used as the `alt` attribute, not displayed visually.
+- Remove the visible hover caption **only for this image** by hiding the overlay text block when `image.id === 1`. The dark gradient + hover zoom effect stays consistent with the rest of the grid; only the "Residential / House exterior cleaning in Groveland" words are removed from view.
 
-**Fix approach**: Cast Supabase `.from()` calls to `any` to bypass TypeScript's strict table name checking until types are regenerated. Also fix `process.env` usage in `googlePhotos.ts` (browser code can't use `process.env`; must use `import.meta.env`).
+## Notes
 
-**Files to change:**
-1. **`src/components/AdminDashboard.tsx`** — Cast `supabase.from(...)` calls for `customers` and `security_audit_log` to `any`
-2. **`src/components/ContactForm.tsx`** — Cast `supabase.from('customers')` to `any`
-3. **`src/components/SecurePhotoUpload.tsx`** — Cast `supabase.from('security_audit_log')` to `any`
-4. **`src/components/VideoGallery.tsx`** — Cast `supabase.from('video_gallery')` to `any`
-5. **`src/services/googlePhotos.ts`** — Replace `process.env.GOOGLE_CLIENT_ID` and `process.env.GOOGLE_API_KEY` with `import.meta.env.VITE_GOOGLE_CLIENT_ID` and `import.meta.env.VITE_GOOGLE_API_KEY`
-
-### Part 2: Cloudflare DNS Setup
-
-For using Cloudflare as your DNS provider with your Lovable project:
-
-1. When connecting your custom domain in **Project Settings → Domains**, expand the **Advanced** section and check **"Domain uses Cloudflare or a similar proxy"**. This switches to CNAME-based verification which is compatible with Cloudflare's proxy.
-
-2. In your Cloudflare dashboard, add the DNS records Lovable provides during the domain connection flow.
-
-This is a configuration step done in the Lovable UI and Cloudflare dashboard — no code changes needed.
-
+- Other gallery items keep their current hover captions.
+- Filtering by "Residential" still includes this image.
+- No other pages or components are affected.
