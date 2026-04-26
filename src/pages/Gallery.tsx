@@ -23,9 +23,9 @@ const Gallery = () => {
   const images: GalleryImage[] = [
     {
       id: 1,
-      src: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+      src: sidewalkBeforeAfter,
       category: "Residential",
-      description: "House exterior cleaning in Groveland"
+      description: "Sidewalk pressure washing before and after in Groveland"
     },
     {
       id: 2,
