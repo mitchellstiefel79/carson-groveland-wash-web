@@ -25,7 +25,6 @@ export const serviceCities: ServiceCity[] = [
   { name: "Umatilla", county: "Lake" },
   { name: "Sorrento", county: "Lake" },
   { name: "Yalaha", county: "Lake" },
-  { name: "Astor", county: "Lake" },
 
   // Orange County
   { name: "Winter Garden", county: "Orange", slug: "winter-garden" },
@@ -61,7 +60,6 @@ export const serviceCities: ServiceCity[] = [
   { name: "Buenaventura Lakes", county: "Osceola" },
   { name: "Poinciana", county: "Osceola" },
   { name: "Harmony", county: "Osceola" },
-  { name: "Yeehaw Junction", county: "Osceola" },
   { name: "Narcoossee", county: "Osceola" },
 ];
 
