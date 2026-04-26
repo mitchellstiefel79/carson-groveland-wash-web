@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import sidewalkBeforeAfter from "@/assets/gallery-sidewalk-before-after.jpg";
+import roofBeforeAfter from "@/assets/gallery-roof-before-after.jpg";
 
 interface GalleryImage {
   id: number;
@@ -47,7 +48,7 @@ const Gallery = () => {
     },
     {
       id: 5,
-      src: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+      src: roofBeforeAfter,
       category: "Roof",
       description: "Roof soft washing service"
     },
