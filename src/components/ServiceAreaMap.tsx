@@ -1,36 +1,87 @@
-import { coverageMap, serviceCities } from "@/data/serviceAreas";
+import { MapContainer, TileLayer, Marker, Popup, Circle } from "react-leaflet";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import {
+  cityCoordinates,
+  coverageMap,
+  serviceCities,
+} from "@/data/serviceAreas";
+
+// Custom small pin marker (avoids broken default marker icon paths)
+const pinIcon = L.divIcon({
+  className: "",
+  html: `<div style="
+    width:14px;height:14px;border-radius:50%;
+    background:hsl(24 95% 53%);
+    border:2px solid white;
+    box-shadow:0 0 0 1px rgba(0,0,0,.4), 0 1px 4px rgba(0,0,0,.5);
+  "></div>`,
+  iconSize: [14, 14],
+  iconAnchor: [7, 7],
+});
 
 /**
- * Free Google Maps embed (no API key required) showing a centered
- * coverage area across Lake, Orange, Sumter and Osceola counties.
- *
- * The embed automatically reflects whatever cities are listed in
- * src/data/serviceAreas.ts because the search query is built from them.
+ * Satellite map centered on Clermont, FL. Drops a pin on every serviced city
+ * and outlines the overall coverage radius. Uses Esri World Imagery tiles
+ * (no API key required).
  */
 const ServiceAreaMap = () => {
-  // Build a search query from the unique counties so the map highlights the region.
-  const query = encodeURIComponent(
-    "Lake County FL, Orange County FL, Sumter County FL, Osceola County FL"
-  );
-
-  const { center, zoom } = coverageMap;
-  const src = `https://www.google.com/maps?q=${query}&ll=${center.lat},${center.lng}&z=${zoom}&output=embed`;
+  const { center, zoom, radiusMeters } = coverageMap;
 
   return (
     <div className="w-full overflow-hidden rounded-lg shadow-lg border border-border">
-      <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-        <iframe
-          title="Carson's Soft Wash service area map"
-          src={src}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="absolute inset-0 w-full h-full border-0"
-          allowFullScreen
-        />
+      <div className="relative w-full" style={{ height: "520px" }}>
+        <MapContainer
+          center={[center.lat, center.lng]}
+          zoom={zoom}
+          scrollWheelZoom={false}
+          style={{ height: "100%", width: "100%" }}
+        >
+          {/* Satellite imagery */}
+          <TileLayer
+            attribution="Tiles &copy; Esri"
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+            maxZoom={19}
+          />
+          {/* Labels overlay so cities/roads are readable on satellite */}
+          <TileLayer
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}"
+            maxZoom={19}
+          />
+
+          <Circle
+            center={[center.lat, center.lng]}
+            radius={radiusMeters}
+            pathOptions={{
+              color: "hsl(24 95% 53%)",
+              weight: 2,
+              fillColor: "hsl(24 95% 53%)",
+              fillOpacity: 0.08,
+            }}
+          />
+
+          {serviceCities.map((city) => {
+            const coords = cityCoordinates[city.name];
+            if (!coords) return null;
+            return (
+              <Marker
+                key={`${city.county}-${city.name}`}
+                position={[coords.lat, coords.lng]}
+                icon={pinIcon}
+              >
+                <Popup>
+                  <strong>{city.name}</strong>
+                  <br />
+                  {city.county} County
+                </Popup>
+              </Marker>
+            );
+          })}
+        </MapContainer>
       </div>
       <div className="bg-muted px-4 py-3 text-sm text-muted-foreground">
-        Serving {serviceCities.length}+ cities and towns across Lake, Orange,
-        Sumter and Osceola counties.
+        Centered on Clermont, FL — serving {serviceCities.length}+ cities and
+        towns across Lake, Orange, Sumter and Osceola counties.
       </div>
     </div>
   );
