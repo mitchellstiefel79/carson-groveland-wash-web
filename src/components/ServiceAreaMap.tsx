@@ -34,7 +34,15 @@ const ServiceAreaMap = () => {
         <MapContainer
           center={[center.lat, center.lng]}
           zoom={zoom}
+          minZoom={zoom}
+          maxZoom={zoom}
           scrollWheelZoom={false}
+          doubleClickZoom={false}
+          touchZoom={false}
+          boxZoom={false}
+          keyboard={false}
+          dragging={false}
+          zoomControl={false}
           style={{ height: "100%", width: "100%" }}
         >
           {/* Satellite imagery */}
