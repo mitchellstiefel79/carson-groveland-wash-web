@@ -15,19 +15,16 @@ import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    // Load TikTok embed script
+    // Load TikTok embed script only once
+    if (document.querySelector('script[src="https://www.tiktok.com/embed.js"]')) {
+      return;
+    }
     const script = document.createElement('script');
     script.src = 'https://www.tiktok.com/embed.js';
     script.async = true;
     document.body.appendChild(script);
-
-    return () => {
-      // Cleanup script if component unmounts
-      const existingScript = document.querySelector('script[src="https://www.tiktok.com/embed.js"]');
-      if (existingScript) {
-        document.body.removeChild(existingScript);
-      }
-    };
+    // No cleanup: TikTok's embed script mutates the DOM, and removing it
+    // can cause React's reconciler to fail with a removeChild NotFoundError.
   }, []);
 
   return (
