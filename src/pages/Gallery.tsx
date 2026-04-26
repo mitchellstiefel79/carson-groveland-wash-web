@@ -37,9 +37,9 @@ const Gallery = () => {
     },
     {
       id: 3,
-      src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      src: paverWalkwayBeforeAfter,
       category: "Concrete",
-      description: "Driveway pressure washing"
+      description: "Paver walkway cleaning — before and after"
     },
     {
       id: 4,
