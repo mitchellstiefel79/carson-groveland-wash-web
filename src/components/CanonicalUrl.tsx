@@ -50,7 +50,7 @@ const CanonicalUrl = () => {
       name: title,
       description,
       isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
-      about: { "@id": `${SITE_ORIGIN}/#localbusiness` },
+      about: { "@id": `${SITE_ORIGIN}/#business` },
       inLanguage: "en-US",
     };
 

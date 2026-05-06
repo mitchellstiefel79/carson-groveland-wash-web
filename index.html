@@ -27,7 +27,7 @@
     <meta name="twitter:description" content="Professional pressure washing and soft washing services for residential and commercial properties in Groveland, FL and surrounding areas." />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-    <!-- Site Graph: WebSite, Organization, Review -->
+    <!-- Unified JSON-LD @graph -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -36,233 +36,153 @@
           "@type": "WebSite",
           "@id": "https://www.carsonssoftwashservices.com/#website",
           "url": "https://www.carsonssoftwashservices.com/",
-          "name": "Carson's Softwash Services",
-          "publisher": { "@id": "https://www.carsonssoftwashservices.com/#localbusiness" }
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://www.carsonssoftwashservices.com/#organization",
           "name": "Carson's Soft Wash Inc.",
+          "inLanguage": "en-US",
+          "publisher": { "@id": "https://www.carsonssoftwashservices.com/#business" }
+        },
+        {
+          "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+          "@id": "https://www.carsonssoftwashservices.com/#business",
+          "name": "Carson's Soft Wash Inc.",
+          "legalName": "Carson's Soft Wash Inc.",
+          "alternateName": "Carson's Soft Wash Services",
+          "slogan": "Groveland FL's ARMA-compliant roof cleaning company",
+          "description": "Carson's Soft Wash Inc. is a licensed and insured soft washing and exterior cleaning company serving Groveland, Clermont, Minneola, and Lake County, FL. Specializing in roof soft washing, house washing, driveway cleaning, paver sealing, pool screen enclosure cleaning, and commercial pressure washing.",
+          "url": "https://www.carsonssoftwashservices.com",
+          "telephone": "+13524673964",
+          "email": "carsonssoftwash@gmail.com",
+          "foundingDate": "2024-05",
+          "priceRange": "$$",
+          "currenciesAccepted": "USD",
+          "paymentAccepted": "Cash, Credit Card, Check",
+          "image": "https://www.carsonssoftwashservices.com/lovable-uploads/8921a334-0410-496d-8519-9cdb3500f796.png",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.carsonssoftwashservices.com/lovable-uploads/8921a334-0410-496d-8519-9cdb3500f796.png"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Groveland",
+            "addressRegion": "FL",
+            "postalCode": "34736",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 28.5597,
+            "longitude": -81.8551
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+              "opens": "08:00",
+              "closes": "18:00"
+            }
+          ],
+          "areaServed": [
+            { "@type": "City", "name": "Groveland" },
+            { "@type": "City", "name": "Clermont" },
+            { "@type": "City", "name": "Minneola" },
+            { "@type": "City", "name": "Leesburg" },
+            { "@type": "City", "name": "Tavares" },
+            { "@type": "City", "name": "Mascotte" },
+            { "@type": "City", "name": "Montverde" },
+            { "@type": "City", "name": "Mount Dora" },
+            { "@type": "City", "name": "Howey-in-the-Hills" },
+            { "@type": "City", "name": "Winter Garden" },
+            { "@type": "City", "name": "Windermere" },
+            { "@type": "City", "name": "Oakland" },
+            { "@type": "County", "name": "Lake County" }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Exterior Cleaning Services",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Soft Wash Roof Cleaning", "description": "Low-pressure ARMA-compliant roof cleaning that removes algae, mold, and black streaks from shingles, tile, and metal roofs." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "House Washing", "description": "Full exterior house washing using soft wash technique safe for stucco, siding, block, and painted surfaces." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Driveway & Paver Cleaning", "description": "High-pressure cleaning of concrete driveways and paver surfaces followed by optional sealing and sanding." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool Screen Enclosure Cleaning", "description": "Soft washing of pool lanai and screen enclosure panels and frames to remove algae, oxidation, and dirt." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paver Sealing & Sanding", "description": "Paver re-sanding and sealing service to restore color, prevent weeds, and protect against staining." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Pressure Washing", "description": "Commercial exterior cleaning for retail, industrial, and multi-family properties throughout Lake County, FL." } }
+            ]
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "50",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Clermont Resident" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "Great experience! Safely soft washed our asphalt shingle roof to remove Gloeocapsa magma and sealed our driveway pavers."
+          },
+          "sameAs": [
+            "https://www.facebook.com/p/Carsons-Soft-Wash-Service-100088828035566/",
+            "https://www.yelp.com/biz/carsons-soft-wash-services-groveland",
+            "https://www.bbb.org/us/fl/groveland/profile/pressure-washing/carsons-soft-wash-services-inc-0733-235968940"
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.carsonssoftwashservices.com/#webpage",
           "url": "https://www.carsonssoftwashservices.com/",
-          "logo": "https://www.carsonssoftwashservices.com/lovable-uploads/8921a334-0410-496d-8519-9cdb3500f796.png"
+          "name": "Carson's Soft Wash Inc. | ARMA-Compliant Roof Cleaning & Soft Wash | Groveland, FL",
+          "description": "Groveland FL's ARMA-compliant exterior cleaning company. Expert soft washing, roof cleaning, paver restoration & pressure washing. Serving Groveland, Clermont, Minneola & 12 cities in Lake & Orange County. Free estimates — call (352) 467-3964.",
+          "inLanguage": "en-US",
+          "isPartOf": { "@id": "https://www.carsonssoftwashservices.com/#website" },
+          "about": { "@id": "https://www.carsonssoftwashservices.com/#business" },
+          "datePublished": "2024-05-01",
+          "dateModified": "2026-05-06",
+          "significantLink": [
+            "https://www.asphaltroofing.org/",
+            "https://en.wikipedia.org/wiki/Soft_washing",
+            "https://www.bbb.org/us/fl/groveland/profile/pressure-washing/carsons-soft-wash-services-inc-0733-235968940"
+          ],
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".hero-description", ".service-card p", ".faq-answer"]
+          },
+          "mentions": [
+            { "@type": "Thing", "name": "Soft washing", "sameAs": ["https://www.wikidata.org/wiki/Q39086212", "https://en.wikipedia.org/wiki/Soft_washing"] },
+            { "@type": "Thing", "name": "Pressure washing", "sameAs": ["https://www.wikidata.org/wiki/Q107400805", "https://dbpedia.org/resource/Pressure_washing"] },
+            { "@type": "Thing", "name": "Gloeocapsa magma", "sameAs": "https://www.wikidata.org/wiki/Q5571154" },
+            { "@type": "Place", "name": "Groveland, Florida", "sameAs": "https://www.wikidata.org/wiki/Q2153697" }
+          ]
         },
         {
-          "@type": "Review",
-          "itemReviewed": { "@id": "https://www.carsonssoftwashservices.com/#localbusiness" },
-          "author": { "@type": "Person", "name": "Clermont Resident" },
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "reviewBody": "Great experience! Safely soft washed our asphalt shingle roof to remove Gloeocapsa magma and sealed our driveway pavers."
-        }
-      ]
-    }
-    </script>
-
-    <!-- Local Business Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Carson's Soft Wash Inc.",
-      "alternateName": "Carson's Soft Wash Services",
-      "url": "https://www.carsonssoftwashservices.com",
-      "telephone": "(352) 467-3964",
-      "email": "carsonssoftwash@gmail.com",
-      "image": "https://www.carsonssoftwashservices.com/lovable-uploads/8921a334-0410-496d-8519-9cdb3500f796.png",
-      "description": "Carson's Soft Wash Inc. is a licensed and insured soft washing and exterior cleaning company serving Groveland, Clermont, Minneola, and Lake County, FL. Specializing in roof soft washing, house washing, driveway cleaning, paver sealing, pool screen enclosure cleaning, and commercial pressure washing.",
-      "priceRange": "$$",
-      "openingHours": "Mo-Sa 08:00-18:00",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Groveland",
-        "addressRegion": "FL",
-        "postalCode": "34736",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 28.5583,
-        "longitude": -81.8537
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Groveland" },
-        { "@type": "City", "name": "Clermont" },
-        { "@type": "City", "name": "Minneola" },
-        { "@type": "City", "name": "Leesburg" },
-        { "@type": "City", "name": "Tavares" },
-        { "@type": "City", "name": "Mascotte" },
-        { "@type": "City", "name": "Mount Dora" },
-        { "@type": "City", "name": "Howey-in-the-Hills" },
-        { "@type": "City", "name": "Winter Garden" },
-        { "@type": "County", "name": "Lake County" }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "9",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Exterior Cleaning Services",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Soft Wash Roof Cleaning", "description": "Low-pressure ARMA-compliant roof cleaning that removes algae, mold, and black streaks from shingles, tile, and metal roofs." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "House Washing", "description": "Full exterior house washing using soft wash technique safe for stucco, siding, block, and painted surfaces." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Driveway & Paver Cleaning", "description": "High-pressure cleaning of concrete driveways and paver surfaces followed by optional sealing and sanding." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pool Screen Enclosure Cleaning", "description": "Soft washing of pool lanai and screen enclosure panels and frames to remove algae, oxidation, and dirt." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paver Sealing & Sanding", "description": "Paver re-sanding and sealing service to restore color, prevent weeds, and protect against staining." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Pressure Washing", "description": "Commercial exterior cleaning for retail, industrial, and multi-family properties throughout Lake County, FL." } }
-        ]
-      },
-      "sameAs": [
-        "https://www.facebook.com/p/Carsons-Soft-Wash-Service-100088828035566/",
-        "https://www.yelp.com/biz/carsons-soft-wash-services-groveland",
-        "https://www.bbb.org/us/fl/groveland/profile/pressure-washing/carsons-soft-wash-services-inc-0733-235968940"
-      ]
-    }
-    </script>
-
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is soft washing and how is it different from pressure washing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Soft washing uses low-pressure water (under 500 PSI) combined with biodegradable cleaning solutions to safely remove algae, mold, mildew, and dirt from surfaces like roofs, siding, and painted wood. Pressure washing uses high-pressure water (1,500–4,000 PSI) for hard surfaces like concrete and pavers. Soft washing is manufacturer-recommended for roofs and is safer for delicate surfaces."
-          }
+          "@type": "FAQPage",
+          "@id": "https://www.carsonssoftwashservices.com/#faqpage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What is soft washing and how is it different from pressure washing?", "acceptedAnswer": { "@type": "Answer", "text": "Soft washing uses low-pressure water (under 500 PSI) combined with biodegradable cleaning solutions to safely remove algae, mold, mildew, and dirt from surfaces like roofs, siding, and painted wood. Pressure washing uses high-pressure water (1,500–4,000 PSI) for hard surfaces like concrete and pavers. Soft washing is manufacturer-recommended for roofs and is safer for delicate surfaces." } },
+            { "@type": "Question", "name": "How much does soft washing cost in Groveland, FL?", "acceptedAnswer": { "@type": "Answer", "text": "Soft washing pricing in Groveland, FL typically ranges from $150–$400 for residential homes depending on size and services. Carson's Soft Wash offers free estimates — call (352) 467-3964 or visit carsonssoftwashservices.com." } },
+            { "@type": "Question", "name": "How often should I soft wash my house in Florida?", "acceptedAnswer": { "@type": "Answer", "text": "Florida's humidity and climate accelerate algae, mold, and mildew growth. Most Florida homeowners should soft wash their exterior every 12–18 months. Roofs may need cleaning every 2–3 years depending on tree coverage and shade." } },
+            { "@type": "Question", "name": "Is soft washing safe for roof shingles and tile?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — soft washing is the ARMA (Asphalt Roofing Manufacturers Association) recommended method for roof cleaning. It uses low pressure that won't damage shingles, tile, or void manufacturer warranties. High-pressure washing can crack tiles and strip granules from shingles." } },
+            { "@type": "Question", "name": "Does Carson's Soft Wash serve Clermont and Minneola, FL?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Carson's Soft Wash serves Groveland, Clermont, Minneola, Leesburg, Tavares, Mascotte, Mount Dora, and surrounding Lake County, FL communities." } },
+            { "@type": "Question", "name": "What surfaces can be soft washed?", "acceptedAnswer": { "@type": "Answer", "text": "Soft washing is safe for asphalt shingles, tile roofs, stucco, vinyl siding, wood siding, painted surfaces, pool screen enclosures, fences, patio covers, and gutters. It should not replace high-pressure cleaning for concrete, pavers, and driveways where deep stain removal is needed." } },
+            { "@type": "Question", "name": "Are the cleaning solutions used in soft washing safe for plants and pets?", "acceptedAnswer": { "@type": "Answer", "text": "Carson's Soft Wash uses biodegradable, eco-friendly cleaning solutions. Pre-wetting plants and rinsing after treatment protects landscaping. Solutions are diluted to safe concentrations and meet Florida environmental standards." } },
+            { "@type": "Question", "name": "How long does soft washing last?", "acceptedAnswer": { "@type": "Answer", "text": "A professional soft wash typically keeps surfaces clean for 2–5 years depending on the surface and environment. In Florida's humid climate, house exteriors generally stay clean for 1–2 years and roofs for 3–5 years after soft washing." } },
+            { "@type": "Question", "name": "Do I need to be home during soft washing service?", "acceptedAnswer": { "@type": "Answer", "text": "You do not need to be home for exterior soft washing. Carson's Soft Wash can complete most exterior cleaning jobs without you being present. We ask that windows be closed, outdoor furniture and pets be moved inside or to a safe area, and hose bibs be accessible." } },
+            { "@type": "Question", "name": "Does soft washing remove black streaks from roofs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Black streaks on roofs are caused by Gloeocapsa Magma, a type of algae. Soft washing with the right cleaning solution kills the algae at the root and removes the streaks, typically in a single treatment." } },
+            { "@type": "Question", "name": "Is Carson's Soft Wash licensed and insured?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Carson's Soft Wash is fully licensed and insured in the state of Florida. We carry general liability insurance and are registered with the BBB. Call (352) 467-3964 for proof of insurance or to request a certificate." } },
+            { "@type": "Question", "name": "What is paver sealing and do I need it after cleaning?", "acceptedAnswer": { "@type": "Answer", "text": "Paver sealing protects cleaned pavers from staining, weed growth, and weathering by applying a sealant that locks in color and prevents water and oil penetration. Carson's Soft Wash offers paver cleaning, sanding, and sealing as a bundled service for driveways, pool decks, and walkways." } },
+            { "@type": "Question", "name": "How do I get a quote from Carson's Soft Wash?", "acceptedAnswer": { "@type": "Answer", "text": "Call or text (352) 467-3964, email carsonssoftwash@gmail.com, or fill out the contact form at carsonssoftwashservices.com. We offer free, no-obligation estimates for all residential and commercial exterior cleaning services in Lake County, FL." } },
+            { "@type": "Question", "name": "Can soft washing remove mold and mildew from a house exterior?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Soft washing is highly effective at killing and removing mold, mildew, algae, and lichen from house exteriors including stucco, vinyl siding, painted wood, and block. The low-pressure application combined with biocidal cleaning solution eliminates 99% of biological growth on contact." } },
+            { "@type": "Question", "name": "What's included in a pool screen enclosure cleaning?", "acceptedAnswer": { "@type": "Answer", "text": "Pool screen enclosure cleaning at Carson's Soft Wash includes soft washing the screen panels, frame, and surrounding pool deck. We remove algae, mold, dirt, and oxidation buildup without damaging delicate screen mesh. The service restores clarity and visibility and extends screen lifespan." } }
+          ]
         },
         {
-          "@type": "Question",
-          "name": "How much does soft washing cost in Groveland, FL?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Soft washing pricing in Groveland, FL typically ranges from $150–$400 for residential homes depending on size and services. Carson's Soft Wash offers free estimates — call (352) 467-3964 or visit carsonssoftwashservices.com."
-          }
+          "@type": "Quotation",
+          "text": "Black streaks on roofs are caused by Gloeocapsa Magma, a type of algae. Soft washing with the right cleaning solution kills the algae at the root and removes the streaks, typically in a single treatment.",
+          "isPartOf": { "@id": "https://www.carsonssoftwashservices.com/#faqpage" }
         },
         {
-          "@type": "Question",
-          "name": "How often should I soft wash my house in Florida?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Florida's humidity and climate accelerate algae, mold, and mildew growth. Most Florida homeowners should soft wash their exterior every 12–18 months. Roofs may need cleaning every 2–3 years depending on tree coverage and shade."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is soft washing safe for roof shingles and tile?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes — soft washing is the ARMA (Asphalt Roofing Manufacturers Association) recommended method for roof cleaning. It uses low pressure that won't damage shingles, tile, or void manufacturer warranties. High-pressure washing can crack tiles and strip granules from shingles."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Carson's Soft Wash serve Clermont and Minneola, FL?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Carson's Soft Wash serves Groveland, Clermont, Minneola, Leesburg, Tavares, Mascotte, Mount Dora, and surrounding Lake County, FL communities."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What surfaces can be soft washed?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Soft washing is safe for asphalt shingles, tile roofs, stucco, vinyl siding, wood siding, painted surfaces, pool screen enclosures, fences, patio covers, and gutters. It should not replace high-pressure cleaning for concrete, pavers, and driveways where deep stain removal is needed."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are the cleaning solutions used in soft washing safe for plants and pets?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Carson's Soft Wash uses biodegradable, eco-friendly cleaning solutions. Pre-wetting plants and rinsing after treatment protects landscaping. Solutions are diluted to safe concentrations and meet Florida environmental standards."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does soft washing last?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A professional soft wash typically keeps surfaces clean for 2–5 years depending on the surface and environment. In Florida's humid climate, house exteriors generally stay clean for 1–2 years and roofs for 3–5 years after soft washing."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do I need to be home during soft washing service?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You do not need to be home for exterior soft washing. Carson's Soft Wash can complete most exterior cleaning jobs without you being present. We ask that windows be closed, outdoor furniture and pets be moved inside or to a safe area, and hose bibs be accessible."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does soft washing remove black streaks from roofs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Black streaks on roofs are caused by Gloeocapsa Magma, a type of algae. Soft washing with the right cleaning solution kills the algae at the root and removes the streaks, typically in a single treatment."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Carson's Soft Wash licensed and insured?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Carson's Soft Wash is fully licensed and insured in the state of Florida. We carry general liability insurance and are registered with the BBB. Call (352) 467-3964 for proof of insurance or to request a certificate."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is paver sealing and do I need it after cleaning?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Paver sealing protects cleaned pavers from staining, weed growth, and weathering by applying a sealant that locks in color and prevents water and oil penetration. Carson's Soft Wash offers paver cleaning, sanding, and sealing as a bundled service for driveways, pool decks, and walkways."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I get a quote from Carson's Soft Wash?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Call or text (352) 467-3964, email carsonssoftwash@gmail.com, or fill out the contact form at carsonssoftwashservices.com. We offer free, no-obligation estimates for all residential and commercial exterior cleaning services in Lake County, FL."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can soft washing remove mold and mildew from a house exterior?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Soft washing is highly effective at killing and removing mold, mildew, algae, and lichen from house exteriors including stucco, vinyl siding, painted wood, and block. The low-pressure application combined with biocidal cleaning solution eliminates 99% of biological growth on contact."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What's included in a pool screen enclosure cleaning?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pool screen enclosure cleaning at Carson's Soft Wash includes soft washing the screen panels, frame, and surrounding pool deck. We remove algae, mold, dirt, and oxidation buildup without damaging delicate screen mesh. The service restores clarity and visibility and extends screen lifespan."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the difference between soft washing and pressure washing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pressure washing uses high-pressure water to blast dirt, while soft washing uses low-pressure systems (under 500 PSI) and eco-friendly chemicals to safely eradicate organic growth."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is soft washing safe for my roof?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Soft washing uses low pressure and specialized solutions to safely remove algae without damaging your roof, adhering to ARMA guidelines."
-          }
+          "@type": "Quotation",
+          "text": "A professional soft wash typically keeps surfaces clean for 2–5 years depending on the surface and environment. In Florida's humid climate, house exteriors generally stay clean for 1–2 years and roofs for 3–5 years after soft washing.",
+          "isPartOf": { "@id": "https://www.carsonssoftwashservices.com/#faqpage" }
         }
       ]
     }
