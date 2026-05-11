@@ -39,7 +39,7 @@ const ServiceAreaTemplate = ({
           <div className="absolute inset-0 bg-black/40"></div>
           <img 
             src={heroImage} 
-            alt={`Pressure washing services in ${name}`} 
+            alt={`Soft washing and exterior cleaning in ${name}, FL`} 
             className="w-full h-full object-cover"
           />
         </div>
@@ -58,6 +58,26 @@ const ServiceAreaTemplate = ({
             <p className="text-xl">{description}</p>
           </div>
         </div>
+        {imageCredit && (
+          <div className="absolute bottom-2 right-3 z-10 text-[10px] text-white/70">
+            Photo: {imageCredit}
+          </div>
+        )}
+      </section>
+
+      {/* About / What We Offer */}
+      <section className="py-14 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <SectionTitle
+              title={`What We Offer in ${name}`}
+              subtitle={`Soft washing and exterior cleaning tailored to ${name} homes and businesses.`}
+            />
+            <p className="text-gray-700 leading-relaxed text-lg whitespace-pre-line">
+              {aboutParagraph}
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Services Section */}
@@ -66,7 +86,7 @@ const ServiceAreaTemplate = ({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <SectionTitle 
-                title="Our Services in {name}" 
+                title={`Our Services in ${name}`}
                 subtitle="Professional pressure washing services for residential and commercial properties."
               />
               
@@ -79,6 +99,7 @@ const ServiceAreaTemplate = ({
                 ))}
               </div>
             </div>
+
 
             <div>
               <SectionTitle 
