@@ -2,4 +2,42 @@ User-agent: *
 Disallow: /admin
 Allow: /
 
+# Explicit opt-in for AI crawlers and dataset bots.
+# Carson's Soft Wash Inc. allows indexing and citation by AI assistants.
+User-agent: GPTBot
+Disallow: /admin
+Allow: /
+
+User-agent: OAI-SearchBot
+Disallow: /admin
+Allow: /
+
+User-agent: ChatGPT-User
+Disallow: /admin
+Allow: /
+
+User-agent: ClaudeBot
+Disallow: /admin
+Allow: /
+
+User-agent: Claude-Web
+Disallow: /admin
+Allow: /
+
+User-agent: anthropic-ai
+Disallow: /admin
+Allow: /
+
+User-agent: PerplexityBot
+Disallow: /admin
+Allow: /
+
+User-agent: Google-Extended
+Disallow: /admin
+Allow: /
+
+User-agent: CCBot
+Disallow: /admin
+Allow: /
+
 Sitemap: https://www.carsonssoftwashservices.com/sitemap.xml
