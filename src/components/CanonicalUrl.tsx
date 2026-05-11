@@ -87,6 +87,11 @@ const ROUTE_SEO: Record<string, RouteSeo> = {
     description:
       "Plain-English guides to soft washing, roof cleaning, paver sealing, and pool screen care from a licensed Lake County, FL specialist. Updated regularly.",
   },
+  "/faq": {
+    title: `FAQ | Soft Wash & Pressure Washing | Carson's Soft Wash`,
+    description:
+      "Answers to common questions about soft washing, pressure washing, paver sealing, pricing, scheduling, and service areas in Groveland and Lake County, FL.",
+  },
   "/blog/what-is-gloeocapsa-magma-roof-stains": {
     title: `Gloeocapsa Magma: What Those Black Roof Stains Really Are`,
     description:
