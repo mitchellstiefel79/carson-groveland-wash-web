@@ -22,6 +22,8 @@ import Montverde from "./pages/service-areas/Montverde";
 import WinterGarden from "./pages/service-areas/WinterGarden";
 import Windermere from "./pages/service-areas/Windermere";
 import Oakland from "./pages/service-areas/Oakland";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +51,8 @@ const App = () => (
           <Route path="/service-areas/winter-garden" element={<WinterGarden />} />
           <Route path="/service-areas/windermere" element={<Windermere />} />
           <Route path="/service-areas/oakland" element={<Oakland />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
