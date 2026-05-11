@@ -240,7 +240,12 @@ const BlogPostTemplate = ({ post }: Props) => {
         </div>
       </article>
 
-      <CallToAction />
+      <CallToAction
+        title="Get Your Free Soft Wash Quote"
+        description="Honest pricing and expert advice for Lake County, FL homeowners. No pressure, no upsells."
+        buttonText="Request a Free Quote"
+        buttonLink="/contact"
+      />
     </Layout>
   );
 };
