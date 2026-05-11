@@ -24,6 +24,7 @@ import Windermere from "./pages/service-areas/Windermere";
 import Oakland from "./pages/service-areas/Oakland";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import FAQ from "./pages/FAQ";
 
 const queryClient = new QueryClient();
 
