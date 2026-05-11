@@ -82,6 +82,41 @@ const ROUTE_SEO: Record<string, RouteSeo> = {
     description:
       "Friendly soft washing, roof cleaning and paver sealing for the town of Oakland, FL. Honest written pricing, comfortable on rural and historic properties.",
   },
+  "/blog": {
+    title: `Soft Wash & Pressure Washing Education | Carson's Soft Wash`,
+    description:
+      "Plain-English guides to soft washing, roof cleaning, paver sealing, and pool screen care from a licensed Lake County, FL specialist. Updated regularly.",
+  },
+  "/blog/what-is-gloeocapsa-magma-roof-stains": {
+    title: `Gloeocapsa Magma: What Those Black Roof Stains Really Are`,
+    description:
+      "Those black streaks on Florida roofs aren't dirt — they're Gloeocapsa magma, a living algae. What it is, why it spreads in Lake County, and how to kill it safely.",
+  },
+  "/blog/soft-wash-vs-pressure-wash": {
+    title: `Soft Wash vs. Pressure Wash: Which Does Your Home Need?`,
+    description:
+      "Soft washing and pressure washing aren't the same. Plain-English breakdown of which surfaces need which method, and what happens when you mix them up.",
+  },
+  "/blog/house-soft-washing-cost-lake-county-fl": {
+    title: `House Soft Washing Cost in Lake County, FL (2026 Guide)`,
+    description:
+      "Honest 2026 pricing for house soft washing in Groveland, Clermont, and Lake County, FL. What drives the price up, what drives it down, and red flags to avoid.",
+  },
+  "/blog/how-often-soft-wash-house-florida": {
+    title: `How Often Should You Soft Wash a House in Florida?`,
+    description:
+      "Florida humidity grows mildew on siding fast. Here's the right soft washing interval for Lake County homes — and the warning signs that you've waited too long.",
+  },
+  "/blog/paver-sealing-timing-and-cost": {
+    title: `Paver Sealing in Florida: When to Seal & 2026 Cost`,
+    description:
+      "Florida paver decks fade and weed up fast without sealing. When to seal, what each finish looks like, and honest 2026 pricing for Lake County, FL.",
+  },
+  "/blog/pool-screen-enclosure-cleaning-guide": {
+    title: `Pool Screen Enclosure Cleaning: Florida Homeowner's Guide`,
+    description:
+      "Pool cages trap pollen, mildew, and Lovebug residue that pressure washers can't fix without damage. The right way to clean a screen enclosure in Florida.",
+  },
 };
 
 const DEFAULT_SEO: RouteSeo = ROUTE_SEO["/"];
