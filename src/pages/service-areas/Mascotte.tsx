@@ -1,32 +1,33 @@
-
 import ServiceAreaTemplate from "@/components/ServiceAreaTemplate";
 
 const Mascotte = () => {
   return (
     <ServiceAreaTemplate
       name="Mascotte"
-      description="Reliable pressure washing services with quick response times for Mascotte properties"
-      heroImage="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86"
+      description="Honest, neighborly soft washing and pressure washing for Mascotte homes, mobile homes, and small businesses."
+      heroImage="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Mascotte_FL_city_hall02.jpg/1920px-Mascotte_FL_city_hall02.jpg"
+      imageCredit="Mascotte City Hall — Wikimedia Commons (CC BY-SA 3.0)"
       isPrimary={true}
+      aboutParagraph={`Mascotte is right next door to our Groveland base, so we know the older neighborhoods off Sunset Avenue, the newer builds in Knight Lake Estates, and the mobile-home and manufactured-home communities along SR-50 well. Florida humidity is brutal on metal roofs and painted aluminum siding here, so we soft wash at low pressure with a balanced detergent that lifts mildew and algae without stripping paint or denting panels. Concrete driveways, carports, sidewalks, and pool decks are surface-cleaned with hot water for an even finish — no zebra striping — and we'll seal pavers or stamped concrete to keep the color from chalking out. We keep pricing fair and straightforward for Mascotte residents, and we won't try to sell you services your home doesn't actually need.`}
       services={[
-        "House washing and exterior cleaning",
-        "Driveway and concrete cleaning",
-        "Paver restoration and sealing",
-        "Commercial building washing",
-        "Roof cleaning and maintenance",
+        "Soft wash house and mobile home exteriors",
+        "Metal and shingle roof soft washing",
+        "Driveway, carport, and sidewalk pressure washing",
+        "Paver and stamped concrete sealing",
         "Pool deck and patio cleaning",
-        "Fence and deck restoration",
-        "Mobile home cleaning services"
+        "Wood and vinyl fence restoration",
+        "Small commercial and storefront cleaning",
+        "Algae, mildew, and rust treatment",
       ]}
       benefits={[
-        "Quick response for Mascotte residents",
-        "No travel fees within city limits",
-        "Experience with mobile home communities",
-        "Affordable rates for all budgets",
-        "Gentle cleaning for older structures",
-        "Water conservation practices",
-        "Local references available",
-        "Emergency cleaning services"
+        "Mascotte is in our backyard — fast response",
+        "No travel fee inside Mascotte",
+        "Experience with mobile and manufactured homes",
+        "Fair, fixed-price quotes for every budget",
+        "Gentle methods safe for older roofs and paint",
+        "Water-conscious cleaning practices",
+        "Local references on request",
+        "Licensed and insured in Lake County",
       ]}
       responseTime="24-48 hours"
       travelCharge="No charge"
