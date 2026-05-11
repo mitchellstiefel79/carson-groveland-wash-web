@@ -9,7 +9,9 @@ import { Link } from "react-router-dom";
 interface ServiceAreaTemplateProps {
   name: string;
   description: string;
+  aboutParagraph: string;
   heroImage: string;
+  imageCredit?: string;
   isPrimary: boolean;
   services: string[];
   benefits: string[];
@@ -20,7 +22,9 @@ interface ServiceAreaTemplateProps {
 const ServiceAreaTemplate = ({
   name,
   description,
+  aboutParagraph,
   heroImage,
+  imageCredit,
   isPrimary,
   services,
   benefits,
