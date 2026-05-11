@@ -73,9 +73,9 @@ export const counties: ServiceCity["county"][] = [
 // Map centered on Clermont, FL with satellite view as default.
 export const coverageMap = {
   center: { lat: 28.5494, lng: -81.7729 }, // Clermont, FL
-  // Approx radius (meters) covering surrounding service area
-  radiusMeters: 45000,
-  zoom: 11,
+  // Approx radius (meters) covering every listed city (farthest: Harmony, ~70km)
+  radiusMeters: 75000,
+  zoom: 10,
   mapType: "satellite" as const,
 };
 
