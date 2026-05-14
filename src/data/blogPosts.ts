@@ -33,7 +33,7 @@ export type BlogPost = {
 const PUBLISHED = "2026-05-11";
 
 export const BLOG_AUTHOR_ID =
-  "https://www.carsonssoftwashservices.com/#carson-stiefel";
+  "https://carsonssoftwashservices.com/#carson-stiefel";
 
 export const blogPosts: BlogPost[] = [
   {
