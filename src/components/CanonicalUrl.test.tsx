@@ -98,7 +98,7 @@ describe("Per-route SEO (CanonicalUrl)", () => {
         ?.getAttribute("href");
       const expectedPath = path === "/" ? "/" : path.replace(/\/+$/, "");
       expect(canonical, `canonical for ${path}`).toBe(
-        `https://www.carsonssoftwashservices.com${expectedPath}`,
+        `https://carsonssoftwashservices.com${expectedPath}`,
       );
     }
   });
