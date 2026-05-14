@@ -197,8 +197,10 @@ const CanonicalUrl = () => {
     }
     link.setAttribute("href", url);
 
-    // 4. og:url
+    // 4. og:url + og:type (article for blog posts, website otherwise)
     getOrCreateMeta("property", "og:url").setAttribute("content", url);
+    const ogType = path.startsWith("/blog/") ? "article" : "website";
+    getOrCreateMeta("property", "og:type").setAttribute("content", ogType);
 
     // 5. Per-route WebPage JSON-LD with matching @id and url
     const webPage = {
