@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const SITE_ORIGIN = "https://www.carsonssoftwashservices.com";
+const SITE_ORIGIN = "https://carsonssoftwashservices.com";
 const SCHEMA_ID = "ld-webpage-route";
 const BRAND = "Carson's Soft Wash Inc.";
 
