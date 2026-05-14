@@ -13,9 +13,9 @@ type RouteSeo = { title: string; description: string };
  */
 const ROUTE_SEO: Record<string, RouteSeo> = {
   "/": {
-    title: `${BRAND} | Soft Wash & Pressure Washing | Groveland, FL`,
+    title: `Soft Wash & Pressure Washing in Groveland, FL | Carson's`,
     description:
-      "ARMA-compliant soft washing, roof cleaning, paver sealing & pressure washing in Groveland, Clermont, Minneola & Lake County, FL. Free estimates — (352) 467-3964.",
+      "Soft washing, pressure washing, roof cleaning & paver sealing in Groveland, Clermont & Lake County, FL. Free quote — call (352) 467-3964.",
   },
   "/about": {
     title: `About Carson's Soft Wash | Family-Owned in Groveland, FL`,
@@ -38,7 +38,7 @@ const ROUTE_SEO: Record<string, RouteSeo> = {
       "Request a free, no-obligation quote for soft washing, roof cleaning or paver sealing. Call (352) 467-3964 or message us — we serve Lake & Orange County, FL.",
   },
   "/service-areas": {
-    title: `Service Areas | Soft Wash & Pressure Washing in Lake County FL`,
+    title: `Service Areas | Soft Wash in Lake County, FL`,
     description:
       "Carson's Soft Wash serves Groveland, Clermont, Minneola, Mascotte, Montverde, Winter Garden, Windermere, Oakland and the surrounding Lake & Orange County, FL area.",
   },
