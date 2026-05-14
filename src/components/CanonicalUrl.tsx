@@ -13,9 +13,9 @@ type RouteSeo = { title: string; description: string };
  */
 const ROUTE_SEO: Record<string, RouteSeo> = {
   "/": {
-    title: `${BRAND} | Soft Wash & Pressure Washing | Groveland, FL`,
+    title: `Soft Wash & Pressure Washing in Groveland, FL | Carson's`,
     description:
-      "ARMA-compliant soft washing, roof cleaning, paver sealing & pressure washing in Groveland, Clermont, Minneola & Lake County, FL. Free estimates — (352) 467-3964.",
+      "Soft washing, pressure washing, roof cleaning & paver sealing in Groveland, Clermont & Lake County, FL. Free quote — call (352) 467-3964.",
   },
   "/about": {
     title: `About Carson's Soft Wash | Family-Owned in Groveland, FL`,
@@ -38,7 +38,7 @@ const ROUTE_SEO: Record<string, RouteSeo> = {
       "Request a free, no-obligation quote for soft washing, roof cleaning or paver sealing. Call (352) 467-3964 or message us — we serve Lake & Orange County, FL.",
   },
   "/service-areas": {
-    title: `Service Areas | Soft Wash & Pressure Washing in Lake County FL`,
+    title: `Service Areas | Soft Wash in Lake County, FL`,
     description:
       "Carson's Soft Wash serves Groveland, Clermont, Minneola, Mascotte, Montverde, Winter Garden, Windermere, Oakland and the surrounding Lake & Orange County, FL area.",
   },
@@ -91,6 +91,11 @@ const ROUTE_SEO: Record<string, RouteSeo> = {
     title: `FAQ | Soft Wash & Pressure Washing | Carson's Soft Wash`,
     description:
       "Answers to common questions about soft washing, pressure washing, paver sealing, pricing, scheduling, and service areas in Groveland and Lake County, FL.",
+  },
+  "/admin": {
+    title: `Admin | Carson's Soft Wash`,
+    description:
+      "Internal admin dashboard for Carson's Soft Wash Inc. Not intended for public access.",
   },
   "/blog/what-is-gloeocapsa-magma-roof-stains": {
     title: `Gloeocapsa Magma: What Those Black Roof Stains Really Are`,
@@ -197,8 +202,10 @@ const CanonicalUrl = () => {
     }
     link.setAttribute("href", url);
 
-    // 4. og:url
+    // 4. og:url + og:type (article for blog posts, website otherwise)
     getOrCreateMeta("property", "og:url").setAttribute("content", url);
+    const ogType = path.startsWith("/blog/") ? "article" : "website";
+    getOrCreateMeta("property", "og:type").setAttribute("content", ogType);
 
     // 5. Per-route WebPage JSON-LD with matching @id and url
     const webPage = {

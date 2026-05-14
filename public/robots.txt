@@ -40,4 +40,4 @@ User-agent: CCBot
 Disallow: /admin
 Allow: /
 
-Sitemap: https://www.carsonssoftwashservices.com/sitemap.xml
+Sitemap: https://carsonssoftwashservices.com/sitemap.xml
