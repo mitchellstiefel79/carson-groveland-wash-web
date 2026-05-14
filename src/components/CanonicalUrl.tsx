@@ -127,6 +127,11 @@ const ROUTE_SEO: Record<string, RouteSeo> = {
     description:
       "Pool cages trap pollen, mildew, and Lovebug residue that pressure washers can't fix without damage. The right way to clean a screen enclosure in Florida.",
   },
+  "/blog/commercial-pressure-washing-central-florida": {
+    title: `Commercial Pressure Washing in Central Florida: Buyer's Guide`,
+    description:
+      "Scope, scheduling, insurance, and 2026 pricing for commercial pressure washing in Lake and Orange County, FL. Storefronts, dumpster pads, drive-thrus and more.",
+  },
 };
 
 const DEFAULT_SEO: RouteSeo = ROUTE_SEO["/"];
