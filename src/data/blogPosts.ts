@@ -696,6 +696,142 @@ export const blogPosts: BlogPost[] = [
       { label: "Winter Garden", href: "/service-areas/winter-garden" },
     ],
   },
+  {
+    slug: "commercial-pressure-washing-central-florida",
+    title: "Commercial Pressure Washing in Central Florida: A Buyer's Guide",
+    metaDescription:
+      "What Central Florida property managers should know about commercial pressure washing — scope, scheduling, insurance, and realistic 2026 pricing in Lake and Orange County.",
+    hubExcerpt:
+      "Storefronts, dumpster pads, drive-thrus, and parking decks all need different cleaning methods. Here's how to scope and price commercial pressure washing in Central Florida.",
+    category: "Commercial",
+    readMinutes: 8,
+    datePublished: PUBLISHED,
+    dateModified: PUBLISHED,
+    heroImage: "/lovable-uploads/74691437-06d7-47c3-a140-7ee919fc173a.png",
+    heroAlt:
+      "Commercial pressure washing of a storefront sidewalk in Central Florida",
+    intro: [
+      "Commercial exterior cleaning isn't just residential pressure washing at a bigger scale. The surfaces are different, the liability is different, the scheduling windows are different, and the consequences of getting it wrong land on a property manager's desk instead of a homeowner's. If you manage a retail center, restaurant, HOA clubhouse, medical office, or industrial facility in Lake or Orange County, this guide will help you scope, budget, and schedule the work without surprises.",
+      "We'll cover the most common commercial scopes we handle out of Groveland, what each one actually costs in 2026, the insurance and compliance side, and the scheduling tradeoffs that quietly drive 80% of the price.",
+    ],
+    sections: [
+      {
+        heading: "The most common commercial scopes",
+        paragraphs: [
+          "Most commercial pressure washing requests in Central Florida fall into one of a handful of recurring scopes. Each one has its own equipment setup, chemistry, and risk profile.",
+        ],
+        bullets: [
+          "Storefront sidewalks and entryway concrete (gum, soda spills, traffic film)",
+          "Dumpster pads and grease lanes behind restaurants",
+          "Drive-thru lanes and order-board concrete",
+          "Gas station fuel islands and canopy soffits",
+          "Parking decks, ramps, and stairwells",
+          "Building exteriors — soft wash for stucco, EIFS, painted CMU; controlled pressure for unpainted brick",
+          "Awnings, canopies, and signage faces",
+          "HOA amenity centers, pool decks, and mailbox kiosks",
+        ],
+      },
+      {
+        heading: "Soft wash vs. pressure wash on commercial buildings",
+        paragraphs: [
+          "The same rule that governs residential work applies at commercial scale: surfaces that grow something living get a soft wash; surfaces that collect something deposited get pressure. Stucco, EIFS, painted CMU, and metal panel facades all get a low-pressure soft wash with a sodium-hypochlorite-based mix that kills mildew and algae at the source. Pressure-blasting these surfaces strips paint, gouges stucco, and forces water behind cladding.",
+          "Concrete, brick pavers, dumpster pads, and drive-thru lanes get surface-cleaner pressure washing — typically with a hot-water unit for grease, plus a degreaser pre-treatment. The combination matters: hot water alone won't lift hardened grease without a surfactant, and chemistry alone won't dislodge baked-on tire rubber without mechanical action.",
+        ],
+      },
+      {
+        heading: "Insurance, compliance, and water reclamation",
+        paragraphs: [
+          "Commercial work raises the bar on documentation. Before any vendor pulls a trigger on your property, you should have three things on file:",
+        ],
+        bullets: [
+          "General liability certificate naming the property owner and management company as additional insureds (typically $1M/$2M minimum)",
+          "Workers' compensation coverage for every crew member on site",
+          "EPA/SWPPP compliance plan for wash-water containment, especially near storm drains",
+        ],
+      },
+      {
+        heading: "Why dumpster pads and drive-thrus are their own category",
+        paragraphs: [
+          "Restaurants, fast-casual chains, and grocery anchors generate two types of cleaning that no other commercial scope deals with: animal-fat grease and high-traffic tire rubber. Both bond chemically to concrete and require a different process than ordinary pressure washing.",
+          "On a typical dumpster pad, we apply a degreaser, agitate with a stiff-bristle deck brush, hot-water surface clean, then post-treat with an enzymatic odor neutralizer. Skipping the post-treatment is the #1 reason cleaned pads still smell at 9 a.m. the next day. Drive-thru lanes get a similar treatment focused on the order-board pad and the tire-track lines, with extra attention to the curb where soda and milkshake spills concentrate.",
+        ],
+      },
+      {
+        heading: "Scheduling: the hidden 80% of the price",
+        paragraphs: [
+          "The single biggest variable in commercial pricing isn't square footage — it's when you need the work done. A retail strip cleaned at 11 a.m. on a Tuesday costs significantly less than the same strip cleaned at 2 a.m. on a Sunday. Overnight and pre-open windows require crews on premium pay, generator-powered lighting, and a different traffic-control plan.",
+          "If your tenants will tolerate daytime cleaning with reasonable signage, take the daytime quote. If your lease requires after-hours work or you operate a 24-hour facility, build that premium into the annual maintenance budget rather than treating it as a one-time surprise.",
+        ],
+        bullets: [
+          "Daytime (business hours): baseline pricing",
+          "Pre-open / post-close (5–9 a.m. or 9 p.m.–midnight): +15–25%",
+          "Overnight (midnight–5 a.m.): +30–50%",
+          "Weekend or holiday: +20–35% on top of the time-of-day premium",
+        ],
+      },
+      {
+        heading: "Realistic 2026 pricing in Lake and Orange County",
+        paragraphs: [
+          "Every commercial property is custom-quoted, but these ranges hold for the majority of work we bid in Groveland, Clermont, Winter Garden, and the broader Orlando metro. Pricing assumes daytime scheduling and standard access.",
+        ],
+        bullets: [
+          "Storefront sidewalk (small retail bay, ~500 sq ft): $125–$225 per visit",
+          "Full retail strip frontage (10–15 bays): $450–$900 per visit",
+          "Dumpster pad with degreaser and odor treatment: $175–$350 per pad",
+          "Drive-thru lane (single lane, full clean): $300–$550",
+          "Gas station fuel islands and canopy soffit: $650–$1,400",
+          "HOA pool deck and amenity area: $400–$900",
+          "Soft wash of a single-story commercial building exterior: $0.18–$0.35 per sq ft of wall surface",
+          "Quarterly maintenance contracts: typically 15–25% off per-visit pricing",
+        ],
+      },
+      {
+        heading: "What to ask before signing a contract",
+        paragraphs: [
+          "A few targeted questions during the bid stage filter out the vendors who will cause problems six months in.",
+        ],
+        bullets: [
+          "Can you provide a current COI listing us as additional insured?",
+          "How do you contain and dispose of wash water near storm drains?",
+          "Do you use hot water for grease scopes, or cold only?",
+          "What's your response time if a tenant calls with a complaint?",
+          "Can you provide before-and-after photo documentation per visit?",
+          "How do you handle re-cleans if the work doesn't meet spec?",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Do you offer recurring maintenance contracts?",
+        answer:
+          "Yes. Most commercial clients in Groveland, Clermont, and Winter Garden are on monthly, quarterly, or semiannual schedules depending on the surface. Recurring contracts include locked-in pricing, photo documentation, and priority response for between-visit issues.",
+      },
+      {
+        question: "Can you work after hours so we don't disrupt customers?",
+        answer:
+          "Yes. We regularly run pre-open, post-close, and overnight crews for restaurants, retail, and medical facilities. After-hours scheduling carries a premium — see the scheduling section above for typical ranges.",
+      },
+      {
+        question: "Are you insured for commercial property work?",
+        answer:
+          "Carson's Soft Wash carries general liability and workers' comp coverage that meets standard commercial property requirements. We provide certificates of insurance naming the property owner and management company as additional insureds before the first visit.",
+      },
+      {
+        question: "Do you handle wash-water reclamation?",
+        answer:
+          "For scopes near storm drains — gas stations, restaurants with grease, parking decks — we use containment booms, vacuum recovery, or filtered berms as required by local SWPPP rules. We document the containment method per visit.",
+      },
+    ],
+    relatedServices: [
+      { label: "Commercial pressure washing", href: "/services" },
+      { label: "Paver sealing", href: "/services" },
+    ],
+    relatedAreas: [
+      { label: "Groveland", href: "/service-areas/groveland" },
+      { label: "Clermont", href: "/service-areas/clermont" },
+      { label: "Winter Garden", href: "/service-areas/winter-garden" },
+    ],
+  },
 ];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
