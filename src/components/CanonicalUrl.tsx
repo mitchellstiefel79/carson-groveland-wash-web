@@ -92,6 +92,11 @@ const ROUTE_SEO: Record<string, RouteSeo> = {
     description:
       "Answers to common questions about soft washing, pressure washing, paver sealing, pricing, scheduling, and service areas in Groveland and Lake County, FL.",
   },
+  "/admin": {
+    title: `Admin | Carson's Soft Wash`,
+    description:
+      "Internal admin dashboard for Carson's Soft Wash Inc. Not intended for public access.",
+  },
   "/blog/what-is-gloeocapsa-magma-roof-stains": {
     title: `Gloeocapsa Magma: What Those Black Roof Stains Really Are`,
     description:
