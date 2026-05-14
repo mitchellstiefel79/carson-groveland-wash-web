@@ -76,6 +76,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://carsonssoftwashservices.com/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://carsonssoftwashservices.com/blog/what-is-gloeocapsa-magma-roof-stains</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
