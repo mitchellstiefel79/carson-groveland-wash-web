@@ -132,6 +132,11 @@ const ROUTE_SEO: Record<string, RouteSeo> = {
     description:
       "Scope, scheduling, insurance, and 2026 pricing for commercial pressure washing in Lake and Orange County, FL. Storefronts, dumpster pads, drive-thrus and more.",
   },
+  "/blog/why-not-use-box-store-sealers-florida": {
+    title: `Why Box Store Paver Sealers Fail in Florida | Carson's`,
+    description:
+      "Big-box paver sealers peel and whiten within months in Florida sun. Here's the chemistry behind the failure and what professional-grade sealers do differently.",
+  },
 };
 
 const DEFAULT_SEO: RouteSeo = ROUTE_SEO["/"];
