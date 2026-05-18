@@ -12,7 +12,7 @@ import {
 import { Calendar, Clock, ArrowLeft, User } from "lucide-react";
 import type { BlogPost } from "@/data/blogPosts";
 
-const SITE_ORIGIN = "https://www.carsonssoftwashservices.com";
+const SITE_ORIGIN = "https://carsonssoftwashservices.com";
 const AUTHOR_ID = `${SITE_ORIGIN}/#carson-stiefel`;
 const BUSINESS_ID = `${SITE_ORIGIN}/#business`;
 const SCHEMA_ID = "ld-blog-post";
