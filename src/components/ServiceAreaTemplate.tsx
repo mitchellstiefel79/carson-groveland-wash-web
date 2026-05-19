@@ -167,6 +167,18 @@ const ServiceAreaTemplate = ({
         </div>
       </section>
 
+      {/* Long-form depth content + FAQs */}
+      {longFormSections && longFormSections.length > 0 && (
+        <LongFormSections
+          schemaId={`ld-faq-${pageSlug}`}
+          pageUrl={pageUrl}
+          intro={longFormIntro}
+          sections={longFormSections}
+          faqs={faqs}
+          faqHeading={`${name} Soft Wash & Pressure Washing FAQs`}
+        />
+      )}
+
       {/* Contact CTA */}
       <section className="py-16">
         <div className="container mx-auto px-4">
