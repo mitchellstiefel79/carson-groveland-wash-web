@@ -85,6 +85,16 @@ const Index = () => {
       {/* Services Section */}
       <ServicesSection />
 
+      {/* Long-form depth content + FAQs */}
+      <LongFormSections
+        schemaId="ld-faq-home"
+        pageUrl="https://carsonssoftwashservices.com/"
+        sections={homeLongForm}
+        faqs={homeFAQs}
+        faqHeading="Soft Wash & Pressure Washing FAQs"
+      />
+
+
       {/* Enhanced CTA Section */}
       <CallToAction 
         title="Ready to Transform Your Property?" 
