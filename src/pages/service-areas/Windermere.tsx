@@ -1,6 +1,8 @@
 import ServiceAreaTemplate from "@/components/ServiceAreaTemplate";
+import { getServiceAreaContent } from "@/data/serviceAreaContent";
 
 const Windermere = () => {
+  const { intro, sections, faqs } = getServiceAreaContent("Windermere");
   return (
     <ServiceAreaTemplate
       name="Windermere"
@@ -31,6 +33,9 @@ const Windermere = () => {
       ]}
       responseTime="2-4 business days"
       travelCharge="Minimal for premium properties"
+      longFormIntro={intro}
+      longFormSections={sections}
+      faqs={faqs}
     />
   );
 };

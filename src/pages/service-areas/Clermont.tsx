@@ -1,6 +1,8 @@
 import ServiceAreaTemplate from "@/components/ServiceAreaTemplate";
+import { getServiceAreaContent } from "@/data/serviceAreaContent";
 
 const Clermont = () => {
+  const { intro, sections, faqs } = getServiceAreaContent("Clermont");
   return (
     <ServiceAreaTemplate
       name="Clermont"
@@ -31,6 +33,9 @@ const Clermont = () => {
       ]}
       responseTime="24-48 hours"
       travelCharge="No charge"
+      longFormIntro={intro}
+      longFormSections={sections}
+      faqs={faqs}
     />
   );
 };

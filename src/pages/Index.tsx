@@ -10,6 +10,8 @@ import HeroSection from "@/components/HeroSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import ServicesSection from "@/components/ServicesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import LongFormSections from "@/components/LongFormSections";
+import { homeLongForm, homeFAQs } from "@/data/longFormContent";
 import { ArrowRight } from "lucide-react";
 import { useEffect } from "react";
 
@@ -82,6 +84,16 @@ const Index = () => {
 
       {/* Services Section */}
       <ServicesSection />
+
+      {/* Long-form depth content + FAQs */}
+      <LongFormSections
+        schemaId="ld-faq-home"
+        pageUrl="https://carsonssoftwashservices.com/"
+        sections={homeLongForm}
+        faqs={homeFAQs}
+        faqHeading="Soft Wash & Pressure Washing FAQs"
+      />
+
 
       {/* Enhanced CTA Section */}
       <CallToAction 

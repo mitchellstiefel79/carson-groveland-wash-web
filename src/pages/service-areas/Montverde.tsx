@@ -1,6 +1,8 @@
 import ServiceAreaTemplate from "@/components/ServiceAreaTemplate";
+import { getServiceAreaContent } from "@/data/serviceAreaContent";
 
 const Montverde = () => {
+  const { intro, sections, faqs } = getServiceAreaContent("Montverde");
   return (
     <ServiceAreaTemplate
       name="Montverde"
@@ -31,6 +33,9 @@ const Montverde = () => {
       ]}
       responseTime="2-5 business days"
       travelCharge="Minimal charge for larger projects"
+      longFormIntro={intro}
+      longFormSections={sections}
+      faqs={faqs}
     />
   );
 };
