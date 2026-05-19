@@ -1,6 +1,8 @@
 import ServiceAreaTemplate from "@/components/ServiceAreaTemplate";
+import { getServiceAreaContent } from "@/data/serviceAreaContent";
 
 const Minneola = () => {
+  const { intro, sections, faqs } = getServiceAreaContent("Minneola");
   return (
     <ServiceAreaTemplate
       name="Minneola"
