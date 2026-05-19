@@ -3,7 +3,9 @@ import SectionTitle from "@/components/SectionTitle";
 import CallToAction from "@/components/CallToAction";
 import ServiceDetail from "@/components/ServiceDetail";
 import ProcessStep from "@/components/ProcessStep";
+import LongFormSections from "@/components/LongFormSections";
 import { serviceDetails, processSteps } from "@/data/serviceData";
+import { servicesLongForm, servicesFAQs } from "@/data/longFormContent";
 
 const Services = () => {
   return (
@@ -68,6 +70,15 @@ const Services = () => {
           </div>
         </div>
       </section>
+
+      {/* Long-form depth content + FAQs */}
+      <LongFormSections
+        schemaId="ld-faq-services"
+        pageUrl="https://carsonssoftwashservices.com/services"
+        sections={servicesLongForm}
+        faqs={servicesFAQs}
+        faqHeading="Pressure Washing & Soft Washing FAQs"
+      />
 
       {/* CTA Section */}
       <CallToAction

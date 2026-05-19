@@ -10,6 +10,8 @@ import HeroSection from "@/components/HeroSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import ServicesSection from "@/components/ServicesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import LongFormSections from "@/components/LongFormSections";
+import { homeLongForm, homeFAQs } from "@/data/longFormContent";
 import { ArrowRight } from "lucide-react";
 import { useEffect } from "react";
 
