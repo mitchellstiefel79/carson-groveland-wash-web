@@ -33,6 +33,9 @@ const Windermere = () => {
       ]}
       responseTime="2-4 business days"
       travelCharge="Minimal for premium properties"
+      longFormIntro={intro}
+      longFormSections={sections}
+      faqs={faqs}
     />
   );
 };

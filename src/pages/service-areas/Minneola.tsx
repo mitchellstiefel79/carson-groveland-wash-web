@@ -33,6 +33,9 @@ const Minneola = () => {
       ]}
       responseTime="Same day to 48 hours"
       travelCharge="No charge"
+      longFormIntro={intro}
+      longFormSections={sections}
+      faqs={faqs}
     />
   );
 };

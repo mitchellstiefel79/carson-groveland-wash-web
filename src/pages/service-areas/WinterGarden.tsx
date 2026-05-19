@@ -33,6 +33,9 @@ const WinterGarden = () => {
       ]}
       responseTime="3-5 business days"
       travelCharge="Small travel fee for larger jobs"
+      longFormIntro={intro}
+      longFormSections={sections}
+      faqs={faqs}
     />
   );
 };

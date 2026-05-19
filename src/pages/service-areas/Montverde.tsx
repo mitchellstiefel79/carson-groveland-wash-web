@@ -33,6 +33,9 @@ const Montverde = () => {
       ]}
       responseTime="2-5 business days"
       travelCharge="Minimal charge for larger projects"
+      longFormIntro={intro}
+      longFormSections={sections}
+      faqs={faqs}
     />
   );
 };

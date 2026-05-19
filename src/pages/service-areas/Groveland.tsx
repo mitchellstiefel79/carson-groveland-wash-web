@@ -33,6 +33,9 @@ const Groveland = () => {
       ]}
       responseTime="Same day or next day"
       travelCharge="No charge within city limits"
+      longFormIntro={intro}
+      longFormSections={sections}
+      faqs={faqs}
     />
   );
 };

@@ -33,6 +33,9 @@ const Mascotte = () => {
       ]}
       responseTime="24-48 hours"
       travelCharge="No charge"
+      longFormIntro={intro}
+      longFormSections={sections}
+      faqs={faqs}
     />
   );
 };

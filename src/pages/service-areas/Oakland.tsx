@@ -33,6 +33,9 @@ const Oakland = () => {
       ]}
       responseTime="3-5 business days"
       travelCharge="Reasonable travel fee"
+      longFormIntro={intro}
+      longFormSections={sections}
+      faqs={faqs}
     />
   );
 };
