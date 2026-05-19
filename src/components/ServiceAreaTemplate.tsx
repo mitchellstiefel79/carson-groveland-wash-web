@@ -5,6 +5,10 @@ import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import LongFormSections, {
+  type LongFormSection,
+  type FAQ,
+} from "@/components/LongFormSections";
 
 interface ServiceAreaTemplateProps {
   name: string;
@@ -17,6 +21,11 @@ interface ServiceAreaTemplateProps {
   benefits: string[];
   responseTime: string;
   travelCharge: string;
+  /** Optional slug for canonical/schema id — defaults to lowercased name */
+  slug?: string;
+  longFormIntro?: string;
+  longFormSections?: LongFormSection[];
+  faqs?: FAQ[];
 }
 
 const ServiceAreaTemplate = ({
@@ -29,8 +38,15 @@ const ServiceAreaTemplate = ({
   services,
   benefits,
   responseTime,
-  travelCharge
+  travelCharge,
+  slug,
+  longFormIntro,
+  longFormSections,
+  faqs,
 }: ServiceAreaTemplateProps) => {
+  const pageSlug =
+    slug ?? name.toLowerCase().replace(/\s+/g, "-");
+  const pageUrl = `https://carsonssoftwashservices.com/service-areas/${pageSlug}`;
   return (
     <Layout>
       {/* Hero Section */}
