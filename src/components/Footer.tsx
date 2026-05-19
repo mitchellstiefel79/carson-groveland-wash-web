@@ -78,15 +78,13 @@ const Footer = () => {
               >
                 <MapPin size={18} className="text-accent mt-1 flex-shrink-0" />
                 <span>
+                  <span itemProp="streetAddress">{address.streetAddress}</span>
+                  <br />
                   <span itemProp="addressLocality">{address.locality}</span>
                   ,{" "}
                   <span itemProp="addressRegion">{address.region}</span>{" "}
                   <span itemProp="postalCode">{address.postalCode}</span>
                   <meta itemProp="addressCountry" content={address.country} />
-                  <br />
-                  <span className="text-gray-300 text-sm">
-                    Service-area business — serving all of Central Florida
-                  </span>
                 </span>
               </div>
               <div className="flex items-center space-x-3">
