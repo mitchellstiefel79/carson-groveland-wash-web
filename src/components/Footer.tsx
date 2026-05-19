@@ -2,9 +2,11 @@
 import { NavLink } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Youtube, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BUSINESS_INFO, BUSINESS_CITATION_SHORT } from "@/data/businessInfo";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { address, phoneDisplay, phoneHref, email } = BUSINESS_INFO;
   
   return (
     <footer className="bg-secondary text-white pt-12 pb-6">
@@ -56,24 +58,62 @@ const Footer = () => {
             <h3 className="text-xl font-bold border-b-2 border-accent pb-2 inline-block">
               Contact Us
             </h3>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3">
+            {/*
+              Canonical NAP (Name / Address / Phone).
+              These values are the single source of truth and MUST match
+              the LocalBusiness JSON-LD in index.html plus the GBP / Yelp / BBB
+              citations. Edits should flow from src/data/businessInfo.ts.
+            */}
+            <address
+              className="space-y-3 not-italic"
+              itemScope
+              itemType="https://schema.org/LocalBusiness"
+            >
+              <meta itemProp="name" content={BUSINESS_INFO.legalName} />
+              <div
+                className="flex items-start space-x-3"
+                itemProp="address"
+                itemScope
+                itemType="https://schema.org/PostalAddress"
+              >
                 <MapPin size={18} className="text-accent mt-1 flex-shrink-0" />
-                <span>Serving all of Central Florida</span>
+                <span>
+                  <span itemProp="streetAddress">{address.streetAddress}</span>
+                  <br />
+                  <span itemProp="addressLocality">{address.locality}</span>
+                  ,{" "}
+                  <span itemProp="addressRegion">{address.region}</span>{" "}
+                  <span itemProp="postalCode">{address.postalCode}</span>
+                  <meta itemProp="addressCountry" content={address.country} />
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-accent flex-shrink-0" />
-                <a href="tel:3524673964" className="hover:text-accent transition-colors">352-467-3964</a>
+                <a
+                  href={phoneHref}
+                  className="hover:text-accent transition-colors"
+                  itemProp="telephone"
+                >
+                  {phoneDisplay}
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-accent flex-shrink-0" />
-                <a href="mailto:carsonssoftwash@gmail.com" className="hover:text-accent transition-colors">carsonssoftwash@gmail.com</a>
+                <a
+                  href={`mailto:${email}`}
+                  className="hover:text-accent transition-colors"
+                  itemProp="email"
+                >
+                  {email}
+                </a>
               </div>
               <div className="flex items-start space-x-3">
                 <Clock size={18} className="text-accent mt-1 flex-shrink-0" />
-                <span>Mon - Sat: 8:00 AM - 6:00 PM<br />Sunday: Closed</span>
+                <span className="whitespace-pre-line" itemProp="openingHours">
+                  {BUSINESS_INFO.hours}
+                </span>
               </div>
-            </div>
+            </address>
           </div>
         </div>
 
