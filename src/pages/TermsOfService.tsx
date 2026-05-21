@@ -7,13 +7,18 @@ const EFFECTIVE_DATE = "May 21, 2026";
 const TermsOfService = () => {
   useEffect(() => {
     document.title = "Terms of Service | Carson's Soft Wash Inc.";
+    const desc = "Terms governing use of carsonssoftwashservices.com and exterior cleaning services by Carson's Soft Wash Inc. in Central Florida.";
+    let tag = document.querySelector('meta[name="description"]');
+    if (!tag) { tag = document.createElement("meta"); tag.setAttribute("name", "description"); document.head.appendChild(tag); }
+    tag.setAttribute("content", desc);
   }, []);
   return (
     <Layout>
 
       <article className="container mx-auto px-4 py-12 max-w-3xl prose prose-slate">
         <h1 className="text-4xl font-bold mb-2">Terms of Service</h1>
-        <p className="text-muted-foreground"><em>Effective {EFFECTIVE_DATE}</em></p>
+        <p className="text-muted-foreground text-sm"><em>Effective {EFFECTIVE_DATE} · Published by {BUSINESS_INFO.legalName}</em></p>
+
 
         <p>
           These Terms of Service ("Terms") govern your use of{" "}
