@@ -39,6 +39,12 @@ const Navbar = () => {
     { path: "/contact", label: "Contact" },
   ];
 
+  const legalItems = [
+    { path: "/privacy-policy", label: "Privacy" },
+    { path: "/terms-of-service", label: "Terms" },
+    { path: "/acceptable-use", label: "Usage" },
+  ];
+
   return (
     <header
       className={cn(
@@ -58,7 +64,7 @@ const Navbar = () => {
         </NavLink>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6 items-center">
+        <nav className="hidden md:flex space-x-5 lg:space-x-6 items-center">
           {navItems.map((item) => (
             <NavLink
               key={item.path}
@@ -74,6 +80,25 @@ const Navbar = () => {
                 )
               }
               end={item.path === "/"}
+            >
+              {item.label}
+            </NavLink>
+          ))}
+          <span className="h-5 w-px bg-gray-300 mx-1" />
+          {legalItems.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={({ isActive }) =>
+                cn(
+                  "text-sm font-medium transition-colors hover:text-primary",
+                  isActive
+                    ? "text-primary border-b-2 border-primary"
+                    : scrolled
+                    ? "text-gray-500"
+                    : "text-gray-400"
+                )
+              }
             >
               {item.label}
             </NavLink>
@@ -99,7 +124,7 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-lg animate-fade-in">
           <div className="container mx-auto px-4 py-4">
-            <nav className="flex flex-col space-y-4">
+            <nav className="flex flex-col">
               {navItems.map((item) => (
                 <NavLink
                   key={item.path}
@@ -118,7 +143,25 @@ const Navbar = () => {
                   {item.label}
                 </NavLink>
               ))}
-              <Button className="bg-accent hover:bg-accent/90 flex items-center gap-2 text-white" asChild>
+              <div className="border-t border-gray-200 my-3" />
+              <div className="flex flex-wrap gap-4 pl-3">
+                {legalItems.map((item) => (
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    className={({ isActive }) =>
+                      cn(
+                        "text-sm font-medium transition-colors hover:text-primary",
+                        isActive ? "text-primary" : "text-gray-500"
+                      )
+                    }
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </NavLink>
+                ))}
+              </div>
+              <Button className="bg-accent hover:bg-accent/90 flex items-center gap-2 text-white mt-4" asChild>
                 <a href="tel:3524673964">
                   <Phone size={16} />
                   <span>Call: 352-467-3964</span>
