@@ -39,6 +39,12 @@ const Navbar = () => {
     { path: "/contact", label: "Contact" },
   ];
 
+  const legalItems = [
+    { path: "/privacy-policy", label: "Privacy" },
+    { path: "/terms-of-service", label: "Terms" },
+    { path: "/acceptable-use", label: "Usage" },
+  ];
+
   return (
     <header
       className={cn(
