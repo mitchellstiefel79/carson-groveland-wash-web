@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 import Layout from "@/components/Layout";
 import { BUSINESS_INFO, BUSINESS_CITATION_FULL } from "@/data/businessInfo";
 
