@@ -7,13 +7,18 @@ const EFFECTIVE_DATE = "May 21, 2026";
 const PrivacyPolicy = () => {
   useEffect(() => {
     document.title = "Privacy Policy | Carson's Soft Wash Inc.";
+    const desc = "How Carson's Soft Wash Inc. collects, uses, and protects your information when you request a quote or use carsonssoftwashservices.com.";
+    let tag = document.querySelector('meta[name="description"]');
+    if (!tag) { tag = document.createElement("meta"); tag.setAttribute("name", "description"); document.head.appendChild(tag); }
+    tag.setAttribute("content", desc);
   }, []);
   return (
     <Layout>
 
       <article className="container mx-auto px-4 py-12 max-w-3xl prose prose-slate">
         <h1 className="text-4xl font-bold mb-2">Privacy Policy</h1>
-        <p className="text-muted-foreground"><em>Effective {EFFECTIVE_DATE}</em></p>
+        <p className="text-muted-foreground text-sm"><em>Effective {EFFECTIVE_DATE} · Published by {BUSINESS_INFO.legalName}</em></p>
+
 
         <p>
           {BUSINESS_INFO.legalName} ("Carson's Soft Wash," "we," "us," or "our")
