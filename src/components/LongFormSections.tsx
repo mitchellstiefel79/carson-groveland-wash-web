@@ -127,7 +127,7 @@ const LongFormSections = ({
                 {faqs.map((faq, i) => (
                   <AccordionItem key={i} value={`item-${i}`}>
                     <AccordionTrigger className="text-left font-semibold text-secondary">
-                      {faq.question}
+                      <h3 className="text-base font-semibold m-0">{faq.question}</h3>
                     </AccordionTrigger>
                     <AccordionContent className="text-gray-700 leading-relaxed whitespace-pre-line">
                       {faq.answer}
