@@ -32,11 +32,51 @@ User-agent: PerplexityBot
 Disallow: /admin
 Allow: /
 
+User-agent: Perplexity-User
+Disallow: /admin
+Allow: /
+
 User-agent: Google-Extended
 Disallow: /admin
 Allow: /
 
+User-agent: Googlebot
+Disallow: /admin
+Allow: /
+
+User-agent: Bingbot
+Disallow: /admin
+Allow: /
+
+User-agent: Applebot
+Disallow: /admin
+Allow: /
+
+User-agent: Applebot-Extended
+Disallow: /admin
+Allow: /
+
 User-agent: CCBot
+Disallow: /admin
+Allow: /
+
+User-agent: cohere-ai
+Disallow: /admin
+Allow: /
+
+User-agent: meta-externalagent
+Disallow: /admin
+Allow: /
+
+User-agent: Amazonbot
+Disallow: /admin
+Allow: /
+
+User-agent: YouBot
+Disallow: /admin
+Allow: /
+
+User-agent: DuckAssistBot
 Disallow: /admin
 Allow: /
 
