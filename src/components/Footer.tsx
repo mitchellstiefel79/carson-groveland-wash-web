@@ -122,6 +122,7 @@ const Footer = () => {
             <NavLink to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</NavLink>
             <NavLink to="/terms-of-service" className="hover:text-accent transition-colors">Terms of Service</NavLink>
             <NavLink to="/acceptable-use" className="hover:text-accent transition-colors">Acceptable Use</NavLink>
+            <NavLink to="/licensing" className="hover:text-accent transition-colors">Licensing</NavLink>
           </nav>
           <p>&copy; {currentYear} Carson's Soft Wash Inc. All rights reserved.</p>
         </div>

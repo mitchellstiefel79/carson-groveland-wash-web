@@ -43,6 +43,7 @@ const Navbar = () => {
     { path: "/privacy-policy", label: "Privacy" },
     { path: "/terms-of-service", label: "Terms" },
     { path: "/acceptable-use", label: "Usage" },
+    { path: "/licensing", label: "Licensing" },
   ];
 
   return (

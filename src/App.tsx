@@ -28,6 +28,8 @@ import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import AcceptableUse from "./pages/AcceptableUse";
+import Licensing from "./pages/Licensing";
+
 
 const queryClient = new QueryClient();
 
@@ -61,6 +63,8 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/acceptable-use" element={<AcceptableUse />} />
+          <Route path="/licensing" element={<Licensing />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
