@@ -96,11 +96,12 @@ const Licensing = () => {
         </p>
         <p>
           <strong>{BUSINESS_INFO.legalName}</strong><br />
-          {BUSINESS_INFO.address.street}<br />
-          {BUSINESS_INFO.address.city}, {BUSINESS_INFO.address.state} {BUSINESS_INFO.address.zip}<br />
+          {BUSINESS_INFO.address.streetAddress}<br />
+          {BUSINESS_INFO.address.locality}, {BUSINESS_INFO.address.region} {BUSINESS_INFO.address.postalCode}<br />
           Email: <a href={`mailto:${BUSINESS_INFO.email}`}>{BUSINESS_INFO.email}</a><br />
-          Phone: <a href={`tel:${BUSINESS_INFO.phoneRaw}`}>{BUSINESS_INFO.phone}</a>
+          Phone: <a href={BUSINESS_INFO.phoneHref}>{BUSINESS_INFO.phoneDisplay}</a>
         </p>
+
 
         <h2>9. Licensing Requests</h2>
         <p>
