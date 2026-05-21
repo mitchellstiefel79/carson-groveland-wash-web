@@ -25,6 +25,9 @@ import Oakland from "./pages/service-areas/Oakland";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import FAQ from "./pages/FAQ";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import AcceptableUse from "./pages/AcceptableUse";
 
 const queryClient = new QueryClient();
 
@@ -55,6 +58,9 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/acceptable-use" element={<AcceptableUse />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
