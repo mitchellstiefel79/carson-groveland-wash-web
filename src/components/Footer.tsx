@@ -117,7 +117,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-4 border-t border-gray-700 text-center text-gray-400 text-sm">
+        <div className="mt-12 pt-4 border-t border-gray-700 text-center text-gray-400 text-sm space-y-2">
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <NavLink to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</NavLink>
+            <NavLink to="/terms-of-service" className="hover:text-accent transition-colors">Terms of Service</NavLink>
+            <NavLink to="/acceptable-use" className="hover:text-accent transition-colors">Acceptable Use</NavLink>
+          </nav>
           <p>&copy; {currentYear} Carson's Soft Wash Inc. All rights reserved.</p>
         </div>
       </div>
