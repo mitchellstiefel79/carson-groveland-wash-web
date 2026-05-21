@@ -91,7 +91,7 @@ const Index = () => {
         pageUrl="https://carsonssoftwashservices.com/"
         sections={homeLongForm}
         faqs={homeFAQs}
-        faqHeading="Soft Wash & Pressure Washing FAQs"
+        faqHeading="Frequently Asked Questions: Soft Wash & Pressure Washing"
       />
 
 
