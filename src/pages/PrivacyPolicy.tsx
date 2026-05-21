@@ -5,16 +5,11 @@ import { BUSINESS_INFO, BUSINESS_CITATION_FULL } from "@/data/businessInfo";
 const EFFECTIVE_DATE = "May 21, 2026";
 
 const PrivacyPolicy = () => {
+  useEffect(() => {
+    document.title = "Privacy Policy | Carson's Soft Wash Inc.";
+  }, []);
   return (
     <Layout>
-      <Helmet>
-        <title>Privacy Policy | Carson's Soft Wash Inc.</title>
-        <meta
-          name="description"
-          content="How Carson's Soft Wash Inc. collects, uses, and protects your information when you request a quote or use our website."
-        />
-        <link rel="canonical" href={`${BUSINESS_INFO.websiteUrl}/privacy-policy`} />
-      </Helmet>
 
       <article className="container mx-auto px-4 py-12 max-w-3xl prose prose-slate">
         <h1 className="text-4xl font-bold mb-2">Privacy Policy</h1>

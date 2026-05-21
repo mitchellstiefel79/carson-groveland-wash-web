@@ -1,20 +1,15 @@
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 import Layout from "@/components/Layout";
 import { BUSINESS_INFO } from "@/data/businessInfo";
 
 const EFFECTIVE_DATE = "May 21, 2026";
 
 const AcceptableUse = () => {
+  useEffect(() => {
+    document.title = "Acceptable Use Policy | Carson's Soft Wash Inc.";
+  }, []);
   return (
     <Layout>
-      <Helmet>
-        <title>Acceptable Use Policy | Carson's Soft Wash Inc.</title>
-        <meta
-          name="description"
-          content="Rules for acceptable use of Carson's Soft Wash Inc.'s website, forms, and any provided digital tools."
-        />
-        <link rel="canonical" href={`${BUSINESS_INFO.websiteUrl}/acceptable-use`} />
-      </Helmet>
 
       <article className="container mx-auto px-4 py-12 max-w-3xl prose prose-slate">
         <h1 className="text-4xl font-bold mb-2">Acceptable Use Policy</h1>
