@@ -28,6 +28,8 @@ import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import AcceptableUse from "./pages/AcceptableUse";
+import Licensing from "./pages/Licensing";
+
 
 const queryClient = new QueryClient();
 
