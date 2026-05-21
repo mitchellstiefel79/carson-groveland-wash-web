@@ -64,7 +64,7 @@ const Navbar = () => {
         </NavLink>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6 items-center">
+        <nav className="hidden md:flex space-x-5 lg:space-x-6 items-center">
           {navItems.map((item) => (
             <NavLink
               key={item.path}
@@ -80,6 +80,25 @@ const Navbar = () => {
                 )
               }
               end={item.path === "/"}
+            >
+              {item.label}
+            </NavLink>
+          ))}
+          <span className="h-5 w-px bg-gray-300 mx-1" />
+          {legalItems.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={({ isActive }) =>
+                cn(
+                  "text-sm font-medium transition-colors hover:text-primary",
+                  isActive
+                    ? "text-primary border-b-2 border-primary"
+                    : scrolled
+                    ? "text-gray-500"
+                    : "text-gray-400"
+                )
+              }
             >
               {item.label}
             </NavLink>
