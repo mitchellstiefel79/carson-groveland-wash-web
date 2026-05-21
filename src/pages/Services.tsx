@@ -77,7 +77,7 @@ const Services = () => {
         pageUrl="https://carsonssoftwashservices.com/services"
         sections={servicesLongForm}
         faqs={servicesFAQs}
-        faqHeading="Pressure Washing & Soft Washing FAQs"
+        faqHeading="Frequently Asked Questions: Pressure Washing & Soft Washing"
       />
 
       {/* CTA Section */}
